@@ -1,4 +1,6 @@
-﻿namespace P4Projekt2
+﻿using P4Projekt2.Pages;
+
+namespace P4Projekt2
 {
     public partial class App : Application
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new SignInPage();
         }
     }
 }

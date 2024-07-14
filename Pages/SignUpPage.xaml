@@ -2,21 +2,96 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="P4Projekt2.Pages.SignUpPage"
-             xmlns:vm="clr-namespace:P4Projekt2.MVVM"
-             Title="SignUpPage"
-             
-             >
 
-    <!--x:DataType="vm:SignUpPageViewModel"-->
+             Title="SignUpPage">
+    
+    <!--xmlns:vm="clr-namespace:P4Projekt2.MVVM"
+             x:DataType="vm:SignUpPageViewModel"-->
     <ScrollView>
-        <StackLayout Padding="20" Spacing="15">
-            <Label FontSize="24" HorizontalOptions="Center" Text="Sign Up" />
+        <VerticalStackLayout Padding="18,82" Spacing="10">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Center"
+                    Text="Sign Up"
+                    VerticalOptions="Center" />
 
-            <Entry Placeholder="Firstname" Text="{Binding Firstname}" />
-            <Entry Placeholder="Lastname" Text="{Binding Lastname}" />
-            <Entry Keyboard="Email" Placeholder="Email" Text="{Binding Email}" />
-            <Entry IsPassword="True" Placeholder="Password" Text="{Binding Password}" />
-            <Button Command="{Binding SignUpCommand}" Text="Sign Up" />
-        </StackLayout>
+                <Button
+                    Command="{Binding LoginCommand}"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalOptions="EndAndExpand"
+                    Text="Login" />
+            </StackLayout>
+
+            <Label
+                FontAttributes="Bold"
+                FontSize="14"
+                HorizontalOptions="Start"
+                Text="Register to continue"
+                TextColor="#929292"
+                VerticalOptions="Center" />
+            <StackLayout Margin="0,50,0,0" Spacing="40">
+                <StackLayout Spacing="0">
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Start"
+                        Text="Name"
+                        TextColor="#929292"
+                        VerticalOptions="Center" />
+                    <Entry
+                        FontSize="18"
+                        Placeholder="Enter FirstName"
+                        Text="{Binding FirstName}" />
+                </StackLayout>
+                <StackLayout Spacing="0">
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Start"
+                        Text="Name"
+                        TextColor="#929292"
+                        VerticalOptions="Center" />
+                    <Entry
+                        FontSize="18"
+                        Placeholder="Enter LastName"
+                        Text="{Binding LastName}" />
+                </StackLayout>
+                <StackLayout Spacing="0">
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Start"
+                        Text="Email"
+                        TextColor="#929292"
+                        VerticalOptions="Center" />
+                    <Entry
+                        FontSize="18"
+                        Placeholder="Enter Email"
+                        Text="{Binding Email}" />
+                </StackLayout>
+                <StackLayout Margin="0" Spacing="0">
+                    <Label
+                        FontSize="14"
+                        HorizontalOptions="Start"
+                        Text="Password"
+                        TextColor="#929292"
+                        VerticalOptions="Center" />
+                    <Entry
+                        FontSize="18"
+                        IsPassword="True"
+                        Placeholder="Enter Password"
+                        Text="{Binding Password}" />
+                </StackLayout>
+            </StackLayout>
+            <Button
+                Margin="0,60"
+                Padding="16"
+                Background="{DynamicResource Primary}"
+                Command="{Binding RegisterCommand}"
+                CornerRadius="4"
+                Text="SIGN UP"
+                TextColor="{DynamicResource White}" />
+
+        </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

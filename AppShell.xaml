@@ -3,17 +3,27 @@
     x:Class="P4Projekt2.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:P4Projekt2"
-    xmlns:pages="clr-namespace:P4Projekt2.Pages"
-    Shell.FlyoutBehavior="Disabled"
-    Title="P4Projekt2">
+    xmlns:views="clr-namespace:P4Projekt2.Pages"
+    Shell.FlyoutBehavior="Disabled">
+    <TabBar>
+        <Tab Title="Explore">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialIcon" Glyph="&#xf56e;" />
+            </Tab.Icon>
+            <!--<ShellContent ContentTemplate="{DataTemplate views:HomePageView}" />-->
+        </Tab>
+        <Tab Title="Cart">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialIcon" Glyph="&#xf110;" />
+            </Tab.Icon>
+            <!--<ShellContent ContentTemplate="{DataTemplate views:CartView}" />-->
+        </Tab>
+        <Tab Title="Account">
+            <Tab.Icon>
+                <FontImageSource FontFamily="MaterialIcon" Glyph="&#xf004;" />
+            </Tab.Icon>
+            <!--<ShellContent ContentTemplate="{DataTemplate views:ProfileView}" />-->
+        </Tab>
+    </TabBar>
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-    <ShellContent
-        Title="SignInPage"
-        ContentTemplate="{DataTemplate pages:SignInPage}"
-        Route="SignInPage" />
 </Shell>
