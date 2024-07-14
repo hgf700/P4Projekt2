@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="P4Projekt2.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:P4Projekt2"
+    xmlns:pages="clr-namespace:P4Projekt2.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Title="P4Projekt2">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="SignInPage"
+        ContentTemplate="{DataTemplate pages:SignInPage}"
+        Route="SignInPage" />
+</Shell>
