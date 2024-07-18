@@ -3,56 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\signinpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\signinpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\pages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:pages\\signuppage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\signuppageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\signuppageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\pages\\signinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:pages\\signinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\choseregisterview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\choseregisterview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\pages\\signinpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:pages\\signinpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:pages\\signuppage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\signinpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\signinpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\pages\\signinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:pages\\signinpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,171 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "AppShell.xaml.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
-              "RelativeToolTip": "AppShell.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:16:30.569Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml.cs",
-              "RelativeDocumentMoniker": "App.xaml.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml.cs",
-              "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:09:39.623Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MainPage.xaml.cs",
-              "RelativeToolTip": "MainPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:09:35.937Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MainPage.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MainPage.xaml",
-              "RelativeToolTip": "MainPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T22:02:57.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "SignInPage.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignInPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\SignInPage.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignInPage.xaml",
-              "RelativeToolTip": "Pages\\SignInPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T21:56:11.03Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "SignUpPageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignUpPageViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\SignUpPageViewModel.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignUpPageViewModel.cs",
-              "RelativeToolTip": "MVVM\\SignUpPageViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAYAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T21:12:13.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SignupPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignupPage.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\SignupPage.xaml.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignupPage.xaml.cs",
-              "RelativeToolTip": "Pages\\SignupPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:05:44.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml",
-              "RelativeDocumentMoniker": "App.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml",
-              "RelativeToolTip": "App.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T22:09:38.55Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SignInPageViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignInPageViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\SignInPageViewModel.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignInPageViewModel.cs",
-              "RelativeToolTip": "MVVM\\SignInPageViewModel.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAEwCMAAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T13:18:53.941Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\BaseViewModel.cs",
-              "RelativeDocumentMoniker": "MVVM\\BaseViewModel.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\BaseViewModel.cs",
-              "RelativeToolTip": "MVVM\\BaseViewModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T22:03:12.004Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAIwBgAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T22:01:09.417Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
               "Title": "SigninPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SigninPage.xaml.cs",
               "RelativeDocumentMoniker": "Pages\\SigninPage.xaml.cs",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SigninPage.xaml.cs",
               "RelativeToolTip": "Pages\\SigninPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAABAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-14T21:50:57.407Z",
+              "WhenOpened": "2024-07-18T15:34:06.024Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SignUpPage.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignUpPage.xaml",
-              "RelativeDocumentMoniker": "Pages\\SignUpPage.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignUpPage.xaml",
-              "RelativeToolTip": "Pages\\SignUpPage.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
+              "DocumentIndex": 3,
+              "Title": "SignInPage.xaml",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignInPage.xaml",
+              "RelativeDocumentMoniker": "Pages\\SignInPage.xaml",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\Pages\\SignInPage.xaml",
+              "RelativeToolTip": "Pages\\SignInPage.xaml",
+              "ViewState": "AQIAADUAAAAAAAAAAAAIwD4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-14T21:55:54.048Z",
+              "WhenOpened": "2024-07-18T15:33:38.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SignInPageViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignInPageViewModel.cs",
+              "RelativeDocumentMoniker": "MVVM\\SignInPageViewModel.cs",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignInPageViewModel.cs",
+              "RelativeToolTip": "MVVM\\SignInPageViewModel.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAowCQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T15:29:17.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChoseRegisterView.cs",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\ChoseRegisterView.cs",
+              "RelativeDocumentMoniker": "MVVM\\ChoseRegisterView.cs",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\ChoseRegisterView.cs",
+              "RelativeToolTip": "MVVM\\ChoseRegisterView.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-18T15:28:06.311Z",
               "EditorCaption": ""
             }
           ]

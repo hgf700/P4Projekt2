@@ -66,9 +66,21 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
-            "CommunityToolkit.Mvvm": {
+            "IdentityModel": {
               "target": "Package",
-              "version": "[8.2.2, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNet.SignalR.Client": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -76,11 +88,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[8.0.70, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -88,7 +104,15 @@
               "version": "[8.0.2, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Refit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "Refit.HttpClientFactory": {
               "target": "Package",
               "version": "[7.1.2, )"
             }
@@ -117,9 +141,21 @@
         "net8.0-ios17.2": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
-            "CommunityToolkit.Mvvm": {
+            "IdentityModel": {
               "target": "Package",
-              "version": "[8.2.2, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNet.SignalR.Client": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -127,11 +163,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[8.0.70, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -139,7 +179,15 @@
               "version": "[8.0.2, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Refit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "Refit.HttpClientFactory": {
               "target": "Package",
               "version": "[7.1.2, )"
             }
@@ -168,9 +216,21 @@
         "net8.0-maccatalyst17.2": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
-            "CommunityToolkit.Mvvm": {
+            "IdentityModel": {
               "target": "Package",
-              "version": "[8.2.2, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNet.SignalR.Client": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -178,11 +238,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[8.0.70, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -190,7 +254,15 @@
               "version": "[8.0.2, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
             "Refit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "Refit.HttpClientFactory": {
               "target": "Package",
               "version": "[7.1.2, )"
             }
@@ -220,9 +292,21 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
-            "CommunityToolkit.Mvvm": {
+            "IdentityModel": {
               "target": "Package",
-              "version": "[8.2.2, )"
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.AspNet.SignalR.Client": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Client.Core": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.AspNetCore.SignalR.Common": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -230,13 +314,25 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[8.0.70, )"
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[8.0.70, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Refit": {
+              "target": "Package",
+              "version": "[7.1.2, )"
+            },
+            "Refit.HttpClientFactory": {
               "target": "Package",
               "version": "[7.1.2, )"
             }

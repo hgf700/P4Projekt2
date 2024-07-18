@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
 using Refit;
 using P4Projekt2.API.Authorization;
 using P4Projekt2.API.User;
@@ -38,6 +36,9 @@ namespace P4Projekt2.MVVM
             LoginCommand = new Command(Login);
             RegisterCommand = new Command(SignUp);
         }
+
+
+
         private async void SignUp(object obj)
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpPage());

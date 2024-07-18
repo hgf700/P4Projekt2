@@ -158,3 +158,17 @@ Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 Xamarin.Google.Crypto.Tink.Android.aar
 Xamarin.Google.ErrorProne.Annotations.aar
+Microsoft.Maui.Controls.Maps.dll
+Microsoft.Maui.Maps.dll
+Xamarin.GooglePlayServices.Base.dll
+Xamarin.GooglePlayServices.Basement.dll
+Xamarin.GooglePlayServices.Maps.dll
+Xamarin.GooglePlayServices.Tasks.dll
+play-services-base.aar
+play-services-basement.aar
+play-services-maps.aar
+play-services-tasks.aar
+playservicesbasement-18.2.0.aar
+playservicestasks-18.0.2.aar
+playservicesbase-18.2.0.aar
+playservicesmaps-18.1.0.aar

@@ -5,9 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:P4Projekt2.MVVM"
     Title="SignInPage">
-    
-    <!--tutaj cos-->
-    
+
     
     <ScrollView>
         <VerticalStackLayout Padding="18,82" Spacing="10">

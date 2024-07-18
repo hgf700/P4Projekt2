@@ -1,6 +1,9 @@
 ﻿using System.Windows.Input;
 using P4Projekt2.Pages;
 using P4Projekt2.MVVM;
+using P4Projekt2.API.User;
+using P4Projekt2.API.Authorization;
+using System.Net;
 
 namespace P4Projekt2.MVVM
 {
@@ -33,109 +36,76 @@ namespace P4Projekt2.MVVM
             set => SetProperty(ref _LastName, value);
         }
 
-
+        public readonly IAuth _userIdentityApi;
+        public readonly IUserApi _usersInfoApi;
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
-        public SignUpPageViewModel()
+        public SignUpPageViewModel(IAuth userIdentityApi, IUserApi usersInfoApi)
         {
             LoginCommand = new Command(Login);
             RegisterCommand = new Command(SignUp);
+            _userIdentityApi = userIdentityApi;
+            _usersInfoApi = usersInfoApi;
         }
 
         private async void SignUp(object obj)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new MainPage());
-        }
+            var userIdentity = new IdentityUserInfo();
+            userIdentity.Email = _Email;
+            userIdentity.Password = _Password;
+            userIdentity.Firstname = _FirstName;
+            userIdentity.Lastname = _LastName;
+            var resposne = await _userIdentityApi.CreateNewIdentity(userIdentity);
+            if (resposne.StatusCode == HttpStatusCode.BadRequest)
+            {
+                await Application.Current.MainPage.DisplayAlert("Sign Up", "Wrong forms!", "OK");
+            }
 
+            if (resposne.StatusCode == HttpStatusCode.OK)
+            {
+                var authTokenRequest = new AuthTokenRequest
+                {
+                    Granttype = "password",
+                    Firstname = _FirstName,
+                    Lastname = _LastName,
+                    Email = _Email,
+                    Password = _Password,
+                    ClientId = "postman",
+                    ClientSecret = "secret",
+                };
+                var userInfo = new DtoUserInfo();
+                userInfo.Email = _Email;
+                userInfo.Firstname = _FirstName;
+                userInfo.Lastname = _LastName;
+                var response = await _userIdentityApi.Execute(authTokenRequest);
+                var token = $"Bearer {response.Content.AccessToken}";
+
+                var res = await _usersInfoApi.CreateUser(userInfo, token);
+
+                if (res.StatusCode == HttpStatusCode.Created)
+                {
+                    await Application.Current.MainPage.DisplayAlert(
+                        "Sign Up",
+                        "Sign up successful!",
+                        "OK"
+                    );
+                    //chat page
+                    await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert(
+                        "Sign Up",
+                        "Something Went Wrong",
+                        "OK"
+                    );
+                }
+            }
+
+        }
         private void Login(object obj)
         {
             App.Current.MainPage = new SignInPage();
         }
-
     }
 }
-
-
-
-//namespace P4Projekt2.MVVM
-//{
-//    public partial class SignUpPageViewModel : ObservableObject
-//    {
-//        private readonly IAuth _userIdentityApi;
-//        private readonly IUserApi _usersInfoApi;
-
-//        public SignUpPageViewModel(IAuth userIdentityApi, IUserApi usersInfoApi)
-//        {
-//            _userIdentityApi = userIdentityApi;
-//            _usersInfoApi = usersInfoApi;
-//        }
-
-//        [ObservableProperty]
-//        private string firstname;
-
-//        [ObservableProperty]
-//        private string lastname;
-
-//        [ObservableProperty]
-//        private string email;
-
-//        [ObservableProperty]
-//        private string password;
-
-//        [RelayCommand]
-//        private async Task SignUp()
-//        {
-//            var userIdentity = new IdentityUserInfo();
-//            userIdentity.Firstname = firstname;
-//            userIdentity.Lastname = lastname;
-//            userIdentity.Email = email;
-//            userIdentity.Password = password;
-//            var resposne = await _userIdentityApi.CreateNewIdentity(userIdentity);
-//            if (resposne.StatusCode == HttpStatusCode.BadRequest)
-//            {
-//                await Application.Current.MainPage.DisplayAlert("Sign Up", "Wrong forms!", "OK");
-//            }
-
-//            if (resposne.StatusCode == HttpStatusCode.OK)
-//            {
-//                var authTokenRequest = new AuthTokenRequest
-//                {
-//                    Granttype = "password",
-//                    Firstname = firstname,
-//                    Lastname = lastname,
-//                    Password = password,
-//                    ClientId = "postman",
-//                    ClientSecret = "NotASecret",
-//                };
-
-//                var userInfo = new DtoUserInfo();
-//                userInfo.Firstname = firstname;
-//                userInfo.Lastname = lastname;
-//                userInfo.Email = email;
-
-
-//                var response = await _userIdentityApi.Execute(authTokenRequest);
-//                var token = $"Bearer {response.Content.AccessToken}";
-
-//                var res = await _usersInfoApi.CreateUser(userInfo, token);
-
-//                if (res.StatusCode == HttpStatusCode.Created)
-//                {
-//                    await Application.Current.MainPage.DisplayAlert(
-//                        "Sign Up",
-//                        "Sign up successful!",
-//                        "OK"
-//                    );
-//                    await Shell.Current.GoToAsync(nameof(MainPage));
-//                }
-//                else
-//                {
-//                    await Application.Current.MainPage.DisplayAlert(
-//                        "Sign Up",
-//                        "Something Went Wrong",
-//                        "OK"
-//                    );
-//                }
-//            }
-//        }
-//    }

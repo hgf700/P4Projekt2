@@ -13,5 +13,6 @@ namespace P4Projekt2.API.User
         public string Email { get; set; }
         public string WhoCanMessage { get; set; }
         public List<string> ChatsId { get; set; } = new List<string>();
+        public string ?doctorid { get; set; }
     }
 }
