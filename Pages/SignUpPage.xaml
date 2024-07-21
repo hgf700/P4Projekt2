@@ -2,11 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="P4Projekt2.Pages.SignUpPage"
-
+             xmlns:vm="clr-namespace:P4Projekt2.MVVM"
+             x:DataType="vm:SignUpPageViewModel"
              Title="SignUpPage">
-    
-    <!--xmlns:vm="clr-namespace:P4Projekt2.MVVM"
-             x:DataType="vm:SignUpPageViewModel"-->
+
     <ScrollView>
         <VerticalStackLayout Padding="18,82" Spacing="10">
             <StackLayout Orientation="Horizontal">
@@ -37,24 +36,24 @@
                     <Label
                         FontSize="14"
                         HorizontalOptions="Start"
-                        Text="Name"
+                        Text="First Name"
                         TextColor="#929292"
                         VerticalOptions="Center" />
                     <Entry
                         FontSize="18"
-                        Placeholder="Enter FirstName"
+                        Placeholder="Enter First Name"
                         Text="{Binding FirstName}" />
                 </StackLayout>
                 <StackLayout Spacing="0">
                     <Label
                         FontSize="14"
                         HorizontalOptions="Start"
-                        Text="Name"
+                        Text="Last Name"
                         TextColor="#929292"
                         VerticalOptions="Center" />
                     <Entry
                         FontSize="18"
-                        Placeholder="Enter LastName"
+                        Placeholder="Enter Last Name"
                         Text="{Binding LastName}" />
                 </StackLayout>
                 <StackLayout Spacing="0">
@@ -86,12 +85,11 @@
             <Button
                 Margin="0,60"
                 Padding="16"
-                Background="{DynamicResource Primary}"
+                BackgroundColor="{DynamicResource Primary}"
                 Command="{Binding RegisterCommand}"
                 CornerRadius="4"
                 Text="SIGN UP"
                 TextColor="{DynamicResource White}" />
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

@@ -1,106 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr format="color" name="animationBackgroundColor"/>
-    <attr format="enum" name="finishPrimaryWithPlaceholder">
+    <declare-styleable name="AnimatedStateListDrawableCompat">
         
-        <enum name="always" value="1"/>
+        <attr name="android:visible"/>
         
-        <enum name="adjacent" value="2"/>
-    </attr>
-    <attr format="enum" name="finishPrimaryWithSecondary">
+        <attr name="android:variablePadding"/>
         
-        <enum name="never" value="0"/>
+        <attr name="android:constantSize"/>
         
-        <enum name="always" value="1"/>
+        <attr name="android:dither"/>
         
-        <enum name="adjacent" value="2"/>
-    </attr>
-    <attr format="enum" name="finishSecondaryWithPrimary">
+        <attr name="android:enterFadeDuration"/>
         
-        <enum name="never" value="0"/>
+        <attr name="android:exitFadeDuration"/>
         
-        <enum name="always" value="1"/>
         
-        <enum name="adjacent" value="2"/>
-    </attr>
-    <attr format="enum" name="splitLayoutDirection">
-        
-        <enum name="locale" value="0"/>
-        
-        <enum name="ltr" value="1"/>
-        
-        <enum name="rtl" value="2"/>
-        
-        <enum name="topToBottom" value="3"/>
-        
-        <enum name="bottomToTop" value="4"/>
-    </attr>
-    <attr format="float" name="splitMaxAspectRatioInLandscape">
-        
-        <enum name="alwaysAllow" value="0"/>
-        
-        <enum name="alwaysDisallow" value="-1"/>
-    </attr>
-    <attr format="float" name="splitMaxAspectRatioInPortrait">
-        
-        <enum name="alwaysAllow" value="0"/>
-        
-        <enum name="alwaysDisallow" value="-1"/>
-    </attr>
-    <attr format="integer" name="splitMinHeightDp"/>
-    <attr format="integer" name="splitMinSmallestWidthDp"/>
-    <attr format="integer" name="splitMinWidthDp"/>
-    <attr format="float" name="splitRatio"/>
-    <attr format="string" name="tag"/>
-    <item name="androidx_window_activity_scope" type="id"/>
-    <declare-styleable name="ActivityFilter">
-        
-        <attr format="string" name="activityName"/>
-        
-        <attr format="string" name="activityAction"/>
     </declare-styleable>
-    <declare-styleable name="ActivityRule">
+    <declare-styleable name="AnimatedStateListDrawableItem">
         
-        <attr format="boolean" name="alwaysExpand"/>
-        <attr name="tag"/>
+        <attr name="android:drawable"/>
+        
+        <attr name="android:id"/>
     </declare-styleable>
-    <declare-styleable name="SplitPairFilter">
+    <declare-styleable name="AnimatedStateListDrawableTransition">
         
-        <attr format="string" name="primaryActivityName"/>
+        <attr name="android:fromId"/>
         
-        <attr format="string" name="secondaryActivityName"/>
+        <attr name="android:toId"/>
         
-        <attr format="string" name="secondaryActivityAction"/>
+        <attr name="android:drawable"/>
+        
+        <attr name="android:reversible"/>
     </declare-styleable>
-    <declare-styleable name="SplitPairRule">
+    <declare-styleable name="StateListDrawable">
         
-        <attr format="boolean" name="clearTop"/>
-        <attr name="finishPrimaryWithSecondary"/>
-        <attr name="finishSecondaryWithPrimary"/>
-        <attr name="splitRatio"/>
-        <attr name="splitMinWidthDp"/>
-        <attr name="splitMinHeightDp"/>
-        <attr name="splitMinSmallestWidthDp"/>
-        <attr name="splitMaxAspectRatioInPortrait"/>
-        <attr name="splitMaxAspectRatioInLandscape"/>
-        <attr name="splitLayoutDirection"/>
-        <attr name="tag"/>
-        <attr name="animationBackgroundColor"/>
+        <attr name="android:visible"/>
+        
+        <attr name="android:variablePadding"/>
+        
+        <attr name="android:constantSize"/>
+        
+        <attr name="android:dither"/>
+        
+        <attr name="android:enterFadeDuration"/>
+        
+        <attr name="android:exitFadeDuration"/>
+        
+        
     </declare-styleable>
-    <declare-styleable name="SplitPlaceholderRule">
+    <declare-styleable name="StateListDrawableItem">
         
-        <attr format="string" name="placeholderActivityName"/>
-        
-        <attr format="boolean" name="stickyPlaceholder"/>
-        <attr name="finishPrimaryWithPlaceholder"/>
-        <attr name="splitRatio"/>
-        <attr name="splitMinWidthDp"/>
-        <attr name="splitMinHeightDp"/>
-        <attr name="splitMinSmallestWidthDp"/>
-        <attr name="splitMaxAspectRatioInPortrait"/>
-        <attr name="splitMaxAspectRatioInLandscape"/>
-        <attr name="splitLayoutDirection"/>
-        <attr name="tag"/>
-        <attr name="animationBackgroundColor"/>
+        <attr name="android:drawable"/>
     </declare-styleable>
 </resources>

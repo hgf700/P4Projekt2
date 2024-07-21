@@ -3,6 +3,7 @@ using P4Projekt2.MVVM;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
+
 namespace P4Projekt2.Pages
 {
     public partial class ChatPage : ContentPage

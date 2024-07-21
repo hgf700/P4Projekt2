@@ -1,9 +1,8 @@
 ﻿using System.Windows.Input;
 using P4Projekt2.Pages;
-using P4Projekt2.MVVM;
+using System.Net.Http.Json;
+using Microsoft.Maui.Controls;
 using P4Projekt2.API.User;
-using P4Projekt2.API.Authorization;
-using System.Net;
 
 namespace P4Projekt2.MVVM
 {
@@ -29,6 +28,7 @@ namespace P4Projekt2.MVVM
             get => _FirstName;
             set => SetProperty(ref _FirstName, value);
         }
+
         private string _LastName;
         public string LastName
         {
@@ -36,76 +36,58 @@ namespace P4Projekt2.MVVM
             set => SetProperty(ref _LastName, value);
         }
 
-        public readonly IAuth _userIdentityApi;
-        public readonly IUserApi _usersInfoApi;
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
-        public SignUpPageViewModel(IAuth userIdentityApi, IUserApi usersInfoApi)
+
+        public SignUpPageViewModel()
         {
             LoginCommand = new Command(Login);
             RegisterCommand = new Command(SignUp);
-            _userIdentityApi = userIdentityApi;
-            _usersInfoApi = usersInfoApi;
         }
 
-        private async void SignUp(object obj)
+        private void Login()
         {
-            var userIdentity = new IdentityUserInfo();
-            userIdentity.Email = _Email;
-            userIdentity.Password = _Password;
-            userIdentity.Firstname = _FirstName;
-            userIdentity.Lastname = _LastName;
-            var resposne = await _userIdentityApi.CreateNewIdentity(userIdentity);
-            if (resposne.StatusCode == HttpStatusCode.BadRequest)
+            App.Current.MainPage = new SignInPage();
+        }
+
+        private async void SignUp()
+        {
+            var userIdentity = new IdentityUserInfo
             {
-                await Application.Current.MainPage.DisplayAlert("Sign Up", "Wrong forms!", "OK");
+                Email = _Email,
+                Password = _Password,
+                Firstname = _FirstName,
+                Lastname = _LastName
+            };
+
+            if (string.IsNullOrEmpty(userIdentity.Firstname) || string.IsNullOrEmpty(userIdentity.Email) || string.IsNullOrEmpty(userIdentity.Password) || string.IsNullOrEmpty(userIdentity.Lastname))
+            {
+                MessagingCenter.Send(this, "SignUpError", "Incorrect data");
+                return;
             }
 
-            if (resposne.StatusCode == HttpStatusCode.OK)
+            var url = "http://localhost:5000";
+            using var httpClient = new HttpClient();
+
+            try
             {
-                var authTokenRequest = new AuthTokenRequest
+                var response = await httpClient.PostAsJsonAsync(url, userIdentity);
+                if (response.IsSuccessStatusCode)
                 {
-                    Granttype = "password",
-                    Firstname = _FirstName,
-                    Lastname = _LastName,
-                    Email = _Email,
-                    Password = _Password,
-                    ClientId = "postman",
-                    ClientSecret = "secret",
-                };
-                var userInfo = new DtoUserInfo();
-                userInfo.Email = _Email;
-                userInfo.Firstname = _FirstName;
-                userInfo.Lastname = _LastName;
-                var response = await _userIdentityApi.Execute(authTokenRequest);
-                var token = $"Bearer {response.Content.AccessToken}";
+                    var responseData = await response.Content.ReadFromJsonAsync<IdentityUserInfo>();
+                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {responseData?.Firstname} {responseData?.Lastname}");
 
-                var res = await _usersInfoApi.CreateUser(userInfo, token);
-
-                if (res.StatusCode == HttpStatusCode.Created)
-                {
-                    await Application.Current.MainPage.DisplayAlert(
-                        "Sign Up",
-                        "Sign up successful!",
-                        "OK"
-                    );
-                    //chat page
-                    await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
+                    App.Current.MainPage = new SignInPage();
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert(
-                        "Sign Up",
-                        "Something Went Wrong",
-                        "OK"
-                    );
+                    MessagingCenter.Send(this, "SignUpError", $"Incorrect inserted data: {response.ReasonPhrase}");
                 }
             }
-
-        }
-        private void Login(object obj)
-        {
-            App.Current.MainPage = new SignInPage();
+            catch (Exception ex)
+            {
+                MessagingCenter.Send(this, "SignUpError", $"Exception occurred: {ex.Message}");
+            }
         }
     }
 }

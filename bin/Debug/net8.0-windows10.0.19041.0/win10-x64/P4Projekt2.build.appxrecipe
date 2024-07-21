@@ -232,6 +232,42 @@
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.connections.abstractions\8.0.7\lib\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll">
       <PackagePath>Microsoft.AspNetCore.Connections.Abstractions.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.dll">
+      <PackagePath>Microsoft.AspNetCore.Hosting.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Hosting.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting.server.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.extensions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Extensions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.features\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll">
+      <PackagePath>Microsoft.AspNetCore.Http.Features.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.dll">
+      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.core\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Core.dll">
+      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Core.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.https\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll">
+      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Https.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.transport.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll">
+      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.transport.sockets\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll">
+      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.signalr.client.core\8.0.7\lib\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll">
       <PackagePath>Microsoft.AspNetCore.SignalR.Client.Core.dll</PackagePath>
     </AppxPackagedFile>
@@ -241,6 +277,9 @@
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.signalr.protocols.json\8.0.7\lib\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll">
       <PackagePath>Microsoft.AspNetCore.SignalR.Protocols.Json.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.webutilities\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll">
+      <PackagePath>Microsoft.AspNetCore.WebUtilities.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
       <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
     </AppxPackagedFile>
@@ -249,6 +288,12 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.binder\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.Binder.dll">
       <PackagePath>Microsoft.Extensions.Configuration.Binder.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.environmentvariables\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.EnvironmentVariables.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.fileextensions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll">
+      <PackagePath>Microsoft.Extensions.Configuration.FileExtensions.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.dependencyinjection\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.dll">
       <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
@@ -265,6 +310,18 @@
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.features\8.0.7\lib\net8.0\Microsoft.Extensions.Features.dll">
       <PackagePath>Microsoft.Extensions.Features.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.fileproviders.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.fileproviders.physical\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll">
+      <PackagePath>Microsoft.Extensions.FileProviders.Physical.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.filesystemglobbing\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll">
+      <PackagePath>Microsoft.Extensions.FileSystemGlobbing.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll">
+      <PackagePath>Microsoft.Extensions.Hosting.Abstractions.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.http\8.0.0\lib\net8.0\Microsoft.Extensions.Http.dll">
       <PackagePath>Microsoft.Extensions.Http.dll</PackagePath>
     </AppxPackagedFile>
@@ -276,6 +333,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.logging.debug\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Debug.dll">
       <PackagePath>Microsoft.Extensions.Logging.Debug.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.objectpool\2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll">
+      <PackagePath>Microsoft.Extensions.ObjectPool.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.options\8.0.2\lib\net8.0\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
@@ -315,6 +375,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.maui.maps\8.0.70\lib\net8.0-windows10.0.19041\Microsoft.Maui.Maps.dll">
       <PackagePath>Microsoft.Maui.Maps.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.net.http.headers\2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll">
+      <PackagePath>Microsoft.Net.Http.Headers.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
