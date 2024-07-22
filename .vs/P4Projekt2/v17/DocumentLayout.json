@@ -3,20 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\localserverapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\mvvm\\signuppageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|solutionrelative:mvvm\\signuppageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\localserverapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\LocalServerApi.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C4302BBA-A402-4E31-9353-518921C2694C}|P4Projekt2.csproj|c:\\users\\user098\\documents\\github\\p4projekt2\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,24 +53,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LocalServerApi.http",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.http",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\LocalServerApi.http",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.http",
-              "RelativeToolTip": "..\\LocalServerApi\\LocalServerApi.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-07-21T14:35:16.062Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,40 +67,14 @@
               "RelativeDocumentMoniker": "MVVM\\SignUpPageViewModel.cs",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MVVM\\SignUpPageViewModel.cs",
               "RelativeToolTip": "MVVM\\SignUpPageViewModel.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAWwEQAAAAsAAAA",
+              "ViewState": "AQIAADgAAAAAAAAAAAAqwEQAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T14:12:59.043Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
-              "RelativeDocumentMoniker": "AppShell.xaml",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
-              "RelativeToolTip": "AppShell.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-21T14:11:35.502Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "AppShell.xaml.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
-              "RelativeToolTip": "AppShell.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-21T14:11:33.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MainPage.xaml",
               "RelativeDocumentMoniker": "MainPage.xaml",
@@ -123,46 +87,98 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "..\\LocalServerApi\\Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Properties\\launchSettings.json",
               "RelativeToolTip": "..\\LocalServerApi\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAUAAAAAAAAAAAAcwBAAAAAcAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-07-21T14:10:48.622Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Program.cs",
               "RelativeDocumentMoniker": "..\\LocalServerApi\\Program.cs",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Program.cs",
               "RelativeToolTip": "..\\LocalServerApi\\Program.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAmwCkAAAAaAAAA",
+              "ViewState": "AQIAACwAAAAAAAAAAAAqwDIAAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T14:11:59.662Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "WeatherForecast.cs",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\WeatherForecast.cs",
               "RelativeDocumentMoniker": "..\\LocalServerApi\\WeatherForecast.cs",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\WeatherForecast.cs",
               "RelativeToolTip": "..\\LocalServerApi\\WeatherForecast.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T14:29:33.155Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LocalServerApi.http",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.http",
+              "RelativeDocumentMoniker": "..\\LocalServerApi\\LocalServerApi.http",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.http",
+              "RelativeToolTip": "..\\LocalServerApi\\LocalServerApi.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-07-21T14:35:16.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "..\\LocalServerApi\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "..\\LocalServerApi\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAmwBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-22T12:35:42.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "AppShell.xaml.cs",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml.cs",
+              "RelativeToolTip": "AppShell.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-21T14:11:33.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "AppShell.xaml",
+              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
+              "RelativeDocumentMoniker": "AppShell.xaml",
+              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AppShell.xaml",
+              "RelativeToolTip": "AppShell.xaml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-07-21T14:11:35.502Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",
@@ -175,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\MauiProgram.cs",
               "RelativeDocumentMoniker": "MauiProgram.cs",
@@ -188,13 +204,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml.cs",
               "RelativeDocumentMoniker": "App.xaml.cs",
               "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\App.xaml.cs",
               "RelativeToolTip": "App.xaml.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAIBJwBgAAAAJAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAACBjwBgAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-21T14:10:57.92Z",
               "EditorCaption": ""

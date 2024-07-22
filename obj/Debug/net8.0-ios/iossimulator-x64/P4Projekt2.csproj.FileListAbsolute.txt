@@ -298,7 +298,6 @@ C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-ios\iossimulator-x
 C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet-nativeaot.a
 C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.a
 C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-ios\iossimulator-x64\libxamarin-dotnet.dylib
-C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-ios\iossimulator-x64\build-signature\signature
 C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.inputs
 C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.inputs
 C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.inputs

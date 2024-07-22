@@ -66,7 +66,7 @@ namespace P4Projekt2.MVVM
                 return;
             }
 
-            var url = "http://localhost:5000";
+            var url = "https://localhost:5013";
             using var httpClient = new HttpClient();
 
             try
