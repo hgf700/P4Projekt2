@@ -29,25 +29,45 @@
     <AppXManifest Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-07-22T12:54:54.778</Modified>
+      <Modified>2024-07-22T16:24:41.189</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-07-21T13:51:07.345</Modified>
+      <Modified>2024-07-22T16:24:40.388</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.runtimeconfig.json">
       <PackagePath>P4Projekt2.runtimeconfig.json</PackagePath>
-      <Modified>2024-07-21T13:51:07.062</Modified>
+      <Modified>2024-07-22T16:24:39.879</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.dll">
       <PackagePath>P4Projekt2.dll</PackagePath>
-      <Modified>2024-07-22T12:54:52.768</Modified>
+      <Modified>2024-07-22T16:24:37.725</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\apphost.exe">
+      <PackagePath>LocalServerApi.exe</PackagePath>
+      <Modified>2024-07-22T16:22:53.690</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>P4Projekt2.exe</PackagePath>
-      <Modified>2024-07-22T12:54:52.844</Modified>
+      <Modified>2024-07-22T16:24:37.815</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\LocalServerApi.deps.json">
+      <PackagePath>LocalServerApi.deps.json</PackagePath>
+      <Modified>2024-07-22T16:14:02.688</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\LocalServerApi.runtimeconfig.json">
+      <PackagePath>LocalServerApi.runtimeconfig.json</PackagePath>
+      <Modified>2024-07-22T16:14:03.087</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\appsettings.Development.json">
+      <PackagePath>appsettings.Development.json</PackagePath>
+      <Modified>2024-07-21T13:53:09.098</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\appsettings.json">
+      <PackagePath>appsettings.json</PackagePath>
+      <Modified>2024-07-21T13:53:09.103</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -287,7 +307,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.deps.json">
       <PackagePath>P4Projekt2.deps.json</PackagePath>
-      <Modified>2024-07-21T13:51:06.933</Modified>
+      <Modified>2024-07-22T16:24:39.723</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -309,42 +329,6 @@
       <PackagePath>Microsoft.AspNetCore.Connections.Abstractions.dll</PackagePath>
       <Modified>2024-06-14T17:28:24.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.dll">
-      <PackagePath>Microsoft.AspNetCore.Hosting.dll</PackagePath>
-      <Modified>2018-11-12T17:30:22.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Abstractions.dll">
-      <PackagePath>Microsoft.AspNetCore.Hosting.Abstractions.dll</PackagePath>
-      <Modified>2018-11-12T17:30:22.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.hosting.server.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll">
-      <PackagePath>Microsoft.AspNetCore.Hosting.Server.Abstractions.dll</PackagePath>
-      <Modified>2018-11-12T17:30:20.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.dll">
-      <PackagePath>Microsoft.AspNetCore.Http.dll</PackagePath>
-      <Modified>2018-11-12T17:29:06.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll">
-      <PackagePath>Microsoft.AspNetCore.Http.Abstractions.dll</PackagePath>
-      <Modified>2018-11-12T17:29:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.extensions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Extensions.dll">
-      <PackagePath>Microsoft.AspNetCore.Http.Extensions.dll</PackagePath>
-      <Modified>2018-11-12T17:29:06.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.http.features\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Features.dll">
-      <PackagePath>Microsoft.AspNetCore.Http.Features.dll</PackagePath>
-      <Modified>2018-11-12T17:28:58.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.dll">
-      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.dll</PackagePath>
-      <Modified>2018-11-12T17:31:04.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.core\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Core.dll">
-      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Core.dll</PackagePath>
-      <Modified>2018-11-12T17:30:58.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.https\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Https.dll">
       <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Https.dll</PackagePath>
       <Modified>2018-11-12T17:30:58.000</Modified>
@@ -352,10 +336,6 @@
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.transport.abstractions\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll">
       <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll</PackagePath>
       <Modified>2018-11-12T17:30:54.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.server.kestrel.transport.sockets\2.2.0\lib\netcoreapp2.1\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll">
-      <PackagePath>Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll</PackagePath>
-      <Modified>2018-11-12T17:30:56.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.signalr.client.core\8.0.7\lib\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll">
       <PackagePath>Microsoft.AspNetCore.SignalR.Client.Core.dll</PackagePath>
@@ -369,97 +349,13 @@
       <PackagePath>Microsoft.AspNetCore.SignalR.Protocols.Json.dll</PackagePath>
       <Modified>2024-06-14T17:29:28.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.aspnetcore.webutilities\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.WebUtilities.dll">
-      <PackagePath>Microsoft.AspNetCore.WebUtilities.dll</PackagePath>
-      <Modified>2018-11-12T17:29:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.dll">
-      <PackagePath>Microsoft.Extensions.Configuration.dll</PackagePath>
-      <Modified>2023-10-31T14:59:20.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.Configuration.Abstractions.dll</PackagePath>
-      <Modified>2023-10-31T14:59:08.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.binder\8.0.0\lib\net8.0\Microsoft.Extensions.Configuration.Binder.dll">
-      <PackagePath>Microsoft.Extensions.Configuration.Binder.dll</PackagePath>
-      <Modified>2023-10-31T14:59:26.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.environmentvariables\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.EnvironmentVariables.dll">
-      <PackagePath>Microsoft.Extensions.Configuration.EnvironmentVariables.dll</PackagePath>
-      <Modified>2018-11-11T00:27:04.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.configuration.fileextensions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll">
-      <PackagePath>Microsoft.Extensions.Configuration.FileExtensions.dll</PackagePath>
-      <Modified>2018-11-11T00:27:02.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.dependencyinjection\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.dll">
-      <PackagePath>Microsoft.Extensions.DependencyInjection.dll</PackagePath>
-      <Modified>2023-10-31T14:59:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.DependencyInjection.Abstractions.dll</PackagePath>
-      <Modified>2023-10-31T14:58:56.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.diagnostics\8.0.0\lib\net8.0\Microsoft.Extensions.Diagnostics.dll">
-      <PackagePath>Microsoft.Extensions.Diagnostics.dll</PackagePath>
-      <Modified>2023-10-31T14:59:42.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.diagnostics.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Diagnostics.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.Diagnostics.Abstractions.dll</PackagePath>
-      <Modified>2023-10-31T14:59:22.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.features\8.0.7\lib\net8.0\Microsoft.Extensions.Features.dll">
       <PackagePath>Microsoft.Extensions.Features.dll</PackagePath>
       <Modified>2024-06-14T17:27:58.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.fileproviders.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.FileProviders.Abstractions.dll</PackagePath>
-      <Modified>2018-11-11T00:26:38.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.fileproviders.physical\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll">
-      <PackagePath>Microsoft.Extensions.FileProviders.Physical.dll</PackagePath>
-      <Modified>2018-11-11T00:27:00.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.filesystemglobbing\2.2.0\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll">
-      <PackagePath>Microsoft.Extensions.FileSystemGlobbing.dll</PackagePath>
-      <Modified>2018-11-11T00:26:36.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.hosting.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Hosting.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.Hosting.Abstractions.dll</PackagePath>
-      <Modified>2018-11-12T17:30:20.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.http\8.0.0\lib\net8.0\Microsoft.Extensions.Http.dll">
-      <PackagePath>Microsoft.Extensions.Http.dll</PackagePath>
-      <Modified>2023-10-31T14:59:44.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.logging\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.dll">
-      <PackagePath>Microsoft.Extensions.Logging.dll</PackagePath>
-      <Modified>2023-10-31T14:59:24.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.logging.abstractions\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Abstractions.dll">
-      <PackagePath>Microsoft.Extensions.Logging.Abstractions.dll</PackagePath>
-      <Modified>2023-10-31T14:59:12.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.logging.debug\8.0.0\lib\net8.0\Microsoft.Extensions.Logging.Debug.dll">
-      <PackagePath>Microsoft.Extensions.Logging.Debug.dll</PackagePath>
-      <Modified>2023-10-31T14:59:30.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.objectpool\2.2.0\lib\netstandard2.0\Microsoft.Extensions.ObjectPool.dll">
-      <PackagePath>Microsoft.Extensions.ObjectPool.dll</PackagePath>
-      <Modified>2018-11-11T00:26:48.000</Modified>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.options\8.0.2\lib\net8.0\Microsoft.Extensions.Options.dll">
       <PackagePath>Microsoft.Extensions.Options.dll</PackagePath>
       <Modified>2024-01-18T03:05:26.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.options.configurationextensions\8.0.0\lib\net8.0\Microsoft.Extensions.Options.ConfigurationExtensions.dll">
-      <PackagePath>Microsoft.Extensions.Options.ConfigurationExtensions.dll</PackagePath>
-      <Modified>2023-10-31T14:59:38.000</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.extensions.primitives\8.0.0\lib\net8.0\Microsoft.Extensions.Primitives.dll">
-      <PackagePath>Microsoft.Extensions.Primitives.dll</PackagePath>
-      <Modified>2023-10-31T14:58:52.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.graphics.win2d\1.2.0\lib\net6.0-windows10.0.19041.0\Microsoft.Graphics.Canvas.Interop.dll">
       <PackagePath>Microsoft.Graphics.Canvas.Interop.dll</PackagePath>
@@ -501,9 +397,9 @@
       <PackagePath>Microsoft.Maui.Maps.dll</PackagePath>
       <Modified>2024-07-08T19:07:30.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.net.http.headers\2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll">
-      <PackagePath>Microsoft.Net.Http.Headers.dll</PackagePath>
-      <Modified>2018-11-12T17:28:58.000</Modified>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.openapi\1.2.3\lib\netstandard2.0\Microsoft.OpenApi.dll">
+      <PackagePath>Microsoft.OpenApi.dll</PackagePath>
+      <Modified>2020-08-29T20:14:12.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\lib\net6.0-windows10.0.18362.0\Microsoft.InteractiveExperiences.Projection.dll">
       <PackagePath>Microsoft.InteractiveExperiences.Projection.dll</PackagePath>
@@ -577,9 +473,17 @@
       <PackagePath>Refit.HttpClientFactory.dll</PackagePath>
       <Modified>2024-06-30T23:19:38.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\system.io.pipelines\8.0.0\lib\net8.0\System.IO.Pipelines.dll">
-      <PackagePath>System.IO.Pipelines.dll</PackagePath>
-      <Modified>2023-10-31T14:59:26.000</Modified>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\swashbuckle.aspnetcore.swagger\6.4.0\lib\net6.0\Swashbuckle.AspNetCore.Swagger.dll">
+      <PackagePath>Swashbuckle.AspNetCore.Swagger.dll</PackagePath>
+      <Modified>2022-07-19T15:21:22.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\swashbuckle.aspnetcore.swaggergen\6.4.0\lib\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll">
+      <PackagePath>Swashbuckle.AspNetCore.SwaggerGen.dll</PackagePath>
+      <Modified>2022-07-19T15:21:38.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\swashbuckle.aspnetcore.swaggerui\6.4.0\lib\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll">
+      <PackagePath>Swashbuckle.AspNetCore.SwaggerUI.dll</PackagePath>
+      <Modified>2022-07-19T15:21:48.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.maui.controls.core\8.0.70\lib\net8.0-windows10.0.19041\ar\Microsoft.Maui.Controls.resources.dll">
       <PackagePath>ar\Microsoft.Maui.Controls.resources.dll</PackagePath>
@@ -724,6 +628,10 @@
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windowsappsdk\1.5.240607001\runtimes\win10-x64\native\Microsoft.WindowsAppRuntime.Bootstrap.dll">
       <PackagePath>Microsoft.WindowsAppRuntime.Bootstrap.dll</PackagePath>
       <Modified>2024-06-07T06:05:24.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\LocalServerApi.dll">
+      <PackagePath>LocalServerApi.dll</PackagePath>
+      <Modified>2024-07-22T16:22:53.629</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.maui.controls.compatibility\8.0.70\lib\net8.0-windows10.0.19041\Microsoft.Maui.Controls.Compatibility.pri">
       <PackagePath>Microsoft.Maui.Controls.Compatibility.pri</PackagePath>

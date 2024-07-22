@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P4Projekt2", "P4Projekt2.csproj", "{C4302BBA-A402-4E31-9353-518921C2694C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocalServerApi", "..\LocalServerApi\LocalServerApi.csproj", "{6A94A649-1141-4FFC-BC32-898F8BD3D641}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocalServerApi", "..\LocalServerApi\LocalServerApi.csproj", "{6A94A649-1141-4FFC-BC32-898F8BD3D641}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "source", "source", "{2A4B9E93-1CC7-43B6-8B1D-5CDB82C4E18C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +28,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C4302BBA-A402-4E31-9353-518921C2694C} = {2A4B9E93-1CC7-43B6-8B1D-5CDB82C4E18C}
+		{6A94A649-1141-4FFC-BC32-898F8BD3D641} = {2A4B9E93-1CC7-43B6-8B1D-5CDB82C4E18C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E84C5112-EAE6-4FF5-9758-75D2DE9148A2}

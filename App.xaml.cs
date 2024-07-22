@@ -4,13 +4,13 @@ using P4Projekt2.API.User;
 using P4Projekt2.MVVM;
 using P4Projekt2.Pages;
 using Refit;
-//using WebLocalServerForMessageApp.Controller;
+using LocalServerApi;
 
 namespace P4Projekt2
 {
     public partial class App : Application
     {
-        //private LocalApiServer _localApiServer;
+        //private LocalServerApi _localserverapi;
         public App()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace P4Projekt2
         protected override void OnSleep()
         {
             base.OnSleep();
-            // Stop local API server
+            //Stop local API server
             //_localApiServer?.Stop();
         }
     }
