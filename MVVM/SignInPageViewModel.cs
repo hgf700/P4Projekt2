@@ -15,6 +15,7 @@ namespace P4Projekt2.MVVM
 {
     public partial class SignInPageViewModel : BaseViewModel
     {
+        private readonly HttpClient _httpClient;
         private string _Email;
         public string Email
         {
@@ -41,7 +42,6 @@ namespace P4Projekt2.MVVM
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpPage());
         }
-
         private async void Login()
         {
            

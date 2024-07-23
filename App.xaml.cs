@@ -4,20 +4,22 @@ using P4Projekt2.API.User;
 using P4Projekt2.MVVM;
 using P4Projekt2.Pages;
 using Refit;
-using LocalServerApi;
 
 namespace P4Projekt2
 {
     public partial class App : Application
     {
-        //private LocalServerApi _localserverapi;
+        private HttpClient _httpClient;
         public App()
         {
+
             InitializeComponent();
+
+            _httpClient = new HttpClient();
 
             MainPage = new SignUpPage
             {
-                BindingContext = new SignUpPageViewModel()
+                BindingContext = new SignUpPageViewModel(_httpClient)
             };
 
             //_localApiServer = new LocalApiServer();

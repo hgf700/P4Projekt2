@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using P4Projekt2.MVVM;
 
 namespace P4Projekt2
 {
@@ -14,7 +15,13 @@ namespace P4Projekt2
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
+            builder.Services.AddSingleton<HttpClient>();
 
+
+            //builder.Services.AddTransient<SignInPageViewModel>();
+            builder.Services.AddTransient<SignUpPageViewModel>();
+
+            return builder.Build();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

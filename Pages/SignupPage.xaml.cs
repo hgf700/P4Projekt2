@@ -5,10 +5,11 @@ namespace P4Projekt2.Pages
 {
     public partial class SignUpPage : ContentPage
     {
+        private HttpClient _httpClient;
         public SignUpPage()
         {
             InitializeComponent();
-            BindingContext = new SignUpPageViewModel();
+            BindingContext = new SignUpPageViewModel(_httpClient);
 
             MessagingCenter.Subscribe<SignUpPageViewModel, string>(this, "SignUpSuccess", async (sender, message) =>
             {

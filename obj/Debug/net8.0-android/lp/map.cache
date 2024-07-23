@@ -172,3 +172,6 @@ playservicesbasement-18.2.0.aar
 playservicestasks-18.0.2.aar
 playservicesbase-18.2.0.aar
 playservicesmaps-18.1.0.aar
+SQLitePCLRaw.batteries_v2.dll
+SQLitePCLRaw.lib.e_sqlite3.android.dll
+SQLitePCLRaw.lib.e_sqlite3.android.aar

@@ -81,7 +81,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\LocalServerApi\LocalServerApi.csproj" />
+	  <ProjectReference Include="..\LocalServerApi\IdentityService.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

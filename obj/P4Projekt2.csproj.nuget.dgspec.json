@@ -4,12 +4,12 @@
     "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj": {
+    "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj",
-        "projectName": "LocalServerApi",
-        "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj",
+        "projectUniqueName": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj",
+        "projectName": "IdentityService",
+        "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj",
         "packagesPath": "C:\\Users\\USER098\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\obj\\",
         "projectStyle": "PackageReference",
@@ -50,6 +50,34 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.5.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL.Design": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -111,32 +139,32 @@
           "net8.0-android34.0": {
             "targetAlias": "net8.0-android",
             "projectReferences": {
-              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj": {
-                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj"
+              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj": {
+                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj"
               }
             }
           },
           "net8.0-ios17.2": {
             "targetAlias": "net8.0-ios",
             "projectReferences": {
-              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj": {
-                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj"
+              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj": {
+                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj"
               }
             }
           },
           "net8.0-maccatalyst17.2": {
             "targetAlias": "net8.0-maccatalyst",
             "projectReferences": {
-              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj": {
-                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj"
+              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj": {
+                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj"
               }
             }
           },
           "net8.0-windows10.0.19041": {
             "targetAlias": "net8.0-windows10.0.19041.0",
             "projectReferences": {
-              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj": {
-                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\LocalServerApi.csproj"
+              "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj": {
+                "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj"
               }
             }
           }
