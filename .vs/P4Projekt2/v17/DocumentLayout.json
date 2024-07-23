@@ -1,29 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\migrations\\20240723095908_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\database\\applicationdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\database\\usersaveddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\controllers\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6A94A649-1141-4FFC-BC32-898F8BD3D641}|..\\LocalServerApi\\IdentityService.csproj|c:\\users\\user098\\documents\\github\\localserverapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -31,102 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "..\\LocalServerApi\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAxwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:59:33.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "20240723095908_InitialCreate.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Migrations\\20240723095908_InitialCreate.cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\Migrations\\20240723095908_InitialCreate.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Migrations\\20240723095908_InitialCreate.cs",
-              "RelativeToolTip": "..\\LocalServerApi\\Migrations\\20240723095908_InitialCreate.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAgwB0AAAATAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:59:32.153Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "..\\LocalServerApi\\Properties\\launchSettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-07-23T09:46:47.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Program.cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\Program.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Program.cs",
-              "RelativeToolTip": "..\\LocalServerApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:46:37.906Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApplicationDbContext .cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\DataBase\\ApplicationDbContext .cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\DataBase\\ApplicationDbContext .cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\DataBase\\ApplicationDbContext .cs",
-              "RelativeToolTip": "..\\LocalServerApi\\DataBase\\ApplicationDbContext .cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAuwBAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:46:15.77Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserSavedData.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\DataBase\\UserSavedData.cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\DataBase\\UserSavedData.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\DataBase\\UserSavedData.cs",
-              "RelativeToolTip": "..\\LocalServerApi\\DataBase\\UserSavedData.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:45:50.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Controllers\\Startup.cs",
-              "RelativeDocumentMoniker": "..\\LocalServerApi\\Controllers\\Startup.cs",
-              "ToolTip": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\Controllers\\Startup.cs",
-              "RelativeToolTip": "..\\LocalServerApi\\Controllers\\Startup.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAAAsAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-23T09:45:49.309Z",
-              "EditorCaption": ""
             }
           ]
         }
