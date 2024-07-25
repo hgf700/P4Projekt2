@@ -42,7 +42,7 @@
                     <Entry
                         FontSize="18"
                         Placeholder="Enter First Name"
-                        Text="{Binding FirstName}" />
+                        Text="{Binding FirstName_}" />
                 </StackLayout>
                 <StackLayout Spacing="0">
                     <Label
@@ -54,7 +54,7 @@
                     <Entry
                         FontSize="18"
                         Placeholder="Enter Last Name"
-                        Text="{Binding LastName}" />
+                        Text="{Binding LastName_}" />
                 </StackLayout>
                 <StackLayout Spacing="0">
                     <Label
@@ -66,7 +66,7 @@
                     <Entry
                         FontSize="18"
                         Placeholder="Enter Email"
-                        Text="{Binding Email}" />
+                        Text="{Binding Email_}" />
                 </StackLayout>
                 <StackLayout Margin="0" Spacing="0">
                     <Label
@@ -79,7 +79,7 @@
                         FontSize="18"
                         IsPassword="True"
                         Placeholder="Enter Password"
-                        Text="{Binding Password}" />
+                        Text="{Binding Password_}" />
                 </StackLayout>
             </StackLayout>
             <Button

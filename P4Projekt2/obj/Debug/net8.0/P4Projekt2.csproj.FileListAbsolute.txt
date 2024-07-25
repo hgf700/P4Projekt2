@@ -1,0 +1,6 @@
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.csproj.AssemblyReference.cache
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.AssemblyInfoInputs.cache
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.AssemblyInfo.cs
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.csproj.CoreCompileInputs.cache
+C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0\P4Projekt2.sourcelink.json

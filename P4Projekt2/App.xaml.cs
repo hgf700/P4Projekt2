@@ -15,15 +15,25 @@ namespace P4Projekt2
 
             InitializeComponent();
 
-            _httpClient = new HttpClient();
+            var services = new ServiceCollection();
+            ConfigureServices(services);
 
+            var serviceProvider = services.BuildServiceProvider();
             MainPage = new SignUpPage
             {
-                BindingContext = new SignUpPageViewModel(_httpClient)
+                BindingContext = serviceProvider.GetRequiredService<SignUpPageViewModel>()
             };
+        }
+        private void ConfigureServices(IServiceCollection services)
+        {
+            // Rejestracja HttpClient
+            services.AddHttpClient<SignUpPageViewModel>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:5013/api/user/register"); // Adres Twojego serwera
+            });
 
-            //_localApiServer = new LocalApiServer();
-            //_localApiServer.Start();
+            // Rejestracja ViewModel jako usługi
+            services.AddTransient<SignUpPageViewModel>();
         }
         protected override void OnSleep()
         {

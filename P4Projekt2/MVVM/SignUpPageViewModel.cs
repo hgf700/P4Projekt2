@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using Microsoft.Maui.Controls;
 using P4Projekt2.API.User;
 using P4Projekt2.API.Authorization;
+using static System.Net.WebRequestMethods;
 
 namespace P4Projekt2.MVVM
 {
@@ -11,28 +12,28 @@ namespace P4Projekt2.MVVM
     {
         private readonly HttpClient _httpClient;
         private string _Email;
-        public string Email
+        public string Email_
         {
             get => _Email;
             set => SetProperty(ref _Email, value);
         }
 
         private string _Password;
-        public string Password
+        public string Password_
         {
             get => _Password;
             set => SetProperty(ref _Password, value);
         }
 
         private string _FirstName;
-        public string FirstName
+        public string FirstName_
         {
             get => _FirstName;
             set => SetProperty(ref _FirstName, value);
         }
 
         private string _LastName;
-        public string LastName
+        public string LastName_
         {
             get => _LastName;
             set => SetProperty(ref _LastName, value);
@@ -57,10 +58,10 @@ namespace P4Projekt2.MVVM
         {
             var userIdentity = new IdentityUserInfo
             {
-                Email = _Email,
-                Password = _Password,
-                Firstname = _FirstName,
-                Lastname = _LastName
+                Email = Email_,
+                Password = Password_,
+                Firstname = FirstName_,
+                Lastname = LastName_
             };
 
             if (string.IsNullOrEmpty(userIdentity.Firstname) || string.IsNullOrEmpty(userIdentity.Email) || string.IsNullOrEmpty(userIdentity.Password) || string.IsNullOrEmpty(userIdentity.Lastname))
@@ -69,7 +70,7 @@ namespace P4Projekt2.MVVM
                 return;
             }
 
-            var url = "https://localhost:5013";
+            var url = "https://localhost:5013/api/user/register";
 
             try
             {
@@ -96,7 +97,7 @@ namespace P4Projekt2.MVVM
                 }
                 else
                 {
-                    MessagingCenter.Send(this, "SignUpError", $"Incorrect inserted data: {response.ReasonPhrase}");
+                    MessagingCenter.Send(this, "SignUpError", $"Incorrect inserted data while login: {response.ReasonPhrase}");
                 }
             }
             catch (Exception ex)
