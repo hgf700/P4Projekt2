@@ -10,7 +10,12 @@ namespace P4Projekt2
         {
             InitializeComponent();
         }
-
-
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                // cause error occurs without it
+            }
+        }
     }
 }

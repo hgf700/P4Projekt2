@@ -70,7 +70,7 @@ namespace P4Projekt2.MVVM
                 return;
             }
 
-            var url = "https://localhost:5013/api/user/register";
+            var url = "https://localhost:5014/api/user/register";
 
             try
             {

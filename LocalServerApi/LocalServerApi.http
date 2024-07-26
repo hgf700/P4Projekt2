@@ -1,4 +1,4 @@
-@LocalServerApi_HostAddress = https://localhost:5013/api/user/register
+@LocalServerApi_HostAddress = https://localhost:5014
 
 GET {{LocalServerApi_HostAddress}}/doctormessageapp/
 Accept: application/json

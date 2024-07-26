@@ -29,7 +29,7 @@ namespace P4Projekt2
             // Rejestracja HttpClient
             services.AddHttpClient<SignUpPageViewModel>(client =>
             {
-                client.BaseAddress = new Uri("https://localhost:5013/api/user/register"); // Adres Twojego serwera
+                client.BaseAddress = new Uri("https://localhost:5014"); // Adres Twojego serwera
             });
 
             // Rejestracja ViewModel jako usługi
