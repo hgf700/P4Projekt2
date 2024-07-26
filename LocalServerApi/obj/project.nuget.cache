@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bLN/ts5ySP5ek7sMlZVw55AQkB14xfqf2JZBJoYx49MaIMSQwrkuo/4+4Wg4vc7pxm1HyhrQRM5Gp+K9DarHRw==",
+  "dgSpecHash": "OQLhy4JLbY/3r5L+vC/HK2GYULGZC30k/4JsI+tEvrTeqI4a9eEjUqrXnM5QxqD7hcdd4Qh09Wx+bwY2Bf1yPA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,8 @@
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.http\\8.0.0\\microsoft.extensions.http.8.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0\\microsoft.extensions.logging.8.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.logging.configuration\\8.0.0\\microsoft.extensions.logging.configuration.8.0.0.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.logging.console\\8.0.0\\microsoft.extensions.logging.console.8.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.logging.debug\\8.0.0\\microsoft.extensions.logging.debug.8.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.objectpool\\2.2.0\\microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",

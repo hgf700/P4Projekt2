@@ -22,7 +22,7 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.Firstname).IsRequired();
             entity.Property(e => e.Lastname).IsRequired();
             entity.Property(e => e.Email).IsRequired();
-            entity.Property(e => e.Password).IsRequired();
+            entity.Property(e => e.PasswordHash).IsRequired();
             entity.Property(e => e.ClientId).IsRequired();
         });
     }
