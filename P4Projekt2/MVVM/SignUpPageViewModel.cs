@@ -13,6 +13,7 @@ namespace P4Projekt2.MVVM
 {
     public partial class SignUpPageViewModel : BaseViewModel
     {
+        private bool _navigated = false;
         private readonly HttpClient _httpClient;
         private string _Email;
         public string Email_
@@ -59,7 +60,7 @@ namespace P4Projekt2.MVVM
 
         private async void SignUp()
         {
-            var token = new AuthTokenRequest()
+            var token = new RegisterAccount()
             {
                 Granttype = "register",
                 Email = _Email,
@@ -85,8 +86,18 @@ namespace P4Projekt2.MVVM
                 if (response.IsSuccessStatusCode)
                 {
                     // Assuming the response contains a token or other success data.
-                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {token?.Firstname} {token?.Lastname}");
-                    App.Current.MainPage = new SignInPage();
+                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {token?.Firstname} {token?.Lastname} \n Redirecting to SignInPage ");
+                    
+                    Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+                    {
+                        if (!_navigated)
+                        {
+                            _navigated = true;
+                            App.Current.MainPage = new SignInPage();
+                        }
+                        return false; // Zatrzymuje timer
+                    });
+
                 }
                 else
                 {

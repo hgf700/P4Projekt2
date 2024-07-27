@@ -15,6 +15,7 @@ namespace P4Projekt2.Pages
             //var usersInfo = RestService.For<IUserApi>("http://10.0.2.2:7004/chathub");
             //BindingContext = new SignInPageViewModel(userIdentity, usersInfo);
             BindingContext = new SignInPageViewModel();
+
         }
     }
 }

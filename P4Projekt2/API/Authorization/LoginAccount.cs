@@ -7,14 +7,10 @@ using System.Threading.Tasks;
 
 namespace P4Projekt2.API.Authorization
 {
-    public class AuthTokenRequest
+    public class LoginAccount
     {
         [Required]
         public string Granttype { get; set; }
-        [Required]
-        public string Firstname { get; set; }
-        [Required]
-        public string Lastname { get; set; }
         [Required]
         public string Email { get; set; }
         [Required]
@@ -22,5 +18,9 @@ namespace P4Projekt2.API.Authorization
         [Required]
         public string ClientId { get; set; }
     }
-
 }
+
+        //public string AccessToken { get; set; }
+        //public string TokenType { get; set; }
+        //public int ExpiresIn { get; set; }
+        //public string RefreshToken { get; set; }

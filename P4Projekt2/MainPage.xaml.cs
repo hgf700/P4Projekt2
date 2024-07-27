@@ -10,11 +10,13 @@ namespace P4Projekt2
         {
             InitializeComponent();
         }
+        // This is commended because while migration and activating local host error occurs without static main}
         class Program
         {
-            //static void Main(string[] args)
-            //{// it is commended cause while attempting migration error occurs without static main}
-            //}
+
+
+
+            static void Main(string[] args) { }
         }
     }
 }
