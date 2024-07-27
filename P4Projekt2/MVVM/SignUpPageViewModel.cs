@@ -5,6 +5,9 @@ using Microsoft.Maui.Controls;
 using P4Projekt2.API.User;
 using P4Projekt2.API.Authorization;
 using static System.Net.WebRequestMethods;
+using Newtonsoft.Json;
+using System.Text;
+using Refit;
 
 namespace P4Projekt2.MVVM
 {
@@ -56,15 +59,18 @@ namespace P4Projekt2.MVVM
 
         private async void SignUp()
         {
-            var userIdentity = new IdentityUserInfo
+            var token = new AuthTokenRequest()
             {
-                Email = Email_,
-                Password = Password_,
-                Firstname = FirstName_,
-                Lastname = LastName_
+                Granttype = "register",
+                Email = _Email,
+                Password = _Password,
+                Firstname = _FirstName,
+                Lastname = _LastName,
+                ClientId = "postman",
             };
 
-            if (string.IsNullOrEmpty(userIdentity.Firstname) || string.IsNullOrEmpty(userIdentity.Email) || string.IsNullOrEmpty(userIdentity.Password) || string.IsNullOrEmpty(userIdentity.Lastname))
+            // Validate input
+            if (string.IsNullOrEmpty(token.Firstname) || string.IsNullOrEmpty(token.Email) || string.IsNullOrEmpty(token.Password) || string.IsNullOrEmpty(token.Lastname))
             {
                 MessagingCenter.Send(this, "SignUpError", "Incorrect data");
                 return;
@@ -74,36 +80,25 @@ namespace P4Projekt2.MVVM
 
             try
             {
-                var response = await _httpClient.PostAsJsonAsync(url, userIdentity);
+                var httpContent = new StringContent(JsonConvert.SerializeObject(token), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(url, httpContent);
                 if (response.IsSuccessStatusCode)
                 {
-                    var token = new AuthTokenRequest()
-                    {
-                        Granttype = "register",
-                        Email = _Email,
-                        Password = _Password,
-                        Firstname = _FirstName,
-                        Lastname = _LastName,
-                        ClientId = "postman",
-                    };
-                    //tylko chyba auth ma sens? bo po co mi zwykla zmienna a jakby tak do autoryzacji wykorzystac te okno z kodem na
-                    //6 liter lub cyfr podczas rejestracji i ten kod byl by jako autoryzacja okreznie ale chyba ok?
-                    var responseData = await response.Content.ReadFromJsonAsync<IdentityUserInfo>();
-                    var responseauth= await _httpClient.PostAsJsonAsync(url, token);
-                    var responseAuth = await responseauth.Content.ReadFromJsonAsync<AuthTokenRequest>();
-
-                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {responseData?.Firstname} {responseData?.Lastname}");
+                    // Assuming the response contains a token or other success data.
+                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {token?.Firstname} {token?.Lastname}");
                     App.Current.MainPage = new SignInPage();
                 }
                 else
                 {
-                    MessagingCenter.Send(this, "SignUpError", $"Incorrect inserted data while login: {response.ReasonPhrase}");
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "SignUpError", $"Error during sign-up: {response.ReasonPhrase} - {errorResponse}");
                 }
             }
             catch (Exception ex)
             {
                 MessagingCenter.Send(this, "SignUpError", $"Exception occurred: {ex.Message}");
             }
+
         }
     }
 }

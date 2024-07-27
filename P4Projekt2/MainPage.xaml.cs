@@ -12,10 +12,9 @@ namespace P4Projekt2
         }
         class Program
         {
-            static void Main(string[] args)
-            {
-                // cause error occurs without it
-            }
+            //static void Main(string[] args)
+            //{// it is commended cause while attempting migration error occurs without static main}
+            //}
         }
     }
 }

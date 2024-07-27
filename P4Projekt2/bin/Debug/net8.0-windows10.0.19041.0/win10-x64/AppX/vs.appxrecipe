@@ -29,7 +29,7 @@
     <AppXManifest Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-07-26T19:53:35.750</Modified>
+      <Modified>2024-07-27T10:29:42.309</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.dll">
       <PackagePath>P4Projekt2.dll</PackagePath>
-      <Modified>2024-07-26T19:53:35.218</Modified>
+      <Modified>2024-07-27T10:29:41.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>P4Projekt2.exe</PackagePath>
-      <Modified>2024-07-26T19:53:35.226</Modified>
+      <Modified>2024-07-27T10:29:41.627</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>

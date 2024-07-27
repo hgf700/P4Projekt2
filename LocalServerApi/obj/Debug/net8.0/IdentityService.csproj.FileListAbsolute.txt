@@ -311,3 +311,4 @@ C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Micros
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.Maui.Controls.resources.dll
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.dll
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.pdb
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\DataBase\Userdata.json
