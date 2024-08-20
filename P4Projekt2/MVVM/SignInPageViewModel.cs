@@ -35,7 +35,7 @@ namespace P4Projekt2.MVVM
         private readonly UserStore _userStore;
         public SignInPageViewModel()
         {
-            LoginCommand = new Command(Login);
+            //LoginCommand = new Command(Login);
             RegisterCommand = new Command(SignUp);
         }
         private async void SignUp(object obj)
@@ -43,24 +43,24 @@ namespace P4Projekt2.MVVM
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpPage());
         }
 
-        private async void Login()
-        {
-            var logindata = new LoginAccount()
-            {
-                Granttype = "login",
-                Email = _Email,
-                Password = _Password,
-                ClientId = "post",
-            };
-            if (string.IsNullOrEmpty(logindata.Email) || string.IsNullOrEmpty(logindata.Password))
-            {
-                MessagingCenter.Send(this, "SignUpError", "Incorrect data");
-                return;
-            }
-            var url = "https://localhost:5014/api/user/login";
+        //private async void Login()
+        //{
+        //    var logindata = new LoginAccount()
+        //    {
+        //        Granttype = "login",
+        //        Email = _Email,
+        //        Password = _Password,
+        //        ClientId = "post",
+        //    };
+        //    if (string.IsNullOrEmpty(logindata.Email) || string.IsNullOrEmpty(logindata.Password))
+        //    {
+        //        MessagingCenter.Send(this, "SignUpError", "Incorrect data");
+        //        return;
+        //    }
+        //    //var url = "https://localhost:5014";
 
 
 
-        }
+        
     }
 }

@@ -1,14 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "OQLhy4JLbY/3r5L+vC/HK2GYULGZC30k/4JsI+tEvrTeqI4a9eEjUqrXnM5QxqD7hcdd4Qh09Wx+bwY2Bf1yPA==",
+  "dgSpecHash": "P9BA4EctJHJB1CxNkzCuk+dZxV5/Vl6Fo3MzmotpeXOeHbDEMrSRx1i18N8/JS97+nULp7pxVX4m+e+BtAprdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\LocalServerApi\\IdentityService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER098\\.nuget\\packages\\duende.identityserver\\7.0.6\\duende.identityserver.7.0.6.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\duende.identityserver.aspnetidentity\\7.0.6\\duende.identityserver.aspnetidentity.7.0.6.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\duende.identityserver.storage\\7.0.6\\duende.identityserver.storage.7.0.6.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\identityserver4\\4.1.2\\identityserver4.4.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\identityserver4.storage\\4.1.2\\identityserver4.storage.4.1.2.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.3\\microsoft.aspnet.signalr.client.2.4.3.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\8.0.3\\microsoft.aspnetcore.authentication.openidconnect.8.0.3.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\8.0.7\\microsoft.aspnetcore.connections.abstractions.8.0.7.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.dataprotection.abstractions\\8.0.3\\microsoft.aspnetcore.dataprotection.abstractions.8.0.3.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.0\\microsoft.aspnetcore.hosting.2.2.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.hosting.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.hosting.server.abstractions\\2.2.0\\microsoft.aspnetcore.hosting.server.abstractions.2.2.0.nupkg.sha512",
@@ -67,6 +75,12 @@
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.options\\8.0.2\\microsoft.extensions.options.8.0.2.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\8.0.0\\microsoft.extensions.options.configurationextensions.8.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.1.2\\microsoft.identitymodel.abstractions.7.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\7.1.2\\microsoft.identitymodel.jsonwebtokens.7.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.logging\\7.1.2\\microsoft.identitymodel.logging.7.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.protocols\\7.1.2\\microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\7.1.2\\microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.maui.controls\\8.0.70\\microsoft.maui.controls.8.0.70.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.maui.controls.build.tasks\\8.0.70\\microsoft.maui.controls.build.tasks.8.0.70.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.maui.controls.compatibility\\8.0.70\\microsoft.maui.controls.compatibility.8.0.70.nupkg.sha512",
@@ -141,6 +155,7 @@
     "C:\\Users\\USER098\\.nuget\\packages\\system.globalization\\4.3.0\\system.globalization.4.3.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.globalization.calendars\\4.3.0\\system.globalization.calendars.4.3.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.globalization.extensions\\4.3.0\\system.globalization.extensions.4.3.0.nupkg.sha512",
+    "C:\\Users\\USER098\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.1.2\\system.identitymodel.tokens.jwt.7.1.2.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.io\\4.3.0\\system.io.4.3.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.io.compression\\4.3.0\\system.io.compression.4.3.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.io.compression.zipfile\\4.3.0\\system.io.compression.zipfile.4.3.0.nupkg.sha512",
@@ -198,5 +213,26 @@
     "C:\\Users\\USER098\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „IdentityServer4” 4.1.2 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-55p7-v223-x366",
+      "libraryId": "IdentityServer4",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Pakiet „IdentityServer4” 4.1.2 ma znane umiarkowana luki w zabezpieczeniach o ważności, https://github.com/advisories/GHSA-ff4q-64jc-gx98",
+      "libraryId": "IdentityServer4",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

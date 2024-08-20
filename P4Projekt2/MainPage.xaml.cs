@@ -16,7 +16,7 @@ namespace P4Projekt2
 
 
 
-            static void Main(string[] args) { }
+            //static void Main(string[] args) { }
         }
     }
 }

@@ -312,3 +312,17 @@ C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Micros
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.dll
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.pdb
 C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\DataBase\Userdata.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Duende.IdentityServer.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Duende.IdentityServer.AspNetIdentity.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Duende.IdentityServer.Storage.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityServer4.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityServer4.Storage.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

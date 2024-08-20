@@ -7,26 +7,16 @@ namespace IdentityService.DataBase
     {
         [Key]
         public int IdRegister { get; set; }
-
-        [Required]
-        public string Granttype { get; set; }
-
-        [Required]
+        public string ResponseType { get; set; }
         public string Firstname { get; set; }
-
-        [Required]
         public string Lastname { get; set; }
-
-        [Required]
         public string Email { get; set; }
-
-        [Required]
         public string PasswordHash { get; set; }
-
-        [Required]
         public string ClientId { get; set; }
-
-        // Navigation property
-        public virtual UserLoginRegister UserLoginRegister { get; set; }
+        public string Scope { get; set; }
+        public string State { get; set; }
+        public string RedirectUri { get; set; }
+        public string CodeChallenge { get; set; }
+        public string CodeChallengeMethod { get; set; }
     }
 }

@@ -20,65 +20,6 @@ namespace IdentityService.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
-                {
-                    b.Property<int>("IdLogin")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdLogin"));
-
-                    b.Property<string>("ClientId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Granttype")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("PasswordHash")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<int>("UserLoginRegisterIdLoginRegister")
-                        .HasColumnType("integer");
-
-                    b.HasKey("IdLogin");
-
-                    b.HasIndex("UserLoginRegisterIdLoginRegister");
-
-                    b.ToTable("UserLoginData");
-                });
-
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginRegister", b =>
-                {
-                    b.Property<int>("IdLoginRegister")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("IdLoginRegister"));
-
-                    b.Property<int>("IdLogin")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IdRegister")
-                        .HasColumnType("integer");
-
-                    b.HasKey("IdLoginRegister");
-
-                    b.HasIndex("IdLogin")
-                        .IsUnique();
-
-                    b.HasIndex("IdRegister")
-                        .IsUnique();
-
-                    b.ToTable("UserLoginRegister");
-                });
-
             modelBuilder.Entity("IdentityService.DataBase.UserRegisterData", b =>
                 {
                     b.Property<int>("IdRegister")
@@ -91,15 +32,19 @@ namespace IdentityService.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("CodeChallenge")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("CodeChallengeMethod")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Firstname")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("Granttype")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -111,55 +56,25 @@ namespace IdentityService.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("UserLoginRegisterIdLoginRegister")
-                        .HasColumnType("integer");
+                    b.Property<string>("RedirectUri")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ResponseType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Scope")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("IdRegister");
 
-                    b.HasIndex("UserLoginRegisterIdLoginRegister");
-
                     b.ToTable("UserRegisterData");
-                });
-
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
-                {
-                    b.HasOne("IdentityService.DataBase.UserLoginRegister", "UserLoginRegister")
-                        .WithMany()
-                        .HasForeignKey("UserLoginRegisterIdLoginRegister")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserLoginRegister");
-                });
-
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginRegister", b =>
-                {
-                    b.HasOne("IdentityService.DataBase.UserLoginData", "UserLoginData")
-                        .WithOne()
-                        .HasForeignKey("IdentityService.DataBase.UserLoginRegister", "IdLogin")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IdentityService.DataBase.UserRegisterData", "UserRegisterData")
-                        .WithOne()
-                        .HasForeignKey("IdentityService.DataBase.UserLoginRegister", "IdRegister")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserLoginData");
-
-                    b.Navigation("UserRegisterData");
-                });
-
-            modelBuilder.Entity("IdentityService.DataBase.UserRegisterData", b =>
-                {
-                    b.HasOne("IdentityService.DataBase.UserLoginRegister", "UserLoginRegister")
-                        .WithMany()
-                        .HasForeignKey("UserLoginRegisterIdLoginRegister")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("UserLoginRegister");
                 });
 #pragma warning restore 612, 618
         }

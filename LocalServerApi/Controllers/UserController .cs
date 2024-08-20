@@ -4,108 +4,99 @@ using Microsoft.AspNetCore.Mvc;
 using P4Projekt2.API.Authorization;
 using System.Security.Cryptography;
 using System.Linq;
+using IdentityModel;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Claims;
+using IdentityService.ServerData;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 namespace IdentityService.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("authorization/[controller]")]
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly string _jwtSecret;
 
-        public UserController(ApplicationDbContext context)
+        public UserController(ApplicationDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _jwtSecret = configuration["Jwt:Secret"]; // Pobierz sekret JWT z konfiguracji
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] RegisterAccount authRequest)
+        public async Task<IActionResult> Register([FromBody] RegisterAccount authRequest)
         {
-            //if (_context.usersaveddata.Any(u => u.Email == authRequest.Email))
-            //{
-            //    return BadRequest("User can only create one account per email");
-            //}
-
-            var passwordHash = HashPassword(authRequest.Password);
-            var user = new UserRegisterData
+            try
             {
-                Granttype = authRequest.Granttype,
-                Firstname = authRequest.Firstname,
-                Lastname = authRequest.Lastname,
-                Email = authRequest.Email,
-                PasswordHash = passwordHash,
-                ClientId = authRequest.ClientId
+                var passwordHash = authRequest.Password; // Powinieneś zaszyfrować hasło przed zapisaniem
+
+                var user = new UserRegisterData
+                {
+                    ResponseType = authRequest.ResponseType,
+                    Firstname = authRequest.Firstname,
+                    Lastname = authRequest.Lastname,
+                    Email = authRequest.Email,
+                    PasswordHash = passwordHash,
+                    ClientId = authRequest.ClientId,
+                    Scope = authRequest.Scope,
+                    State = authRequest.State,
+                    RedirectUri = authRequest.RedirectUri,
+                    CodeChallenge = authRequest.CodeChallenge,
+                    CodeChallengeMethod = authRequest.CodeChallengeMethod,
+                };
+
+                //var authorization = new AuthCode
+                //{
+                //    ClientID = authRequest.ClientId,
+                //    RedirectUri = authRequest.RedirectUri,
+                //    CodeChallenge = authRequest.CodeChallenge,
+                //    CodeChallengeMethod = authRequest.CodeChallengeMethod,
+                //    Expiry = DateTime.UtcNow.AddMinutes(10)
+                //};
+
+                // Dodajemy użytkownika do kontekstu
+                await _context.UserRegisterData.AddAsync(user);
+
+                // Zapisz zmiany w bazie danych
+                await _context.SaveChangesAsync();
+
+                // Generowanie tokenu JWT
+                var token = GenerateJwtToken(user);
+
+                // Opcjonalnie można też zwrócić jakieś dane użytkownika, np. ID
+                return Ok(new { Token = token, UserId = user.ClientId });
+            }
+            catch (Exception ex)
+            {
+                // Logowanie błędu
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        private string GenerateJwtToken(UserRegisterData user)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var key = Encoding.ASCII.GetBytes(_jwtSecret);
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    //new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
+                    // Można dodać więcej claimów w zależności od potrzeby
+                }),
+                Expires = DateTime.UtcNow.AddMinutes(10),
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
-            _context.UserRegisterData.Add(user);
-            _context.SaveChanges();
-
-            var token = GenerateToken(authRequest);
-
-            return Ok(new { Token = token });
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return tokenHandler.WriteToken(token);
         }
-
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] RegisterAccount authRequest)
-        {
-            var user = _context.UserRegisterData.FirstOrDefault(u => u.Email == authRequest.Email);
-            if (user == null || !VerifyPassword(authRequest.Password, user.PasswordHash))
-            {
-                return Unauthorized("Invalid credentials.");
-            }
-
-            var token = GenerateToken(authRequest);
-
-            return Ok(new { Token = token });
-        }
-
-        private string GenerateToken(RegisterAccount authRequest)
-        {
-            // Przykładowa metoda generowania tokenu (JWT lub innego rodzaju)
-            return $"fake-jwt-token-for-{authRequest.Email}";
-        }
-
-        private string HashPassword(string password)
-        {
-            byte[] salt = new byte[128 / 8];
-            using (var rng = RandomNumberGenerator.Create())
-            {
-                rng.GetBytes(salt);
-            }
-
-            string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-
-            return $"{Convert.ToBase64String(salt)}.{hashed}";
-        }
-
-        private bool VerifyPassword(string password, string storedHash)
-        {
-            var parts = storedHash.Split('.');
-            if (parts.Length != 2)
-            {
-                return false;
-            }
-
-            var salt = Convert.FromBase64String(parts[0]);
-            var hash = Convert.ToBase64String(KeyDerivation.Pbkdf2(
-                password: password,
-                salt: salt,
-                prf: KeyDerivationPrf.HMACSHA256,
-                iterationCount: 10000,
-                numBytesRequested: 256 / 8));
-
-            return hash == parts[1];
-        }
-
-        //[HttpPost("login")]
-        //public IActionResult Login([FromBody] RegisterAccount authRequest)
-        //{
-            
-        //}
     }
 }

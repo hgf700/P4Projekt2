@@ -8,6 +8,7 @@ using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
 using System.Text;
 using Refit;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace P4Projekt2.MVVM
 {
@@ -62,22 +63,26 @@ namespace P4Projekt2.MVVM
         {
             var token = new RegisterAccount()
             {
-                Granttype = "register",
+                ResponseType = "register",
                 Email = _Email,
                 Password = _Password,
                 Firstname = _FirstName,
                 Lastname = _LastName,
                 ClientId = "postman",
+                Scope = "scope",
+                State = "state",
+                RedirectUri = "redirecturi",
+                CodeChallenge = "codechallenge",
+                CodeChallengeMethod = "codechallengemethod",
             };
 
-            // Validate input
             if (string.IsNullOrEmpty(token.Firstname) || string.IsNullOrEmpty(token.Email) || string.IsNullOrEmpty(token.Password) || string.IsNullOrEmpty(token.Lastname))
             {
                 MessagingCenter.Send(this, "SignUpError", "Incorrect data");
                 return;
             }
 
-            var url = "https://localhost:5014/api/user/register";
+            var url = "https://localhost:5014/authoriazation/register";
 
             try
             {

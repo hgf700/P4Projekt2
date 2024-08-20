@@ -81,6 +81,8 @@
 	</ItemGroup>
 
 
+
+
 	<ItemGroup>
 	  <Compile Update="Pages\ChatPage.xaml.cs">
 	    <DependentUpon>ChatPage.xaml</DependentUpon>
