@@ -10,6 +10,9 @@ using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using static IdentityModel.OidcConstants;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace IdentityService.Controllers
 {
@@ -31,7 +34,7 @@ namespace IdentityService.Controllers
             {
                 var passwordHash = authRequest.Password; // Powinieneś zaszyfrować hasło przed zapisaniem
 
-                var user = new UserRegisterData
+                var RegisterUser = new UserRegisterData
                 {
                     ResponseType = authRequest.ResponseType,
                     Firstname = authRequest.Firstname,
@@ -46,15 +49,15 @@ namespace IdentityService.Controllers
                     CodeChallengeMethod = authRequest.CodeChallengeMethod,
                 };
 
-                await _context.UserRegisterData.AddAsync(user);
+                await _context.UserRegisterData.AddAsync(RegisterUser);
 
                 // Zapisz zmiany w bazie danych
                 await _context.SaveChangesAsync();
 
                 // Generowanie tokenu JWT
-                var token = GenerateJwtToken(user);
+                var Registeredtoken = GenerateJwtToken(RegisterUser);
 
-                return Ok(new { Token = token, UserId = user.Email });
+                return Ok(new { Token = Registeredtoken, UserId = RegisterUser.Email });
             }
             catch (Exception ex)
             {
@@ -76,7 +79,6 @@ namespace IdentityService.Controllers
                 new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             }),
-                    Expires = DateTime.UtcNow.AddMinutes(30),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
 
@@ -105,5 +107,47 @@ namespace IdentityService.Controllers
             }
 
         }
+        [HttpPost("login")]
+        public async Task<IActionResult> SignIn([FromBody] LoginAccount loginauthRequest)
+        {
+            try
+            {
+                // Szukanie użytkownika na podstawie podanego emaila
+                var user = await _context.UserRegisterData
+                    .FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
+
+                if (user == null)
+                {
+                    return Unauthorized("Invalid credentials");
+                }
+
+                // Weryfikacja hasła (zakładając, że hasło jest przechowywane jako hash)
+                var passwordHash = loginauthRequest.Password; // Powinieneś zaszyfrować hasło przed porównaniem
+
+                // Generowanie tokenu JWT
+                var Logintoken = GenerateJwtToken(user);
+
+                var keyEntry = await _context.Keys
+                           .FirstOrDefaultAsync(k => k.AuthorizationKey == Logintoken);
+
+                // Sprawdzenie, czy Logintoken jest null lub token wygasł
+                if (Logintoken == null || keyEntry == null || keyEntry.Expire <= DateTime.UtcNow)
+                {
+                    return StatusCode(500, "Error while authorizing nedded new generated token");
+
+                    //dokoncz to ooooooooooooo
+                }
+                else
+                {
+                    return Ok(new { Token = Logintoken, UserId = user.Email });
+                }
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"{ex.Message}");
+            }
+        }
+
     }
 }

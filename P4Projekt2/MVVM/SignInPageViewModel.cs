@@ -10,11 +10,13 @@ using System.Diagnostics;
 using Microsoft.Win32;
 using System.Windows.Input;
 using P4Projekt2.Pages;
+using Newtonsoft.Json;
 
 namespace P4Projekt2.MVVM
 {
     public partial class SignInPageViewModel : BaseViewModel
     {
+        private bool _navigated = false;
         private readonly HttpClient _httpClient;
         private string _Email;
         public string Email
@@ -43,24 +45,57 @@ namespace P4Projekt2.MVVM
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpPage());
         }
 
-        //private async void Login()
-        //{
-        //    var logindata = new LoginAccount()
-        //    {
-        //        Granttype = "login",
-        //        Email = _Email,
-        //        Password = _Password,
-        //        ClientId = "post",
-        //    };
-        //    if (string.IsNullOrEmpty(logindata.Email) || string.IsNullOrEmpty(logindata.Password))
-        //    {
-        //        MessagingCenter.Send(this, "SignUpError", "Incorrect data");
-        //        return;
-        //    }
-        //    //var url = "https://localhost:5014";
+        private async void SignIn()
+        {
+            var loginRequest = new LoginAccount()
+            {
+                ResponseType = "login",
+                Email = _Email,
+                Password = _Password,
+                ClientId = "postman",
+            };
+            if (string.IsNullOrEmpty(loginRequest.Email) || string.IsNullOrEmpty(loginRequest.Password))
+            {
+                MessagingCenter.Send(this, "SignUpError", "Incorrect data");
+                return;
+            }
+            var url = "https://localhost:5014/authorization/user/login";
+
+            try
+            {
+                var httpContent = new StringContent(JsonConvert.SerializeObject(loginRequest), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(url, httpContent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+                    MessagingCenter.Send(this, "SignInSuccess", $"User has been successfully logged in: \n Redirecting to ChatPage ");
 
 
+                    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                    {
+                        if (!_navigated)
+                        {
+                            _navigated = true;
+                            App.Current.MainPage = new SignInPage();
+                        }
+                        return false; // Zatrzymuje timer
+                    });
+                }
+                else
+                {
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "SignUpError", $"Error during sign-up: {response.ReasonPhrase} - {errorResponse}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessagingCenter.Send(this, "SignUpError", $"Exception occurred: {ex.Message}");
+            }
+        }
 
-        
+
     }
 }

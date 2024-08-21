@@ -11,6 +11,7 @@ public class ApplicationDbContext : DbContext
     // Definiowanie DbSet dla Twoich encji
     public DbSet<UserRegisterData> UserRegisterData { get; set; }
     public DbSet<Key> Keys { get; set; }
+    public DbSet<UserLoginData> UserLoginData { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -33,13 +34,15 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.CodeChallenge).HasMaxLength(200);
             entity.Property(e => e.CodeChallengeMethod).HasMaxLength(50);
 
-            // Relacja wiele do wielu z Key
+            // Relacja jeden do wielu z Key
             entity.HasMany(e => e.Keys)
-                  .WithMany(k => k.Users)
-                  .UsingEntity<Dictionary<string, object>>(
-                      "UserKey",
-                      j => j.HasOne<Key>().WithMany().HasForeignKey("KeyId"),
-                      j => j.HasOne<UserRegisterData>().WithMany().HasForeignKey("UserId"));
+                  .WithOne(k => k.UserRegisterData)
+                  .HasForeignKey(k => k.UserRegisterDataId);
+
+            // Relacja jeden do wielu z UserLoginData
+            entity.HasMany(e => e.Userlogindata)
+                  .WithOne(l => l.UserRegisterData)
+                  .HasForeignKey(l => l.UserRegisterDataId);
         });
 
         // Konfiguracja dla Key
@@ -47,17 +50,30 @@ public class ApplicationDbContext : DbContext
         {
             entity.HasKey(e => e.Id);
 
-            entity.Property(e => e.GuidId);
-            entity.Property(e => e.AuthorizationKey);
-            entity.Property(e => e.Expire);
+            entity.Property(e => e.GuidId).IsRequired();
+            entity.Property(e => e.AuthorizationKey).IsRequired();
+            entity.Property(e => e.Expire).IsRequired();
 
-            // Relacja wiele do wielu z UserRegisterData
-            entity.HasMany(k => k.Users)
+            // Klucz obcy do UserRegisterData
+            entity.HasOne(k => k.UserRegisterData)
                   .WithMany(u => u.Keys)
-                  .UsingEntity<Dictionary<string, object>>(
-                      "UserKey",
-                      j => j.HasOne<UserRegisterData>().WithMany().HasForeignKey("UserId"),
-                      j => j.HasOne<Key>().WithMany().HasForeignKey("KeyId"));
+                  .HasForeignKey(k => k.UserRegisterDataId);
+        });
+
+        // Konfiguracja dla UserLoginData
+        modelBuilder.Entity<UserLoginData>(entity =>
+        {
+            entity.HasKey(e => e.IdLogin);
+
+            entity.Property(e => e.ResponseType).HasMaxLength(100);
+            entity.Property(e => e.Email).IsRequired().HasMaxLength(255);
+            entity.Property(e => e.Password).IsRequired().HasMaxLength(500);
+            entity.Property(e => e.ClientId).IsRequired().HasMaxLength(100);
+
+            // Klucz obcy do UserRegisterData
+            entity.HasOne(l => l.UserRegisterData)
+                  .WithMany(u => u.Userlogindata)
+                  .HasForeignKey(l => l.UserRegisterDataId);
         });
     }
 }

@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace IdentityService.DataBase
 {
@@ -20,5 +20,6 @@ namespace IdentityService.DataBase
         public string CodeChallengeMethod { get; set; }
 
         public ICollection<Key> Keys { get; set; }
+        public ICollection<UserLoginData> Userlogindata { get; set; }
     }
 }

@@ -8,12 +8,11 @@ namespace P4Projekt2.Pages
 {
     public partial class SignInPage : ContentPage
     {
+        private HttpClient _httpClient;
         public SignInPage()
         {
             InitializeComponent();
-            //var userIdentity = RestService.For<IAuth>("http://10.0.2.2:7004/chathub");
-            //var usersInfo = RestService.For<IUserApi>("http://10.0.2.2:7004/chathub");
-            //BindingContext = new SignInPageViewModel(userIdentity, usersInfo);
+            //_httpClient
             BindingContext = new SignInPageViewModel();
 
         }

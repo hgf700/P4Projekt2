@@ -14,6 +14,7 @@ namespace P4Projekt2.MVVM
 {
     public partial class SignUpPageViewModel : BaseViewModel
     {
+
         private bool _navigated = false;
         private readonly HttpClient _httpClient;
         private string _Email;
