@@ -61,7 +61,7 @@ namespace P4Projekt2.MVVM
 
         private async void SignUp()
         {
-            var token = new RegisterAccount()
+            var tokenRequest = new RegisterAccount()
             {
                 ResponseType = "register",
                 Email = _Email,
@@ -76,24 +76,29 @@ namespace P4Projekt2.MVVM
                 CodeChallengeMethod = "codechallengemethod",
             };
 
-            if (string.IsNullOrEmpty(token.Firstname) || string.IsNullOrEmpty(token.Email) || string.IsNullOrEmpty(token.Password) || string.IsNullOrEmpty(token.Lastname))
+            if (string.IsNullOrEmpty(tokenRequest.Firstname) || string.IsNullOrEmpty(tokenRequest.Email) || string.IsNullOrEmpty(tokenRequest.Password) || string.IsNullOrEmpty(tokenRequest.Lastname))
             {
                 MessagingCenter.Send(this, "SignUpError", "Incorrect data");
                 return;
             }
 
-            var url = "https://localhost:5014/authoriazation/register";
+            var url = "https://localhost:5014/authorization/user/register";
 
             try
             {
-                var httpContent = new StringContent(JsonConvert.SerializeObject(token), Encoding.UTF8, "application/json");
+                var httpContent = new StringContent(JsonConvert.SerializeObject(tokenRequest), Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync(url, httpContent);
+
                 if (response.IsSuccessStatusCode)
                 {
-                    // Assuming the response contains a token or other success data.
-                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {token?.Firstname} {token?.Lastname} \n Redirecting to SignInPage ");
-                    
-                    Device.StartTimer(TimeSpan.FromSeconds(5), () =>
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+                    //null na tokenie bo nigdzie go nie zapisuje narazie!!
+                    // Assuming successful response
+                    MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {tokenRequest?.Firstname} {tokenRequest?.Lastname} \n Redirecting to SignInPage ");
+
+                    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
                     {
                         if (!_navigated)
                         {
@@ -102,7 +107,6 @@ namespace P4Projekt2.MVVM
                         }
                         return false; // Zatrzymuje timer
                     });
-
                 }
                 else
                 {
@@ -114,7 +118,8 @@ namespace P4Projekt2.MVVM
             {
                 MessagingCenter.Send(this, "SignUpError", $"Exception occurred: {ex.Message}");
             }
-
         }
+
+
     }
 }

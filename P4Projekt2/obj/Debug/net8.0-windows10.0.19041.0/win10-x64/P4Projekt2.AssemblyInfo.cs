@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P4Projekt2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+3ccd33cc2e31f5f21b06e2d77ba8ede04390520c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+58b0a5aeac8957577bb9b86568b1fd6ffed3f928")]
 [assembly: System.Reflection.AssemblyProductAttribute("P4Projekt2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P4Projekt2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

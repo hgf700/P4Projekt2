@@ -7,7 +7,6 @@ using System.Linq;
 using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using IdentityService.ServerData;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
@@ -19,12 +18,10 @@ namespace IdentityService.Controllers
     public class UserController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly string _jwtSecret;
 
-        public UserController(ApplicationDbContext context, IConfiguration configuration)
+        public UserController(ApplicationDbContext context)
         {
             _context = context;
-            _jwtSecret = configuration["Jwt:Secret"]; // Pobierz sekret JWT z konfiguracji
         }
 
         [HttpPost("register")]
@@ -49,16 +46,6 @@ namespace IdentityService.Controllers
                     CodeChallengeMethod = authRequest.CodeChallengeMethod,
                 };
 
-                //var authorization = new AuthCode
-                //{
-                //    ClientID = authRequest.ClientId,
-                //    RedirectUri = authRequest.RedirectUri,
-                //    CodeChallenge = authRequest.CodeChallenge,
-                //    CodeChallengeMethod = authRequest.CodeChallengeMethod,
-                //    Expiry = DateTime.UtcNow.AddMinutes(10)
-                //};
-
-                // Dodajemy użytkownika do kontekstu
                 await _context.UserRegisterData.AddAsync(user);
 
                 // Zapisz zmiany w bazie danych
@@ -67,36 +54,56 @@ namespace IdentityService.Controllers
                 // Generowanie tokenu JWT
                 var token = GenerateJwtToken(user);
 
-                // Opcjonalnie można też zwrócić jakieś dane użytkownika, np. ID
-                return Ok(new { Token = token, UserId = user.ClientId });
+                return Ok(new { Token = token, UserId = user.Email });
             }
             catch (Exception ex)
             {
-                // Logowanie błędu
-                return StatusCode(500, "Internal server error");
+                return StatusCode(500, $"{ex.Message}");
             }
         }
 
         private string GenerateJwtToken(UserRegisterData user)
         {
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_jwtSecret);
-
-            var tokenDescriptor = new SecurityTokenDescriptor
+            try
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    //new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
-                    // Można dodać więcej claimów w zależności od potrzeby
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(10),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-            };
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes("A_very_long_secret_key_that_is_at_least_32_bytes_long");
 
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+            }),
+                    Expires = DateTime.UtcNow.AddMinutes(30),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                var tokenString = tokenHandler.WriteToken(token);
+
+                // Tworzenie i zapisywanie instancji Key
+                var keyEntry = new Key
+                {
+                    GuidId = Guid.NewGuid(),
+                    AuthorizationKey = tokenString,
+                    Expire = DateTime.UtcNow.AddMinutes(30)
+                };
+
+                _context.Keys.Add(keyEntry);
+                _context.SaveChanges();
+
+                return tokenString;
+            }
+            catch (Exception ex)
+            {
+                // Logowanie błędu
+                Console.WriteLine($"Error generating JWT token: {ex.Message}"); // Logowanie błędu do konsoli
+                return $"Error generating JWT token: {ex.Message}";
+            }
+
         }
     }
 }

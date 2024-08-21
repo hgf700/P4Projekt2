@@ -18,5 +18,7 @@ namespace IdentityService.DataBase
         public string RedirectUri { get; set; }
         public string CodeChallenge { get; set; }
         public string CodeChallengeMethod { get; set; }
+
+        public ICollection<Key> Keys { get; set; }
     }
 }
