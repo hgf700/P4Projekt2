@@ -2,6 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using IdentityService.midleware;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -48,6 +50,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication(); // Dodaj middleware uwierzytelniania
+app.UseMiddleware<JwtMiddleware>(); // Dodaj custom middleware do obs³ugi JWT
 app.UseAuthorization();  // Dodaj middleware autoryzacji
 
 app.MapControllers();
@@ -62,6 +65,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(
@@ -69,4 +73,3 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-

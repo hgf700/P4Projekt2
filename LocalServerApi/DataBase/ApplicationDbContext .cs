@@ -12,8 +12,10 @@ public class ApplicationDbContext : DbContext
     public DbSet<UserRegisterData> UserRegisterData { get; set; }
     public DbSet<Key> Keys { get; set; }
     public DbSet<UserLoginData> UserLoginData { get; set; }
+    public DbSet<RefreshToken> RefreshTokens { get; set; }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
+
+protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
@@ -43,6 +45,11 @@ public class ApplicationDbContext : DbContext
             entity.HasMany(e => e.Userlogindata)
                   .WithOne(l => l.UserRegisterData)
                   .HasForeignKey(l => l.UserRegisterDataId);
+
+            // Relacja jeden do wielu z RefreshToken
+            entity.HasMany(e => e.RefreshTokens)
+                  .WithOne(r => r.User)
+                  .HasForeignKey(r => r.UserId);
         });
 
         // Konfiguracja dla Key
@@ -51,7 +58,7 @@ public class ApplicationDbContext : DbContext
             entity.HasKey(e => e.Id);
 
             entity.Property(e => e.GuidId).IsRequired();
-            entity.Property(e => e.AuthorizationKey).IsRequired();
+            entity.Property(e => e.AuthorizationKey).IsRequired().HasMaxLength(500); // Dodano HasMaxLength
             entity.Property(e => e.Expire).IsRequired();
 
             // Klucz obcy do UserRegisterData
@@ -75,5 +82,22 @@ public class ApplicationDbContext : DbContext
                   .WithMany(u => u.Userlogindata)
                   .HasForeignKey(l => l.UserRegisterDataId);
         });
+
+        // Konfiguracja dla RefreshToken
+        modelBuilder.Entity<RefreshToken>(entity =>
+        {
+            entity.HasKey(e => e.Id);
+
+            entity.Property(e => e.Token).IsRequired().HasMaxLength(500); // Dodano HasMaxLength
+            entity.Property(e => e.Expiration).IsRequired();
+            entity.Property(e => e.IsRevoked).IsRequired();
+
+            // Klucz obcy do UserRegisterData
+            entity.HasOne(r => r.User)
+                  .WithMany(u => u.RefreshTokens)
+                  .HasForeignKey(r => r.UserId);
+        });
     }
+
 }
+

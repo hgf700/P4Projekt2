@@ -21,5 +21,6 @@ namespace IdentityService.DataBase
 
         public ICollection<Key> Keys { get; set; }
         public ICollection<UserLoginData> Userlogindata { get; set; }
+        public ICollection<RefreshToken> RefreshTokens { get; set; }
     }
 }

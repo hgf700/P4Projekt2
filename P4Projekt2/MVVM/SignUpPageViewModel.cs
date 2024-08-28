@@ -95,8 +95,6 @@ namespace P4Projekt2.MVVM
                     var responseContent = await response.Content.ReadAsStringAsync();
                     var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
-                    //null na tokenie bo nigdzie go nie zapisuje narazie!!
-                    // Assuming successful response
                     MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {tokenRequest?.Firstname} {tokenRequest?.Lastname} \n Redirecting to SignInPage ");
 
                     Device.StartTimer(TimeSpan.FromSeconds(3), () =>

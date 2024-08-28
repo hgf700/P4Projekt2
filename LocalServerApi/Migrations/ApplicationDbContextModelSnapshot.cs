@@ -31,7 +31,8 @@ namespace IdentityService.Migrations
 
                     b.Property<string>("AuthorizationKey")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
 
                     b.Property<DateTime>("Expire")
                         .HasColumnType("timestamp with time zone");
@@ -47,6 +48,35 @@ namespace IdentityService.Migrations
                     b.HasIndex("UserRegisterDataId");
 
                     b.ToTable("Keys");
+                });
+
+            modelBuilder.Entity("IdentityService.DataBase.RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
@@ -166,6 +196,17 @@ namespace IdentityService.Migrations
                     b.Navigation("UserRegisterData");
                 });
 
+            modelBuilder.Entity("IdentityService.DataBase.RefreshToken", b =>
+                {
+                    b.HasOne("IdentityService.DataBase.UserRegisterData", "User")
+                        .WithMany("RefreshTokens")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
                 {
                     b.HasOne("IdentityService.DataBase.UserRegisterData", "UserRegisterData")
@@ -180,6 +221,8 @@ namespace IdentityService.Migrations
             modelBuilder.Entity("IdentityService.DataBase.UserRegisterData", b =>
                 {
                     b.Navigation("Keys");
+
+                    b.Navigation("RefreshTokens");
 
                     b.Navigation("Userlogindata");
                 });
