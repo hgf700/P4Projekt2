@@ -35,11 +35,14 @@ namespace P4Projekt2.MVVM
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
         private readonly UserStore _userStore;
-        public SignInPageViewModel()
+        public SignInPageViewModel(HttpClient httpClient = null)
         {
-            //LoginCommand = new Command(Login);
+            LoginCommand = new Command(SignIn);
             RegisterCommand = new Command(SignUp);
+
+            _httpClient = httpClient ?? new HttpClient(); 
         }
+
         private async void SignUp(object obj)
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignUpPage());
@@ -51,10 +54,10 @@ namespace P4Projekt2.MVVM
             {
                 ResponseType = "login",
                 Email = _Email,
-                Password = _Password,
+                PasswordHash = _Password,
                 ClientId = "postman",
             };
-            if (string.IsNullOrEmpty(loginRequest.Email) || string.IsNullOrEmpty(loginRequest.Password))
+            if (string.IsNullOrEmpty(loginRequest.Email) || string.IsNullOrEmpty(loginRequest.PasswordHash))
             {
                 MessagingCenter.Send(this, "SignUpError", "Incorrect data");
                 return;

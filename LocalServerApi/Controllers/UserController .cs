@@ -35,7 +35,7 @@ namespace IdentityService.Controllers
         {
             try
             {
-                var passwordHash = authRequest.Password; // Powinieneś zaszyfrować hasło przed zapisaniem
+                var hashedPassword = HashPassword(authRequest.Password);
 
                 var RegisterUser = new UserRegisterData
                 {
@@ -43,7 +43,7 @@ namespace IdentityService.Controllers
                     Firstname = authRequest.Firstname,
                     Lastname = authRequest.Lastname,
                     Email = authRequest.Email,
-                    PasswordHash = passwordHash,
+                    PasswordHash = hashedPassword,
                     ClientId = authRequest.ClientId,
                     Scope = authRequest.Scope,
                     State = authRequest.State,
@@ -107,7 +107,8 @@ namespace IdentityService.Controllers
                 {
                     GuidId = Guid.NewGuid(),
                     AuthorizationKey = tokenString,
-                    Expire = DateTime.UtcNow.AddMinutes(30)
+                    Expire = DateTime.UtcNow.AddMinutes(30),
+                    UserRegisterDataId = user.IdRegister
                 };
 
                 _context.Keys.Add(keyEntry);
@@ -130,45 +131,52 @@ namespace IdentityService.Controllers
         {
             try
             {
-                // Szukanie użytkownika na podstawie podanego emaila
                 var user = await _context.UserRegisterData.FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
-
                 if (user == null)
                 {
-                    return Unauthorized("Invalid credentials");
+                    return Unauthorized("User does not exist.");
                 }
 
-                // Weryfikacja hasła
-                var passwordHasher = new PasswordHasher<UserRegisterData>();
-                var verificationResult = passwordHasher.VerifyHashedPassword(user, user.PasswordHash, loginauthRequest.PasswordHash);
+                var hashedPassword = HashPassword(loginauthRequest.PasswordHash); // Hashuj hasło podane przez użytkownika
 
-                if (verificationResult == PasswordVerificationResult.Failed || user.Email != loginauthRequest.Email)
+                // Porównaj z hashem zapisanym w bazie
+                if (hashedPassword != user.PasswordHash)
                 {
-                    return Unauthorized("Invalid credentials");
+                    return Unauthorized("Invalid credentials.");
                 }
 
-                // Generowanie tokenu JWT
-                var Logintoken = GenerateJwtToken(user);
+                var loginToken = GenerateJwtToken(user);
 
-                var keyEntry = await _context.Keys.FirstOrDefaultAsync(k => k.AuthorizationKey == Logintoken);
+                var refreshToken = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.UserId == user.IdRegister);
 
-                // Sprawdzenie, czy Logintoken jest null lub token wygasł
-                if (keyEntry == null || keyEntry.Expire <= DateTime.UtcNow)
+                if (refreshToken != null && refreshToken.Expiration > DateTime.UtcNow && !refreshToken.IsRevoked)
                 {
-                    // Możesz wygenerować nowy token i go zwrócić
-                    var newLogintoken = GenerateJwtToken(user);
+                    var newRefreshToken = new RefreshToken
+                    {
+                        Token = GenerateJwtToken(user),
+                        Expiration = DateTime.UtcNow.AddYears(10),
+                        IsRevoked = false,
+                        UserId = user.IdRegister
+                    };
 
-
-
-
-
-                    return Ok(new { Token = newLogintoken, UserId = user.Email });
+                    refreshToken.IsRevoked = true;
+                    await _context.RefreshTokens.AddAsync(newRefreshToken);
+                    await _context.SaveChangesAsync();
                 }
-                else
+
+                var loginRequest = new UserLoginData
                 {
-                    // Zwróć istniejący token, jeśli jest nadal ważny
-                    return Ok(new { Token = Logintoken, UserId = user.Email });
-                }
+                    ResponseType = loginauthRequest.ResponseType,
+                    Email = loginauthRequest.Email,
+                    Password = hashedPassword,
+                    ClientId = loginauthRequest.ClientId,
+                    UserRegisterDataId = user.IdRegister
+                };
+
+                await _context.UserLoginData.AddAsync(loginRequest);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { Token = loginToken, UserId = user.Email });
             }
             catch (Exception ex)
             {
@@ -178,67 +186,20 @@ namespace IdentityService.Controllers
         }
 
 
-        [HttpPost("authorizeaccess")]
-        public async Task<IActionResult> RefreshTokeCheck([FromBody] RefreshToken refreshToken)
+
+
+
+
+
+
+
+        public string HashPassword(string password)
         {
-            try
+            using (var sha256 = SHA256.Create())
             {
-                // Znajdź token w bazie danych
-                var storedToken = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.Token == refreshToken);
-                var user = await _context.UserRegisterData.FirstOrDefaultAsync(u => u.IdRegister == storedToken.UserId);
-
-                if (user == null)
-                {
-                    return Unauthorized("User not found");
-                }
-
-                // Sprawdzenie stanu tokena
-                if (storedToken.Expiration > DateTime.UtcNow && !storedToken.IsRevoked)
-                {
-                    // Wygenerowanie nowego tokenu JWT
-                    var newJwtToken = GenerateJwtToken(user);
-
-                    // Opcjonalnie: można również odświeżyć token odświeżający
-                    var newRefreshToken = new RefreshToken
-                    {
-                        Token = GenerateJwtToken(user), // lub inna metoda generowania unikalnego tokena odświeżającego
-                        Expiration = DateTime.UtcNow.AddYears(10), // np. 10 lat
-                        IsRevoked = false,
-                        UserId = user.IdRegister
-                    };
-
-                    // Cofnięcie starego tokena odświeżającego
-                    storedToken.IsRevoked = true;
-
-                    // Dodaj nowy token odświeżający do bazy danych
-                    await _context.RefreshTokens.AddAsync(newRefreshToken);
-
-                    // Zapisz zmiany w bazie danych
-                    await _context.SaveChangesAsync();
-
-                    return Ok(new { Token = newJwtToken, RefreshToken = newRefreshToken.Token, Message = "Generated new token, try to log in again" });
-                }
-                else if (storedToken.Expiration < DateTime.UtcNow && !storedToken.IsRevoked && user != null)
-                {
-                    // Autoryzacja zakończona sukcesem
-                    return Ok("Authorization success");
-                }
-                else
-                {
-                    return Unauthorized("Something went wrong while authorizing");
-                }
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
-            catch(Exception ex)
-            {
-                // Logowanie błędu
-                _logger.LogError(ex, $"Error while authorization: {ex.Message}");
-
-                // Zwracanie ogólnego komunikatu o błędzie
-                return StatusCode(500, "An error occurred while processing your request");
-            }
-            
         }
-
-
     }
 }
