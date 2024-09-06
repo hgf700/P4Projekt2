@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "UUGJU/D5LAj72TdWTs9DOVuGupKuMzY20FnAm7DYpS8=",
+  "Source": "AuthorizationServer",
+  "BasePath": "_content/AuthorizationServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

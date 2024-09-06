@@ -1,0 +1,314 @@
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\appsettings.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityService.exe
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityService.deps.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityService.runtimeconfig.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityService.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityService.pdb
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.csproj.AssemblyReference.cache
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.AssemblyInfoInputs.cache
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.AssemblyInfo.cs
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.csproj.CoreCompileInputs.cache
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.IdentityService.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IdentityService.props
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IdentityService.props
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IdentityService.props
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\scopedcss\bundle\IdentityService.styles.css
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\Identity.B9CE61DD.Up2Date
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\refint\IdentityService.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.pdb
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.genruntimeconfig.cache
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\ref\IdentityService.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Humanizer.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Npgsql.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\appsettings.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\IdentityService.exe
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\IdentityService.deps.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\IdentityService.runtimeconfig.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\IdentityService.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\IdentityService.pdb
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Humanizer.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.CodeAnalysis.Workspaces.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.Design.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Npgsql.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.Design.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Composition.AttributedModel.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Composition.Convention.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Composition.Hosting.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Composition.Runtime.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Composition.TypedParts.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Drawing.Common.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Text.Json.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.csproj.AssemblyReference.cache
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.AssemblyInfoInputs.cache
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.AssemblyInfo.cs
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.csproj.CoreCompileInputs.cache
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.IdentityService.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.build.IdentityService.props
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.IdentityService.props
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.IdentityService.props
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\scopedcss\bundle\IdentityService.styles.css
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\Identity.B9CE61DD.Up2Date
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\refint\IdentityService.dll
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.pdb
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\IdentityService.genruntimeconfig.cache
+C:\Users\USER098\Downloads\P4Projekt2-main (1)\P4Projekt2-main\Source\LocalServerApi\obj\Debug\net8.0\ref\IdentityService.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\obj\Debug\net8.0\IdentityService.sourcelink.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.deps.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.runtimeconfig.json
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.exe
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\IdentityModel.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Client.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Https.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Extensions.Features.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Controls.Compatibility.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Controls.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Controls.Maps.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Controls.Xaml.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Essentials.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Graphics.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Microsoft.Maui.Maps.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Refit.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\Refit.HttpClientFactory.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ar\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ca\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\cs\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\da\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\de\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\el\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\es\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fi\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\fr\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\he\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\hi\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\hr\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\hu\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\id\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\it\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ja\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ko\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ms\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\nb\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\nl\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pl\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt-BR\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\pt\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ro\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\ru\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\sk\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\sv\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\th\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\tr\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\uk\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\vi\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-HK\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hans\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\zh-Hant\Microsoft.Maui.Controls.resources.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.dll
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\P4Projekt2.pdb
+C:\Users\USER098\Documents\GitHub\LocalServerApi\bin\Debug\net8.0\DataBase\Userdata.json

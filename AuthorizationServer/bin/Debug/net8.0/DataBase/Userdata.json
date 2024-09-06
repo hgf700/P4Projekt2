@@ -1,0 +1,15 @@
+{
+  "Granttype": "client_credentials",
+  "Firstname": "John",
+  "Lastname": "Doe",
+  "Email": "john.doe@example.com",
+  "Password": "securepassword",
+  "ClientId": "client123"
+}
+
+//curl -X POST "https://localhost:5014/api/user/register" ^
+
+
+curl -X POST "https://localhost:5014" ^
+-H "Content-Type: application/json" ^
+-d "{\"Granttype\": \"client_credentials\", \"Firstname\": \"John\", \"Lastname\": \"Doe\", \"Email\": \"johndoe@example.com\", \"Password\": \"securepassword\", \"ClientId\": \"client123\"}"

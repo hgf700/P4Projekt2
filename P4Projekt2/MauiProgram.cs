@@ -24,7 +24,7 @@ namespace P4Projekt2
 
             return builder.Build();
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

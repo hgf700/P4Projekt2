@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P4Projekt2", "P4Projekt2.csproj", "{C4302BBA-A402-4E31-9353-518921C2694C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityService", "..\LocalServerApi\IdentityService.csproj", "{872EC56D-E164-475B-9FA4-F2CC928073E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthorizationServer", "..\AuthorizationServer\AuthorizationServer.csproj", "{8DB3B61E-DE4A-4E28-8663-68D93FB18FA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{C4302BBA-A402-4E31-9353-518921C2694C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4302BBA-A402-4E31-9353-518921C2694C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C4302BBA-A402-4E31-9353-518921C2694C}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{872EC56D-E164-475B-9FA4-F2CC928073E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{872EC56D-E164-475B-9FA4-F2CC928073E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{872EC56D-E164-475B-9FA4-F2CC928073E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{872EC56D-E164-475B-9FA4-F2CC928073E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB3B61E-DE4A-4E28-8663-68D93FB18FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB3B61E-DE4A-4E28-8663-68D93FB18FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB3B61E-DE4A-4E28-8663-68D93FB18FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB3B61E-DE4A-4E28-8663-68D93FB18FA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
