@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using P4Projekt2.API.Authorization;
-using P4Projekt2.API.User;
 using P4Projekt2.MVVM;
 using P4Projekt2.Pages;
 using Refit;

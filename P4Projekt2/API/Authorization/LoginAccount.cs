@@ -8,7 +8,7 @@ namespace P4Projekt2.API.Authorization
 {
     public class LoginAccount
     {
-        public string  ResponseType { get; set; }   
+        public string ResponseType { get; set; }   
         public string Email { get; set; }
         public string PasswordHash { get; set; }    
         public string ClientId { get; set; }    

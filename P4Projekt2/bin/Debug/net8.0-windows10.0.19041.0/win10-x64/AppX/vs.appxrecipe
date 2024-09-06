@@ -29,25 +29,25 @@
     <AppXManifest Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-09-05T17:16:40.933</Modified>
+      <Modified>2024-09-06T08:34:29.535</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-09-05T16:11:29.478</Modified>
+      <Modified>2024-09-06T08:34:28.960</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.runtimeconfig.json">
       <PackagePath>P4Projekt2.runtimeconfig.json</PackagePath>
-      <Modified>2024-09-05T16:11:29.123</Modified>
+      <Modified>2024-09-06T08:34:28.370</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.dll">
       <PackagePath>P4Projekt2.dll</PackagePath>
-      <Modified>2024-09-05T17:16:40.251</Modified>
+      <Modified>2024-09-06T08:34:26.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>P4Projekt2.exe</PackagePath>
-      <Modified>2024-09-05T17:16:40.266</Modified>
+      <Modified>2024-09-06T08:34:26.167</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -55,23 +55,23 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-100.png">
       <PackagePath>splashSplashScreen.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:42:36.836</Modified>
+      <Modified>2024-09-06T08:33:03.412</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-125.png">
       <PackagePath>splashSplashScreen.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:42:36.864</Modified>
+      <Modified>2024-09-06T08:33:03.457</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-150.png">
       <PackagePath>splashSplashScreen.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:42:36.896</Modified>
+      <Modified>2024-09-06T08:33:03.525</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-200.png">
       <PackagePath>splashSplashScreen.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:42:36.936</Modified>
+      <Modified>2024-09-06T08:33:03.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\sp\splashSplashScreen.scale-400.png">
       <PackagePath>splashSplashScreen.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:42:37.217</Modified>
+      <Modified>2024-09-06T08:33:03.934</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Regular.ttf">
       <PackagePath>OpenSans-Regular.ttf</PackagePath>
@@ -83,207 +83,207 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
-      <Modified>2024-09-05T14:43:34.327</Modified>
+      <Modified>2024-09-06T08:33:06.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-100.png">
       <PackagePath>appiconLargeTile.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.026</Modified>
+      <Modified>2024-09-06T08:33:06.007</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-125.png">
       <PackagePath>appiconLargeTile.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.021</Modified>
+      <Modified>2024-09-06T08:33:06.007</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-150.png">
       <PackagePath>appiconLargeTile.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.020</Modified>
+      <Modified>2024-09-06T08:33:06.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-200.png">
       <PackagePath>appiconLargeTile.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.019</Modified>
+      <Modified>2024-09-06T08:33:06.006</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.019</Modified>
+      <Modified>2024-09-06T08:33:06.005</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-16.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.239</Modified>
+      <Modified>2024-09-06T08:33:06.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-24.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.205</Modified>
+      <Modified>2024-09-06T08:33:06.024</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-256.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.185</Modified>
+      <Modified>2024-09-06T08:33:06.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-32.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.200</Modified>
+      <Modified>2024-09-06T08:33:06.023</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-lightunplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-lightunplated_targetsize-48.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.200</Modified>
+      <Modified>2024-09-06T08:33:06.022</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-16.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-16.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.273</Modified>
+      <Modified>2024-09-06T08:33:06.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-24.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-24.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.272</Modified>
+      <Modified>2024-09-06T08:33:06.027</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-256.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-256.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.239</Modified>
+      <Modified>2024-09-06T08:33:06.025</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-32.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-32.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.253</Modified>
+      <Modified>2024-09-06T08:33:06.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.altform-unplated_targetsize-48.png">
       <PackagePath>appiconLogo.altform-unplated_targetsize-48.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.241</Modified>
+      <Modified>2024-09-06T08:33:06.026</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-100.png">
       <PackagePath>appiconLogo.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.327</Modified>
+      <Modified>2024-09-06T08:33:06.034</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-125.png">
       <PackagePath>appiconLogo.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.326</Modified>
+      <Modified>2024-09-06T08:33:06.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-150.png">
       <PackagePath>appiconLogo.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.326</Modified>
+      <Modified>2024-09-06T08:33:06.033</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-200.png">
       <PackagePath>appiconLogo.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.326</Modified>
+      <Modified>2024-09-06T08:33:06.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.scale-400.png">
       <PackagePath>appiconLogo.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.325</Modified>
+      <Modified>2024-09-06T08:33:06.032</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-16.png">
       <PackagePath>appiconLogo.targetsize-16.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.324</Modified>
+      <Modified>2024-09-06T08:33:06.031</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-24.png">
       <PackagePath>appiconLogo.targetsize-24.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.324</Modified>
+      <Modified>2024-09-06T08:33:06.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-256.png">
       <PackagePath>appiconLogo.targetsize-256.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.301</Modified>
+      <Modified>2024-09-06T08:33:06.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-32.png">
       <PackagePath>appiconLogo.targetsize-32.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.323</Modified>
+      <Modified>2024-09-06T08:33:06.030</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLogo.targetsize-48.png">
       <PackagePath>appiconLogo.targetsize-48.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.309</Modified>
+      <Modified>2024-09-06T08:33:06.029</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-100.png">
       <PackagePath>appiconMediumTile.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.141</Modified>
+      <Modified>2024-09-06T08:33:06.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-125.png">
       <PackagePath>appiconMediumTile.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.141</Modified>
+      <Modified>2024-09-06T08:33:06.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-150.png">
       <PackagePath>appiconMediumTile.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.141</Modified>
+      <Modified>2024-09-06T08:33:06.013</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-200.png">
       <PackagePath>appiconMediumTile.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.119</Modified>
+      <Modified>2024-09-06T08:33:06.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconMediumTile.scale-400.png">
       <PackagePath>appiconMediumTile.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.106</Modified>
+      <Modified>2024-09-06T08:33:06.012</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-100.png">
       <PackagePath>appiconSmallTile.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.148</Modified>
+      <Modified>2024-09-06T08:33:06.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-125.png">
       <PackagePath>appiconSmallTile.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.148</Modified>
+      <Modified>2024-09-06T08:33:06.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-150.png">
       <PackagePath>appiconSmallTile.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.147</Modified>
+      <Modified>2024-09-06T08:33:06.016</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-200.png">
       <PackagePath>appiconSmallTile.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.146</Modified>
+      <Modified>2024-09-06T08:33:06.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconSmallTile.scale-400.png">
       <PackagePath>appiconSmallTile.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.144</Modified>
+      <Modified>2024-09-06T08:33:06.015</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-100.png">
       <PackagePath>appiconStoreLogo.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.163</Modified>
+      <Modified>2024-09-06T08:33:06.020</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-125.png">
       <PackagePath>appiconStoreLogo.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.159</Modified>
+      <Modified>2024-09-06T08:33:06.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-150.png">
       <PackagePath>appiconStoreLogo.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.149</Modified>
+      <Modified>2024-09-06T08:33:06.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-200.png">
       <PackagePath>appiconStoreLogo.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.149</Modified>
+      <Modified>2024-09-06T08:33:06.019</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconStoreLogo.scale-400.png">
       <PackagePath>appiconStoreLogo.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.149</Modified>
+      <Modified>2024-09-06T08:33:06.017</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-100.png">
       <PackagePath>appiconWideTile.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.074</Modified>
+      <Modified>2024-09-06T08:33:06.011</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-125.png">
       <PackagePath>appiconWideTile.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.074</Modified>
+      <Modified>2024-09-06T08:33:06.010</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png">
       <PackagePath>appiconWideTile.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.071</Modified>
+      <Modified>2024-09-06T08:33:06.009</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png">
       <PackagePath>appiconWideTile.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.071</Modified>
+      <Modified>2024-09-06T08:33:06.009</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png">
       <PackagePath>appiconWideTile.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.033</Modified>
+      <Modified>2024-09-06T08:33:06.008</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png">
       <PackagePath>dotnet_bot.scale-100.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.018</Modified>
+      <Modified>2024-09-06T08:33:06.038</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png">
       <PackagePath>dotnet_bot.scale-125.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.014</Modified>
+      <Modified>2024-09-06T08:33:06.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png">
       <PackagePath>dotnet_bot.scale-150.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.007</Modified>
+      <Modified>2024-09-06T08:33:06.037</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png">
       <PackagePath>dotnet_bot.scale-200.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.002</Modified>
+      <Modified>2024-09-06T08:33:06.036</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
-      <Modified>2024-09-05T14:43:34.002</Modified>
+      <Modified>2024-09-06T08:33:06.035</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
@@ -667,7 +667,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.deps.json">
       <PackagePath>P4Projekt2.deps.json</PackagePath>
-      <Modified>2024-09-05T16:11:29.764</Modified>
+      <Modified>2024-09-06T08:34:29.346</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\humanizer.core\2.14.1\lib\net6.0\Humanizer.dll">
       <PackagePath>Humanizer.dll</PackagePath>

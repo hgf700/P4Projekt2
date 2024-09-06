@@ -18,8 +18,9 @@ namespace P4Projekt2
             builder.Services.AddSingleton<HttpClient>();
 
 
-            //builder.Services.AddTransient<SignInPageViewModel>();
+            builder.Services.AddTransient<SignInPageViewModel>();
             builder.Services.AddTransient<SignUpPageViewModel>();
+            //builder.Services.AddTransient<ChatPageViewModel>();
 
             return builder.Build();
 #if DEBUG

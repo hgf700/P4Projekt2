@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Refit;
 using P4Projekt2.API.Authorization;
-using P4Projekt2.API.User;
 using System.Diagnostics;
 using Microsoft.Win32;
 using System.Windows.Input;
@@ -34,7 +33,6 @@ namespace P4Projekt2.MVVM
 
         public ICommand LoginCommand { get; }
         public ICommand RegisterCommand { get; }
-        private readonly UserStore _userStore;
         public SignInPageViewModel(HttpClient httpClient = null)
         {
             LoginCommand = new Command(SignIn);
@@ -82,7 +80,7 @@ namespace P4Projekt2.MVVM
                         if (!_navigated)
                         {
                             _navigated = true;
-                            App.Current.MainPage = new SignInPage();
+                            App.Current.MainPage = new SignUpPage();
                         }
                         return false; // Zatrzymuje timer
                     });

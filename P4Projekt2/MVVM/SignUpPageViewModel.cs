@@ -2,7 +2,6 @@
 using P4Projekt2.Pages;
 using System.Net.Http.Json;
 using Microsoft.Maui.Controls;
-using P4Projekt2.API.User;
 using P4Projekt2.API.Authorization;
 using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
