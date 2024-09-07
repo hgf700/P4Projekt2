@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER098\\Desktop\\staryserwer\\P4Projekt2\\P4Projekt2.csproj": {}
+    "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER098\\Desktop\\staryserwer\\P4Projekt2\\P4Projekt2.csproj": {
+    "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER098\\Desktop\\staryserwer\\P4Projekt2\\P4Projekt2.csproj",
+        "projectUniqueName": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj",
         "projectName": "P4Projekt2",
-        "projectPath": "C:\\Users\\USER098\\Desktop\\staryserwer\\P4Projekt2\\P4Projekt2.csproj",
+        "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj",
         "packagesPath": "C:\\Users\\USER098\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER098\\Desktop\\staryserwer\\P4Projekt2\\obj\\",
+        "outputPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -85,11 +85,11 @@
             },
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -97,15 +97,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -159,11 +159,11 @@
             },
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -171,15 +171,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -242,11 +242,11 @@
             },
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -254,15 +254,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -325,11 +325,11 @@
             },
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -337,15 +337,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -409,11 +409,11 @@
             },
             "Microsoft.AspNetCore.SignalR.Client.Core": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.AspNetCore.SignalR.Common": {
               "target": "Package",
-              "version": "[8.0.7, )"
+              "version": "[8.0.8, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -421,15 +421,15 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Microsoft.Maui.Controls.Maps": {
               "target": "Package",
-              "version": "[8.0.70, )"
+              "version": "[8.0.82, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

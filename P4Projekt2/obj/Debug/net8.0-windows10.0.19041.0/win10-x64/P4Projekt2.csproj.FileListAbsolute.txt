@@ -433,3 +433,4 @@ C:\Users\USER098\Desktop\staryserwer\P4Projekt2\obj\Debug\net8.0-windows10.0.190
 C:\Users\USER098\Desktop\staryserwer\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\USER098\Desktop\staryserwer\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\USER098\Desktop\staryserwer\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\ProjectArchitectures.txt
+C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.IO.RecyclableMemoryStream.dll

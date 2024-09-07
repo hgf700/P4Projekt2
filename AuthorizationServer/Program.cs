@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using IdentityService.midleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
 
 public class Program
 {

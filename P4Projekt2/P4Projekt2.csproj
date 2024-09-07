@@ -60,12 +60,12 @@
 		<PackageReference Include="IdentityModel" Version="7.0.0" />
 		<PackageReference Include="Microsoft.AspNet.SignalR.Client" Version="2.4.3" />
 		<PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.7" />
-		<PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.7" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.70" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.70" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="8.0.8" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.8" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.82" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.82" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.70" />
+		<PackageReference Include="Microsoft.Maui.Controls.Maps" Version="8.0.82" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Refit" Version="7.1.2" />
 		<PackageReference Include="Refit.HttpClientFactory" Version="7.1.2" />

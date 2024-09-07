@@ -12,12 +12,12 @@
           "IdentityModel": "7.0.0",
           "Microsoft.AspNet.SignalR.Client": "2.4.3",
           "Microsoft.AspNetCore.Server.Kestrel": "2.2.0",
-          "Microsoft.AspNetCore.SignalR.Client.Core": "8.0.7",
-          "Microsoft.AspNetCore.SignalR.Common": "8.0.7",
+          "Microsoft.AspNetCore.SignalR.Client.Core": "8.0.8",
+          "Microsoft.AspNetCore.SignalR.Common": "8.0.8",
           "Microsoft.Extensions.Logging.Debug": "8.0.0",
-          "Microsoft.Maui.Controls": "8.0.70",
-          "Microsoft.Maui.Controls.Compatibility": "8.0.70",
-          "Microsoft.Maui.Controls.Maps": "8.0.70",
+          "Microsoft.Maui.Controls": "8.0.82",
+          "Microsoft.Maui.Controls.Compatibility": "8.0.82",
+          "Microsoft.Maui.Controls.Maps": "8.0.82",
           "Newtonsoft.Json": "13.0.3",
           "Refit": "7.1.2",
           "Refit.HttpClientFactory": "7.1.2",
@@ -59,15 +59,15 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Connections.Abstractions/8.0.7": {
+      "Microsoft.AspNetCore.Connections.Abstractions/8.0.8": {
         "dependencies": {
-          "Microsoft.Extensions.Features": "8.0.7",
+          "Microsoft.Extensions.Features": "8.0.8",
           "System.IO.Pipelines": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Connections.Abstractions.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31402"
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
@@ -222,7 +222,7 @@
       },
       "Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Connections.Abstractions": "8.0.7"
+          "Microsoft.AspNetCore.Connections.Abstractions": "8.0.8"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll": {
@@ -244,41 +244,41 @@
           }
         }
       },
-      "Microsoft.AspNetCore.SignalR.Client.Core/8.0.7": {
+      "Microsoft.AspNetCore.SignalR.Client.Core/8.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.SignalR.Common": "8.0.7",
-          "Microsoft.AspNetCore.SignalR.Protocols.Json": "8.0.7",
+          "Microsoft.AspNetCore.SignalR.Common": "8.0.8",
+          "Microsoft.AspNetCore.SignalR.Protocols.Json": "8.0.8",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Logging": "8.0.0",
           "System.Threading.Channels": "8.0.0"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.SignalR.Client.Core.dll": {
-            "assemblyVersion": "8.0.7.0",
-            "fileVersion": "8.0.724.31402"
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
-      "Microsoft.AspNetCore.SignalR.Common/8.0.7": {
+      "Microsoft.AspNetCore.SignalR.Common/8.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.Connections.Abstractions": "8.0.7",
+          "Microsoft.AspNetCore.Connections.Abstractions": "8.0.8",
           "Microsoft.Extensions.Options": "8.0.2"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.SignalR.Common.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31402"
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
-      "Microsoft.AspNetCore.SignalR.Protocols.Json/8.0.7": {
+      "Microsoft.AspNetCore.SignalR.Protocols.Json/8.0.8": {
         "dependencies": {
-          "Microsoft.AspNetCore.SignalR.Common": "8.0.7"
+          "Microsoft.AspNetCore.SignalR.Common": "8.0.8"
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.SignalR.Protocols.Json.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31402"
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
@@ -396,11 +396,11 @@
           }
         }
       },
-      "Microsoft.Extensions.Features/8.0.7": {
+      "Microsoft.Extensions.Features/8.0.8": {
         "runtime": {
           "lib/net8.0/Microsoft.Extensions.Features.dll": {
             "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31402"
+            "fileVersion": "8.0.824.36908"
           }
         }
       },
@@ -547,7 +547,7 @@
       },
       "Microsoft.Graphics.Win2D/1.2.0": {
         "dependencies": {
-          "Microsoft.WindowsAppSDK": "1.5.240607001"
+          "Microsoft.WindowsAppSDK": "1.5.240627000"
         },
         "runtime": {
           "lib/net6.0-windows10.0.19041.0/Microsoft.Graphics.Canvas.Interop.dll": {
@@ -561,46 +561,54 @@
           }
         }
       },
-      "Microsoft.Maui.Controls/8.0.70": {
-        "dependencies": {
-          "Microsoft.Maui.Controls.Build.Tasks": "8.0.70",
-          "Microsoft.Maui.Controls.Core": "8.0.70",
-          "Microsoft.Maui.Controls.Xaml": "8.0.70",
-          "Microsoft.Maui.Resizetizer": "8.0.70"
+      "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IO.RecyclableMemoryStream.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
+          }
         }
       },
-      "Microsoft.Maui.Controls.Build.Tasks/8.0.70": {
+      "Microsoft.Maui.Controls/8.0.82": {
         "dependencies": {
-          "Microsoft.Maui.Controls.Core": "8.0.70",
-          "Microsoft.Maui.Controls.Xaml": "8.0.70"
+          "Microsoft.Maui.Controls.Build.Tasks": "8.0.82",
+          "Microsoft.Maui.Controls.Core": "8.0.82",
+          "Microsoft.Maui.Controls.Xaml": "8.0.82",
+          "Microsoft.Maui.Resizetizer": "8.0.82"
         }
       },
-      "Microsoft.Maui.Controls.Compatibility/8.0.70": {
+      "Microsoft.Maui.Controls.Build.Tasks/8.0.82": {
+        "dependencies": {
+          "Microsoft.Maui.Controls.Core": "8.0.82",
+          "Microsoft.Maui.Controls.Xaml": "8.0.82"
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/8.0.82": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Microsoft.Maui.Controls.Core": "8.0.70",
-          "Microsoft.Maui.Controls.Xaml": "8.0.70"
+          "Microsoft.Maui.Controls.Core": "8.0.82",
+          "Microsoft.Maui.Controls.Xaml": "8.0.82"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Controls.Core/8.0.70": {
+      "Microsoft.Maui.Controls.Core/8.0.82": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Logging": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
-          "Microsoft.Maui.Core": "8.0.70"
+          "Microsoft.Maui.Core": "8.0.82"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         },
         "resources": {
@@ -708,96 +716,97 @@
           }
         }
       },
-      "Microsoft.Maui.Controls.Maps/8.0.70": {
+      "Microsoft.Maui.Controls.Maps/8.0.82": {
         "dependencies": {
-          "Microsoft.Maui.Maps": "8.0.70"
+          "Microsoft.Maui.Maps": "8.0.82"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Maps.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Controls.Xaml/8.0.70": {
+      "Microsoft.Maui.Controls.Xaml/8.0.82": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "8.0.0",
-          "Microsoft.Maui.Controls.Core": "8.0.70",
-          "Microsoft.Maui.Core": "8.0.70"
+          "Microsoft.Maui.Controls.Core": "8.0.82",
+          "Microsoft.Maui.Core": "8.0.82"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Controls.Xaml.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Core/8.0.70": {
+      "Microsoft.Maui.Core/8.0.82": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "8.0.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0",
           "Microsoft.Extensions.Logging": "8.0.0",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0",
           "Microsoft.Graphics.Win2D": "1.2.0",
-          "Microsoft.Maui.Essentials": "8.0.70",
-          "Microsoft.Maui.Graphics": "8.0.70",
-          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "8.0.70",
+          "Microsoft.Maui.Essentials": "8.0.82",
+          "Microsoft.Maui.Graphics": "8.0.82",
+          "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop": "8.0.82",
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756",
-          "Microsoft.WindowsAppSDK": "1.5.240607001"
+          "Microsoft.WindowsAppSDK": "1.5.240627000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Essentials/8.0.70": {
+      "Microsoft.Maui.Essentials/8.0.82": {
         "dependencies": {
-          "Microsoft.Maui.Graphics": "8.0.70",
-          "Microsoft.WindowsAppSDK": "1.5.240607001"
+          "Microsoft.Maui.Graphics": "8.0.82",
+          "Microsoft.WindowsAppSDK": "1.5.240627000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Essentials.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Graphics/8.0.70": {
+      "Microsoft.Maui.Graphics/8.0.82": {
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.2.0",
-          "Microsoft.WindowsAppSDK": "1.5.240607001"
+          "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
+          "Microsoft.WindowsAppSDK": "1.5.240627000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Graphics.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/8.0.70": {
+      "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/8.0.82": {
         "dependencies": {
           "Microsoft.Graphics.Win2D": "1.2.0",
-          "Microsoft.Maui.Graphics": "8.0.70",
-          "Microsoft.WindowsAppSDK": "1.5.240607001"
+          "Microsoft.Maui.Graphics": "8.0.82",
+          "Microsoft.WindowsAppSDK": "1.5.240627000"
         },
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Graphics.Win2D.WinUI.Desktop.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Maps/8.0.70": {
+      "Microsoft.Maui.Maps/8.0.82": {
         "runtime": {
           "lib/net8.0-windows10.0.19041/Microsoft.Maui.Maps.dll": {
             "assemblyVersion": "1.0.0.0",
-            "fileVersion": "8.0.7024.35802"
+            "fileVersion": "8.0.8224.42604"
           }
         }
       },
-      "Microsoft.Maui.Resizetizer/8.0.70": {},
+      "Microsoft.Maui.Resizetizer/8.0.82": {},
       "Microsoft.Net.Http.Headers/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0",
@@ -811,14 +820,14 @@
         }
       },
       "Microsoft.Windows.SDK.BuildTools/10.0.22621.756": {},
-      "Microsoft.WindowsAppSDK/1.5.240607001": {
+      "Microsoft.WindowsAppSDK/1.5.240627000": {
         "dependencies": {
           "Microsoft.Windows.SDK.BuildTools": "10.0.22621.756"
         },
         "runtime": {
           "lib/net6.0-windows10.0.18362.0/Microsoft.InteractiveExperiences.Projection.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.26105.1001"
+            "fileVersion": "10.0.26105.1002"
           },
           "lib/net6.0-windows10.0.18362.0/Microsoft.WinUI.dll": {
             "assemblyVersion": "3.0.0.0",
@@ -969,12 +978,12 @@
       "path": "microsoft.aspnet.signalr.client/2.4.3",
       "hashPath": "microsoft.aspnet.signalr.client.2.4.3.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Connections.Abstractions/8.0.7": {
+    "Microsoft.AspNetCore.Connections.Abstractions/8.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pC+gXphE1PQN7VDf+h6NDrQM78ral6vs77AMI1he9E9gCJU1R/djR1EMB6TzJeQwEhKZ4vg1CS3yYdNCbKJDiw==",
-      "path": "microsoft.aspnetcore.connections.abstractions/8.0.7",
-      "hashPath": "microsoft.aspnetcore.connections.abstractions.8.0.7.nupkg.sha512"
+      "sha512": "sha512-Qf1C5WlKogCGl7jBthegWpRhxknayYUj/T5t/iFqEif9TdhpHv2o+dwgBFRNov3bdVQtK9gvmnPYsxaorBvpHA==",
+      "path": "microsoft.aspnetcore.connections.abstractions/8.0.8",
+      "hashPath": "microsoft.aspnetcore.connections.abstractions.8.0.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Hosting/2.2.0": {
       "type": "package",
@@ -1060,26 +1069,26 @@
       "path": "microsoft.aspnetcore.server.kestrel.transport.sockets/2.2.0",
       "hashPath": "microsoft.aspnetcore.server.kestrel.transport.sockets.2.2.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.SignalR.Client.Core/8.0.7": {
+    "Microsoft.AspNetCore.SignalR.Client.Core/8.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-YMuhYv5U5RXyhsDHM1d6T+blItpZULNk84TmNK7kZ3q8cO11Eo1Cp1iDx0W3fVo5Z1m5DAOiENv9KC+G76MG/Q==",
-      "path": "microsoft.aspnetcore.signalr.client.core/8.0.7",
-      "hashPath": "microsoft.aspnetcore.signalr.client.core.8.0.7.nupkg.sha512"
+      "sha512": "sha512-vvAKtgewQ6E4qhIH88QRv/x9OKKI2duhzojJH6sI8eTn1yvR6cdMD780KIs6//0HXkRDJZspqiLH2jHltKQpPQ==",
+      "path": "microsoft.aspnetcore.signalr.client.core/8.0.8",
+      "hashPath": "microsoft.aspnetcore.signalr.client.core.8.0.8.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.SignalR.Common/8.0.7": {
+    "Microsoft.AspNetCore.SignalR.Common/8.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZvnsR+vFjP/XgK0Xa9n71N5qeQn4+uzB8UTsS+nEh+KPbxQScAGf6xrifLNJMQUuPqrZF6kJchtpoRET2v+KDw==",
-      "path": "microsoft.aspnetcore.signalr.common/8.0.7",
-      "hashPath": "microsoft.aspnetcore.signalr.common.8.0.7.nupkg.sha512"
+      "sha512": "sha512-n4WyR53huf+azYAr0upo3SVHEMQPbuGfeAGOpx+WEMxGqKtkHiWHoRkTrxL89Q4Hd1Qok4mF80o3x7yuS8qXFA==",
+      "path": "microsoft.aspnetcore.signalr.common/8.0.8",
+      "hashPath": "microsoft.aspnetcore.signalr.common.8.0.8.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.SignalR.Protocols.Json/8.0.7": {
+    "Microsoft.AspNetCore.SignalR.Protocols.Json/8.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A7f54ujaJi1SHK3SRxg4fAp0dswnsCo1QYLDxJEdzlQF7PV4AGB0h8NhrPYGmV9AVXg84WCoA7p9eFRkci7OQA==",
-      "path": "microsoft.aspnetcore.signalr.protocols.json/8.0.7",
-      "hashPath": "microsoft.aspnetcore.signalr.protocols.json.8.0.7.nupkg.sha512"
+      "sha512": "sha512-8iqF3voCEzs4hfPNU/MVodtxfg1qpl6O0OUy5uJyzuSWfS4SKY8Vwgr78FgBGvAuRI130eDFV5BHWXAOoMG4eQ==",
+      "path": "microsoft.aspnetcore.signalr.protocols.json/8.0.8",
+      "hashPath": "microsoft.aspnetcore.signalr.protocols.json.8.0.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.WebUtilities/2.2.0": {
       "type": "package",
@@ -1151,12 +1160,12 @@
       "path": "microsoft.extensions.diagnostics.abstractions/8.0.0",
       "hashPath": "microsoft.extensions.diagnostics.abstractions.8.0.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.Features/8.0.7": {
+    "Microsoft.Extensions.Features/8.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-807p0VEIqDArkcAtfNGjFA565pGphcdR6a8nqD0+0A7e/dvODc7T7DsumKr/hGQ55AyH4nETxsNIP1aNVBH1ag==",
-      "path": "microsoft.extensions.features/8.0.7",
-      "hashPath": "microsoft.extensions.features.8.0.7.nupkg.sha512"
+      "sha512": "sha512-twQ7HVVebAchBSLM5VsPeS/rwri3HJwxv22+wUQppr0ByUke97Ipw38gwGqFAnG2dz08N5LicKW2wpNtRng6Fw==",
+      "path": "microsoft.extensions.features/8.0.8",
+      "hashPath": "microsoft.extensions.features.8.0.8.nupkg.sha512"
     },
     "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
       "type": "package",
@@ -1249,89 +1258,96 @@
       "path": "microsoft.graphics.win2d/1.2.0",
       "hashPath": "microsoft.graphics.win2d.1.2.0.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls/8.0.70": {
+    "Microsoft.IO.RecyclableMemoryStream/3.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rI+dxD1Z13NEz+MN257rWYGfoaJ7y/kSvyBn+2SCZHVtHuZW7tkxoFd/T2I0jcHhVJBANQwJ9NoLZcHy8xPG4Q==",
-      "path": "microsoft.maui.controls/8.0.70",
-      "hashPath": "microsoft.maui.controls.8.0.70.nupkg.sha512"
+      "sha512": "sha512-s/s20YTVY9r9TPfTrN5g8zPF1YhwxyqO6PxUkrYTGI2B+OGPe9AdajWZrLhFqXIvqIW23fnUE4+ztrUWNU1+9g==",
+      "path": "microsoft.io.recyclablememorystream/3.0.1",
+      "hashPath": "microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Build.Tasks/8.0.70": {
+    "Microsoft.Maui.Controls/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1nTNvMUt0qLHmo2pMREkO8d6Ur/f3ryK2Ty7UoJgJT2Zf768BxeGcTsIF9H7FVkKoNk7pYNgflPvBXW3aK8KIg==",
-      "path": "microsoft.maui.controls.build.tasks/8.0.70",
-      "hashPath": "microsoft.maui.controls.build.tasks.8.0.70.nupkg.sha512"
+      "sha512": "sha512-wUNQRAvzyhZjD5XLowTcU4OFQ6Tz2bdHz7ZRenKdChqtrxfSltiA84F/aN+M2BwmfVxuEp3zD2Y31paYFK8n1Q==",
+      "path": "microsoft.maui.controls/8.0.82",
+      "hashPath": "microsoft.maui.controls.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Compatibility/8.0.70": {
+    "Microsoft.Maui.Controls.Build.Tasks/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ib0SQEDzYYFHn6lf6qkqAztwy56S7rvQcKa7X7cWHeEHEf1S0L2/jfyw2PLsHzmml3MnBTzRgO3h7ejXO/c2pw==",
-      "path": "microsoft.maui.controls.compatibility/8.0.70",
-      "hashPath": "microsoft.maui.controls.compatibility.8.0.70.nupkg.sha512"
+      "sha512": "sha512-FLtYThqc5tQ7TnNuInJzNsK+jtg2ecjqoOWFYCCWASz4WJn8tN60nyP0drS6wTBj8CJLdrDzr3gxkfJpSh4cng==",
+      "path": "microsoft.maui.controls.build.tasks/8.0.82",
+      "hashPath": "microsoft.maui.controls.build.tasks.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Core/8.0.70": {
+    "Microsoft.Maui.Controls.Compatibility/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A8kp4c/VA8GSik2FiUO2p5zpPfPenMUOuCcwBsbBTfHmD0vsokFl1szPdsBdm97Uzh/AZYhO9YKAthSQ6SYxfA==",
-      "path": "microsoft.maui.controls.core/8.0.70",
-      "hashPath": "microsoft.maui.controls.core.8.0.70.nupkg.sha512"
+      "sha512": "sha512-PwsRrH9PuL3UAITU7l6cgKIqzPekios1XlnBLJW8ZemHUnFnZDU4eNpNf9OBmTiZm2pKVT8Ls3YZQ1gZKt9sKA==",
+      "path": "microsoft.maui.controls.compatibility/8.0.82",
+      "hashPath": "microsoft.maui.controls.compatibility.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Maps/8.0.70": {
+    "Microsoft.Maui.Controls.Core/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-FScS9UUUZvKPGtdEq9xyKlaDlkQgV/2ZzvYjnlgYlvfyejUZOlDWYAMduABKtp63k0n1iLx9yLfzVmjBNpnAFg==",
-      "path": "microsoft.maui.controls.maps/8.0.70",
-      "hashPath": "microsoft.maui.controls.maps.8.0.70.nupkg.sha512"
+      "sha512": "sha512-OA6LfWt6IIQFBXOJIIzef4FeH9kEd1GrN7OjalLqLlxmTrVUoVldAc9fp5e3NTzrLKr6DrvYdhOd+vazx9KvTw==",
+      "path": "microsoft.maui.controls.core/8.0.82",
+      "hashPath": "microsoft.maui.controls.core.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Controls.Xaml/8.0.70": {
+    "Microsoft.Maui.Controls.Maps/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xUVE2RY11zNj2OAlBUssSpgqELtbHjs2T0+Os6w11wpi+lgoZTyhn25oBtuFk5SX0cCtEBVmzqhvFt8npiKxbw==",
-      "path": "microsoft.maui.controls.xaml/8.0.70",
-      "hashPath": "microsoft.maui.controls.xaml.8.0.70.nupkg.sha512"
+      "sha512": "sha512-ZgVTnTR7ZpcqT1kkzTjOgz4+f18QuRQWpL+uoJs7bfIruDl/g3Yw8SLBuJmWPp8jSbe84/xe+/CIrts1M/+0NA==",
+      "path": "microsoft.maui.controls.maps/8.0.82",
+      "hashPath": "microsoft.maui.controls.maps.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Core/8.0.70": {
+    "Microsoft.Maui.Controls.Xaml/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NWeQSE+UIyL0/1e9lFKIXKMDp/AyuEI2lIMBSBD941p7hfpH1Tx6pi79fzO6gxKSlQGAFk6NNciRdG3d0CbgyQ==",
-      "path": "microsoft.maui.core/8.0.70",
-      "hashPath": "microsoft.maui.core.8.0.70.nupkg.sha512"
+      "sha512": "sha512-QFCiX2BOLursL7QXa1KVkUEUsFO6ccxQh7f8rZXMOgAjR1M01Q4YNa9uGJ8vDwfj03snEmIQGrhM/K1ohuBy0Q==",
+      "path": "microsoft.maui.controls.xaml/8.0.82",
+      "hashPath": "microsoft.maui.controls.xaml.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Essentials/8.0.70": {
+    "Microsoft.Maui.Core/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IJ4dU30lHdgec/kpXMEJqKX8jTjt11rHBMwkT4Ek9UsXht1yW8ww8WASo4zI0UL+wMxvcqd2xMT2I1ngpt3heA==",
-      "path": "microsoft.maui.essentials/8.0.70",
-      "hashPath": "microsoft.maui.essentials.8.0.70.nupkg.sha512"
+      "sha512": "sha512-cuL7nSqN4HD+AMmgqKS5FW0nGSixRKt5yHCHYBPdcHJSzhGaBkhm3f3QXfus+FfFeKf8wpe24WT3OpakUxOZOQ==",
+      "path": "microsoft.maui.core/8.0.82",
+      "hashPath": "microsoft.maui.core.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Graphics/8.0.70": {
+    "Microsoft.Maui.Essentials/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-f+X1mqQls09yGA6ikJX/5KnavIndBBiQR7fsddhFIpibR+i+PEsUOd63htq5iZO3vIXu2I5DKG6s/ci14il2hQ==",
-      "path": "microsoft.maui.graphics/8.0.70",
-      "hashPath": "microsoft.maui.graphics.8.0.70.nupkg.sha512"
+      "sha512": "sha512-Rcg+49oW7px7OC4NO0AMFeI0R51kDflyj9V0bFIh3ehY/3kI1Pk9pvHPGt1eRtbiejDOa0VTZKt/tKYme+OXJQ==",
+      "path": "microsoft.maui.essentials/8.0.82",
+      "hashPath": "microsoft.maui.essentials.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/8.0.70": {
+    "Microsoft.Maui.Graphics/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AeCnDeDFACZSsMxbQco+X8BJpDxu2zQKz8S/WBZFeTXMtKssLUJ75pFe5NYh654aBX23ceUBG77+0QiIKPzeVA==",
-      "path": "microsoft.maui.graphics.win2d.winui.desktop/8.0.70",
-      "hashPath": "microsoft.maui.graphics.win2d.winui.desktop.8.0.70.nupkg.sha512"
+      "sha512": "sha512-l0H7YufzTp8On98mx9BzTp7RQPpGPJNJBJMatIHxtEsDCGX0HSYnsoz07v0+dJsOVkfXMVTQmmmOrDujVNhpYQ==",
+      "path": "microsoft.maui.graphics/8.0.82",
+      "hashPath": "microsoft.maui.graphics.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Maps/8.0.70": {
+    "Microsoft.Maui.Graphics.Win2D.WinUI.Desktop/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UHNgzXWfr3D/i36+sY2+ytKDPnDo5jlNabX8jcrxyncJpNEnp77cqNeDlExU1Z1jwZpcNGIYqextqwGQAqlafg==",
-      "path": "microsoft.maui.maps/8.0.70",
-      "hashPath": "microsoft.maui.maps.8.0.70.nupkg.sha512"
+      "sha512": "sha512-IVBp8HvYMKdpJP/hBeJhzd7LeIM9UXOMdhqr/YXAs0XP8PUWp7VSGEVzhvQEexY0fKaBbKdi+dghbJUxfu4aGw==",
+      "path": "microsoft.maui.graphics.win2d.winui.desktop/8.0.82",
+      "hashPath": "microsoft.maui.graphics.win2d.winui.desktop.8.0.82.nupkg.sha512"
     },
-    "Microsoft.Maui.Resizetizer/8.0.70": {
+    "Microsoft.Maui.Maps/8.0.82": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-//d/M3qURatkzC66nUgB6iqZld/8hs0WUD/og+3nsvvIvHQ7/4Xvgy3zu94QhGbSuJpFGvrnNYYI3Q0L+PGWhQ==",
-      "path": "microsoft.maui.resizetizer/8.0.70",
-      "hashPath": "microsoft.maui.resizetizer.8.0.70.nupkg.sha512"
+      "sha512": "sha512-ALykB+37FZJOEx/+nDIJSq0dIXZP4d8xbb+8xbQAErZB6xXbVOXpSCp2pOFWNq21WW9mgNryRI/sw8PkmLCh3w==",
+      "path": "microsoft.maui.maps/8.0.82",
+      "hashPath": "microsoft.maui.maps.8.0.82.nupkg.sha512"
+    },
+    "Microsoft.Maui.Resizetizer/8.0.82": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TlWHxNzHvOpILEP3W+8asTaLZAlkISIPFJHY5/ckD9NuHu1vAb2YNsIVkjRe5YxthJQShTbbRFtzhf4sHryp9g==",
+      "path": "microsoft.maui.resizetizer/8.0.82",
+      "hashPath": "microsoft.maui.resizetizer.8.0.82.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",
@@ -1347,12 +1363,12 @@
       "path": "microsoft.windows.sdk.buildtools/10.0.22621.756",
       "hashPath": "microsoft.windows.sdk.buildtools.10.0.22621.756.nupkg.sha512"
     },
-    "Microsoft.WindowsAppSDK/1.5.240607001": {
+    "Microsoft.WindowsAppSDK/1.5.240627000": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hwPYYUGPlneZi7Uwhm2zAIzSnvGGoL1bIqlisba7Adi5fYbwsj1GvGqiFiyYxRV9bhs3ykQNnJ1LW1cdXvvLiQ==",
-      "path": "microsoft.windowsappsdk/1.5.240607001",
-      "hashPath": "microsoft.windowsappsdk.1.5.240607001.nupkg.sha512"
+      "sha512": "sha512-qzzWG8rxZyzKzBuUdwr4ApezMINf+NT2b8EiEE5fchczNJJmDwlHImMWxX1pHK1W8Yby99alqLyC8DB0fIrhuA==",
+      "path": "microsoft.windowsappsdk/1.5.240627000",
+      "hashPath": "microsoft.windowsappsdk.1.5.240627000.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.3": {
       "type": "package",

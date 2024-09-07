@@ -7,13 +7,13 @@ using System.Linq;
 using IdentityModel;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using System.IdentityModel.Tokens.Jwt;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using static IdentityModel.OidcConstants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
 
 
 namespace IdentityService.Controllers
