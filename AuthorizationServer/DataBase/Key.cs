@@ -10,7 +10,7 @@ namespace IdentityService.DataBase
         public string AuthorizationKey { get; set; }
         public DateTime Expire { get; set; }
 
-        public int UserRegisterDataId { get; set; } // Klucz obcy
+        public string UserRegisterEmail { get; set; } // Klucz obcy
         public UserRegisterData UserRegisterData { get; set; }
     }
 }

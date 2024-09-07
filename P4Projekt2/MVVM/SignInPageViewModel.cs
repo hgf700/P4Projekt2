@@ -80,7 +80,7 @@ namespace P4Projekt2.MVVM
                         if (!_navigated)
                         {
                             _navigated = true;
-                            App.Current.MainPage = new SignUpPage();
+                            App.Current.MainPage = new ChatPage();
                         }
                         return false; // Zatrzymuje timer
                     });

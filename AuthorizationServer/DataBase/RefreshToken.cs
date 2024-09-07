@@ -1,18 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
-namespace IdentityService.DataBase
+public class RefreshToken
 {
-    public class RefreshToken
-    {
-        [Key]
-        public int Id { get; set; }
-        public string Token { get; set; }
-        public DateTime Expiration { get; set; }
-        public bool IsRevoked { get; set; }
+    [Key]
+    public int Id { get; set; }
 
-        [ForeignKey("UserRegisterData")]
-        public int UserId { get; set; } // Klucz obcy do UserRegisterData
-        public UserRegisterData User { get; set; } // Nawigacja do użytkownika
-    }
+    [Required]
+    [MaxLength(500)]
+    public string Token { get; set; }
+
+    public DateTime Expiration { get; set; }
+    public bool IsRevoked { get; set; }
+
+    [ForeignKey("UserRegisterData")]
+    public string UserEmail { get; set; } // Klucz obcy do UserRegisterData
+    public UserRegisterData User { get; set; } // Nawigacja do UserRegisterData
 }

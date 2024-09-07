@@ -14,8 +14,7 @@ public class ApplicationDbContext : DbContext
     public DbSet<UserLoginData> UserLoginData { get; set; }
     public DbSet<RefreshToken> RefreshTokens { get; set; }
 
-
-protected override void OnModelCreating(ModelBuilder modelBuilder)
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
 
@@ -27,6 +26,7 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
             entity.Property(e => e.ResponseType).HasMaxLength(100);
             entity.Property(e => e.Firstname).HasMaxLength(100);
             entity.Property(e => e.Lastname).HasMaxLength(100);
+            entity.HasIndex(e => e.Email).IsUnique(); // Upewnij się, że Email jest unikalny
             entity.Property(e => e.Email).IsRequired().HasMaxLength(255);
             entity.Property(e => e.PasswordHash).HasMaxLength(500);
             entity.Property(e => e.Scope).HasMaxLength(100);
@@ -39,17 +39,20 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
             // Relacja jeden do wielu z Key
             entity.HasMany(e => e.Keys)
                   .WithOne(k => k.UserRegisterData)
-                  .HasForeignKey(k => k.UserRegisterDataId);
+                  .HasForeignKey(k => k.UserRegisterEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
 
             // Relacja jeden do wielu z UserLoginData
             entity.HasMany(e => e.Userlogindata)
                   .WithOne(l => l.UserRegisterData)
-                  .HasForeignKey(l => l.UserRegisterDataId);
+                  .HasForeignKey(l => l.UserRegisterEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
 
             // Relacja jeden do wielu z RefreshToken
             entity.HasMany(e => e.RefreshTokens)
                   .WithOne(r => r.User)
-                  .HasForeignKey(r => r.UserId);
+                  .HasForeignKey(r => r.UserEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
         });
 
         // Konfiguracja dla Key
@@ -58,13 +61,14 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
             entity.HasKey(e => e.Id);
 
             entity.Property(e => e.GuidId).IsRequired();
-            entity.Property(e => e.AuthorizationKey).IsRequired().HasMaxLength(500); // Dodano HasMaxLength
+            entity.Property(e => e.AuthorizationKey).IsRequired().HasMaxLength(500);
             entity.Property(e => e.Expire).IsRequired();
 
-            // Klucz obcy do UserRegisterData
+            // Klucz obcy do UserRegisterData na podstawie Email
             entity.HasOne(k => k.UserRegisterData)
                   .WithMany(u => u.Keys)
-                  .HasForeignKey(k => k.UserRegisterDataId);
+                  .HasForeignKey(k => k.UserRegisterEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
         });
 
         // Konfiguracja dla UserLoginData
@@ -77,10 +81,11 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
             entity.Property(e => e.Password).IsRequired().HasMaxLength(500);
             entity.Property(e => e.ClientId).IsRequired().HasMaxLength(100);
 
-            // Klucz obcy do UserRegisterData
+            // Klucz obcy do UserRegisterData na podstawie Email
             entity.HasOne(l => l.UserRegisterData)
                   .WithMany(u => u.Userlogindata)
-                  .HasForeignKey(l => l.UserRegisterDataId);
+                  .HasForeignKey(l => l.UserRegisterEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
         });
 
         // Konfiguracja dla RefreshToken
@@ -88,16 +93,15 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             entity.HasKey(e => e.Id);
 
-            entity.Property(e => e.Token).IsRequired().HasMaxLength(500); // Dodano HasMaxLength
+            entity.Property(e => e.Token).IsRequired().HasMaxLength(500);
             entity.Property(e => e.Expiration).IsRequired();
             entity.Property(e => e.IsRevoked).IsRequired();
 
-            // Klucz obcy do UserRegisterData
+            // Konfiguracja relacji na podstawie UserEmail (string) zamiast IdRegister (int)
             entity.HasOne(r => r.User)
                   .WithMany(u => u.RefreshTokens)
-                  .HasForeignKey(r => r.UserId);
+                  .HasForeignKey(r => r.UserEmail) // Klucz obcy na podstawie Email
+                  .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
         });
     }
-
 }
-

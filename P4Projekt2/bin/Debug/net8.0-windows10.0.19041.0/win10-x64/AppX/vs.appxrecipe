@@ -29,13 +29,13 @@
     <AppXManifest Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2024-09-07T09:15:19.150</Modified>
+      <Modified>2024-09-07T14:58:45.651</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2024-09-07T09:15:18.602</Modified>
+      <Modified>2024-09-07T14:08:40.028</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.runtimeconfig.json">
       <PackagePath>P4Projekt2.runtimeconfig.json</PackagePath>
@@ -43,11 +43,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.dll">
       <PackagePath>P4Projekt2.dll</PackagePath>
-      <Modified>2024-09-07T09:15:16.103</Modified>
+      <Modified>2024-09-07T14:58:44.905</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\apphost.exe">
       <PackagePath>P4Projekt2.exe</PackagePath>
-      <Modified>2024-09-07T09:15:16.228</Modified>
+      <Modified>2024-09-07T14:58:44.917</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\Resources\Raw\AboutAssets.txt">
       <PackagePath>AboutAssets.txt</PackagePath>
@@ -287,7 +287,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\Documents\GitHub\P4Projekt2\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\P4Projekt2.deps.json">
       <PackagePath>P4Projekt2.deps.json</PackagePath>
-      <Modified>2024-09-07T09:15:18.063</Modified>
+      <Modified>2024-09-07T14:08:39.670</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\USER098\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.31\lib\net6.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>

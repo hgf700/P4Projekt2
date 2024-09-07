@@ -52,7 +52,7 @@ namespace IdentityService.Controllers
                     CodeChallengeMethod = authRequest.CodeChallengeMethod,
                 };
 
-
+                //w bazie najpierw sie tworzy refresh token potem zwykly a nakoniec login token
                 await _context.UserRegisterData.AddAsync(RegisterUser);
                 await _context.SaveChangesAsync();
 
@@ -63,7 +63,7 @@ namespace IdentityService.Controllers
                     Token = refreshtoken,
                     Expiration = DateTime.UtcNow.AddYears(10),
                     IsRevoked = false,
-                    UserId = RegisterUser.IdRegister // Przypisanie UserId do RefreshToken
+                    UserEmail = RegisterUser.Email // Przypisanie UserId do RefreshToken
                 };
 
                 await _context.RefreshTokens.AddAsync(Refreshtoken);
@@ -108,7 +108,7 @@ namespace IdentityService.Controllers
                     GuidId = Guid.NewGuid(),
                     AuthorizationKey = tokenString,
                     Expire = DateTime.UtcNow.AddMinutes(30),
-                    UserRegisterDataId = user.IdRegister
+                    UserRegisterEmail = user.Email
                 };
 
                 _context.Keys.Add(keyEntry);
@@ -147,16 +147,16 @@ namespace IdentityService.Controllers
 
                 var loginToken = GenerateJwtToken(user);
 
-                var refreshToken = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.UserId == user.IdRegister);
+                var refreshToken = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.UserEmail == user.Email);
 
-                if (refreshToken != null && refreshToken.Expiration > DateTime.UtcNow && !refreshToken.IsRevoked)
+                if (refreshToken == null || refreshToken.Expiration < DateTime.UtcNow || refreshToken.IsRevoked)
                 {
                     var newRefreshToken = new RefreshToken
                     {
                         Token = GenerateJwtToken(user),
                         Expiration = DateTime.UtcNow.AddYears(10),
                         IsRevoked = false,
-                        UserId = user.IdRegister
+                        UserEmail = user.Email
                     };
 
                     refreshToken.IsRevoked = true;
@@ -170,13 +170,13 @@ namespace IdentityService.Controllers
                     Email = loginauthRequest.Email,
                     Password = hashedPassword,
                     ClientId = loginauthRequest.ClientId,
-                    UserRegisterDataId = user.IdRegister
+                    UserRegisterEmail = user.Email
                 };
 
                 await _context.UserLoginData.AddAsync(loginRequest);
                 await _context.SaveChangesAsync();
 
-                return Ok(new { Token = loginToken, UserId = user.Email });
+                return Ok(new { Token = loginToken, UserEmail = user.Email });
             }
             catch (Exception ex)
             {

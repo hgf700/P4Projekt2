@@ -11,7 +11,7 @@ namespace IdentityService.DataBase
         public string Password { get; set; }
         public string ClientId { get; set; }
 
-        public int UserRegisterDataId { get; set; } // Klucz obcy
+        public string UserRegisterEmail { get; set; } // Klucz obcy
         public UserRegisterData UserRegisterData { get; set; }
     }
 }
