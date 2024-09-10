@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
 using P4Projekt2.API.Authorization;
+using P4Projekt2.API.User;
 using System.Security.Cryptography;
 using System.Linq;
 using IdentityModel;
@@ -69,10 +70,7 @@ namespace IdentityService.Controllers
                 await _context.RefreshTokens.AddAsync(Refreshtoken);
                 await _context.SaveChangesAsync();
 
-                // Generowanie tokenu JWT
-                var Registeredtoken = GenerateJwtToken(RegisterUser);
-
-                return Ok(new { Token = Registeredtoken, UserId = RegisterUser.Email });
+                return Ok();
             }
             catch (Exception ex)
             {
@@ -92,9 +90,9 @@ namespace IdentityService.Controllers
                 {
                     Subject = new ClaimsIdentity(new[]
                     {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-            }),
+                        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                    }),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
                 };
 
@@ -149,7 +147,7 @@ namespace IdentityService.Controllers
 
                 var refreshToken = await _context.RefreshTokens.FirstOrDefaultAsync(rt => rt.UserEmail == user.Email);
 
-                if (refreshToken == null || refreshToken.Expiration < DateTime.UtcNow || refreshToken.IsRevoked)
+                if (refreshToken == null || refreshToken.Expiration < DateTime.UtcNow || refreshToken.IsRevoked == true)
                 {
                     var newRefreshToken = new RefreshToken
                     {
@@ -163,6 +161,8 @@ namespace IdentityService.Controllers
                     await _context.RefreshTokens.AddAsync(newRefreshToken);
                     await _context.SaveChangesAsync();
                 }
+
+                var existingUser = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
 
                 var loginRequest = new UserLoginData
                 {
@@ -185,7 +185,64 @@ namespace IdentityService.Controllers
             }
         }
 
+        [HttpPost("message")]
+        public async Task<IActionResult> SendMessage([FromBody] UserChatData userchatdata)
+        {
+            try
+            {
+                var chatdata = new ChatData
+                {
+                    Message = userchatdata.Message,
+                    SenderEmail = userchatdata.SenderEmail,
+                    ReceiverEmail = userchatdata.ReceiverEmail,
+                    Timestamp = userchatdata.Timestamp,
+                };
+                await _context.ChatData.AddAsync(chatdata);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while messaging: {ex.Message}");
+                return StatusCode(500, $"{ex.Message}");
+            }
 
+        }
+
+        //[HttpPost("addfriend")]
+        //public async Task<IActionResult> AddFriend([FromBody] AddToFriendList friendRequest)
+        //{
+        //    try
+        //    {
+        //        // Check if a friend request already exists
+        //        //var existingRequest = await _context.FriendList
+        //        //    .FirstOrDefaultAsync(f => f.RequesterEmail == friendRequest.RequesterEmail && f.FriendEmail == friendRequest.FriendEmail);
+
+        //        //if (existingRequest != null)
+        //        //{
+        //        //    return Conflict("Friend request already exists.");
+        //        //}
+
+        //        var addfriend = new AddToFriendList
+        //        {
+
+        //        };
+
+        //        // Set default values
+        //        friendRequest.RequestedAt = DateTime.UtcNow;
+        //        friendRequest.IsAccepted = false; // Initially, the request is not accepted
+
+        //        await _context.FriendList.AddAsync(friendRequest);
+        //        await _context.SaveChangesAsync();
+
+        //        return Ok("Friend request sent.");
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Error while adding friend: {ex.Message}");
+        //        return StatusCode(500, "Internal server error.");
+        //    }
+        //}
 
 
 
@@ -201,9 +258,5 @@ namespace IdentityService.Controllers
                 return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
             }
         }
-
-
-
-
     }
 }

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="P4Projekt2.Pages.AddtofriendlistPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="AddtofriendlistPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="18,82" Spacing="10">
+            <StackLayout Orientation="Horizontal">
+                <Label
+                        FontAttributes="Bold"
+                        FontSize="30"
+                        HorizontalOptions="Center"
+                        Text="Welcome,"
+                        VerticalOptions="Center" />
+
+                <Button
+                Command="{Binding BackChatCommand}"
+                        FontAttributes="Bold"
+                        FontSize="18"
+                        HorizontalOptions="EndAndExpand"
+                        Text="Back to Chat Page" />
+            </StackLayout>
+
+            <Label
+                    FontAttributes="Bold"
+                    FontSize="14"
+                    HorizontalOptions="Start"
+                    Text="Sign in to Continue"
+                    TextColor="#929292"
+                    VerticalOptions="Center" />
+            <StackLayout Margin="0,50,0,0" Spacing="40">
+                <StackLayout Spacing="0">
+                    <Label
+                            FontSize="14"
+                            HorizontalOptions="Start"
+                            Text="Email"
+                            TextColor="#929292"
+                            VerticalOptions="Center" />
+                    <Entry
+                            FontSize="18"
+                            Placeholder="Enter Firstname of your firend"
+                            Text="{Binding Firstname}" />
+                </StackLayout>
+                <StackLayout Margin="0" Spacing="0">
+                    <Label
+                            FontSize="14"
+                            HorizontalOptions="Start"
+                            Text="Password"
+                            TextColor="#929292"
+                            VerticalOptions="Center" />
+                    <Entry
+                            FontSize="18"
+                            IsPassword="True"
+                            Placeholder="Enter Lastname of your firend"
+                            Text="{Binding Lastname}" />
+                </StackLayout>
+                <StackLayout Margin="0" Spacing="0">
+                    <Label
+                            FontSize="14"
+                            HorizontalOptions="Start"
+                            Text="Password"
+                            TextColor="#929292"
+                            VerticalOptions="Center" />
+                    <Entry
+                            FontSize="18"
+                            IsPassword="True"
+                            Placeholder="Enter Email of your firend"
+                            Text="{Binding Email}" />
+                </StackLayout>
+
+
+            </StackLayout>
+            <Button
+                    Padding="16"
+                    Background="{DynamicResource Primary}"
+                    Command="{Binding LoginCommand}"
+                    CornerRadius="4"
+                    Text="SIGN IN"
+                    TextColor="{DynamicResource White}" />
+
+
+            <StackLayout Margin="0,20" Spacing="20">
+
+
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

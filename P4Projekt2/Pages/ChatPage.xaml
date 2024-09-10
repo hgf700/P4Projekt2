@@ -4,31 +4,29 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:P4Projekt2.MVVM"
-    xmlns:models="clr-namespace:P4Projekt2.MVVM"
-    x:DataType="vm:ChatPageViewModel"
     Title="ChatPage">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <!-- Szerokość ListView -->
+            <!-- Width of ListView -->
             <ColumnDefinition Width="*" />
-            <!-- Pozostała przestrzeń dla Chat -->
+            <!-- Remaining space for Chat -->
         </Grid.ColumnDefinitions>
 
-
-
+        <!-- ListView for Contacts -->
         <ListView 
-                Grid.Column="0"
-                ItemsSource="{Binding Contacts}" 
-                SelectedItem="{Binding SelectedContact}">
-                        <ListView.Header>
-                            <Label
-                        Text="Contacts"
-                        FontAttributes="Bold"
-                        FontSize="20"
-                        HorizontalOptions="Center"
-                        Margin="0,10" />
+            Grid.Column="0"
+            ItemsSource="{Binding Contacts}" 
+            SelectedItem="{Binding SelectedContact}">
+
+            <ListView.Header>
+                <Label
+                    Text="Contacts"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Center"
+                    Margin="0,10" />
             </ListView.Header>
 
             <ListView.ItemTemplate>
@@ -36,34 +34,36 @@
                     <ViewCell>
                         <StackLayout Orientation="Horizontal" Padding="10">
                             <Label 
-                                    Text="Name"
-                                    FontSize="18"
-                                    VerticalOptions="Center" />
+                                Text="{Binding Name}"
+                                FontSize="18"
+                                VerticalOptions="Center" />
+                            <Button
+                                Text="Add User To Friend List"
+                                Command="{Binding AddFriendCommand}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-
-        <!-- Okno chatu po prawej stronie -->
+        <!-- Chat window on the right side -->
         <StackLayout
             Grid.Column="1"
             Orientation="Vertical">
 
-            <!-- Wyświetlanie wiadomości -->
+            <!-- Display messages -->
             <ScrollView>
                 <StackLayout
                     Padding="10"
                     Spacing="10"
                     Orientation="Vertical">
-                    <!-- Tu możesz dodać ListView lub inne kontrolki do wyświetlania wiadomości -->
+                    <!-- You can add ListView or other controls to display messages -->
                     <Label Text="Chat messages will appear here." />
-                    <!-- Zastąp to kontrolką do wiadomości -->
+                    <!-- Replace this with message controls -->
                 </StackLayout>
             </ScrollView>
 
-            <!-- Wprowadzenie wiadomości i przycisk wysyłania -->
+            <!-- Message input and send button -->
             <StackLayout
                 Orientation="Horizontal"
                 Padding="10"

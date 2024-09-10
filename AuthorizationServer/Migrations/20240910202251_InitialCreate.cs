@@ -95,6 +95,7 @@ namespace AuthorizationServer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserLoginData", x => x.IdLogin);
+                    table.UniqueConstraint("AK_UserLoginData_Email", x => x.Email);
                     table.ForeignKey(
                         name: "FK_UserLoginData_UserRegisterData_UserRegisterEmail",
                         column: x => x.UserRegisterEmail,
@@ -102,6 +103,82 @@ namespace AuthorizationServer.Migrations
                         principalColumn: "Email",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "AddToFriendList",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RequesterEmail = table.Column<string>(type: "character varying(255)", nullable: false),
+                    FriendEmail = table.Column<string>(type: "character varying(255)", nullable: false),
+                    RequestedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    IsAccepted = table.Column<bool>(type: "boolean", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AddToFriendList", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AddToFriendList_UserLoginData_FriendEmail",
+                        column: x => x.FriendEmail,
+                        principalTable: "UserLoginData",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_AddToFriendList_UserLoginData_RequesterEmail",
+                        column: x => x.RequesterEmail,
+                        principalTable: "UserLoginData",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ChatData",
+                columns: table => new
+                {
+                    MessageId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Message = table.Column<string>(type: "text", nullable: false),
+                    Timestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    SenderEmail = table.Column<string>(type: "character varying(255)", nullable: false),
+                    ReceiverEmail = table.Column<string>(type: "character varying(255)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ChatData", x => x.MessageId);
+                    table.ForeignKey(
+                        name: "FK_ChatData_UserLoginData_ReceiverEmail",
+                        column: x => x.ReceiverEmail,
+                        principalTable: "UserLoginData",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_ChatData_UserLoginData_SenderEmail",
+                        column: x => x.SenderEmail,
+                        principalTable: "UserLoginData",
+                        principalColumn: "Email",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AddToFriendList_FriendEmail",
+                table: "AddToFriendList",
+                column: "FriendEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AddToFriendList_RequesterEmail",
+                table: "AddToFriendList",
+                column: "RequesterEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ChatData_ReceiverEmail",
+                table: "ChatData",
+                column: "ReceiverEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ChatData_SenderEmail",
+                table: "ChatData",
+                column: "SenderEmail");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Keys_UserRegisterEmail",
@@ -121,13 +198,18 @@ namespace AuthorizationServer.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_UserRegisterData_Email",
                 table: "UserRegisterData",
-                column: "Email",
-                unique: true);
+                column: "Email");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AddToFriendList");
+
+            migrationBuilder.DropTable(
+                name: "ChatData");
+
             migrationBuilder.DropTable(
                 name: "Keys");
 

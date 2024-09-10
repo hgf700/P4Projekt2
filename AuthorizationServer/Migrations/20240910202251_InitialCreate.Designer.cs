@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240907135535_InitialCreate")]
+    [Migration("20240910202251_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -23,6 +23,38 @@ namespace AuthorizationServer.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+
+            modelBuilder.Entity("IdentityService.DataBase.ChatData", b =>
+                {
+                    b.Property<int>("MessageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("MessageId"));
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ReceiverEmail")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("SenderEmail")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<DateTime>("Timestamp")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("MessageId");
+
+                    b.HasIndex("ReceiverEmail");
+
+                    b.HasIndex("SenderEmail");
+
+                    b.ToTable("ChatData");
+                });
 
             modelBuilder.Entity("IdentityService.DataBase.Key", b =>
                 {
@@ -54,7 +86,68 @@ namespace AuthorizationServer.Migrations
                     b.ToTable("Keys");
                 });
 
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
+            modelBuilder.Entity("P4Projekt2.API.User.AddToFriendList", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("FriendEmail")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<bool>("IsAccepted")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime>("RequestedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("RequesterEmail")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FriendEmail");
+
+                    b.HasIndex("RequesterEmail");
+
+                    b.ToTable("AddToFriendList");
+                });
+
+            modelBuilder.Entity("RefreshToken", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("Expiration")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<bool>("IsRevoked")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Token")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("character varying(500)");
+
+                    b.Property<string>("UserEmail")
+                        .IsRequired()
+                        .HasColumnType("character varying(255)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserEmail");
+
+                    b.ToTable("RefreshTokens");
+                });
+
+            modelBuilder.Entity("UserLoginData", b =>
                 {
                     b.Property<int>("IdLogin")
                         .ValueGeneratedOnAdd()
@@ -91,36 +184,6 @@ namespace AuthorizationServer.Migrations
                     b.HasIndex("UserRegisterEmail");
 
                     b.ToTable("UserLoginData");
-                });
-
-            modelBuilder.Entity("RefreshToken", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Expiration")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsRevoked")
-                        .HasColumnType("boolean");
-
-                    b.Property<string>("Token")
-                        .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("character varying(500)");
-
-                    b.Property<string>("UserEmail")
-                        .IsRequired()
-                        .HasColumnType("character varying(255)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserEmail");
-
-                    b.ToTable("RefreshTokens");
                 });
 
             modelBuilder.Entity("UserRegisterData", b =>
@@ -188,10 +251,30 @@ namespace AuthorizationServer.Migrations
 
                     b.HasKey("IdRegister");
 
-                    b.HasIndex("Email")
-                        .IsUnique();
+                    b.HasIndex("Email");
 
                     b.ToTable("UserRegisterData");
+                });
+
+            modelBuilder.Entity("IdentityService.DataBase.ChatData", b =>
+                {
+                    b.HasOne("UserLoginData", "Receiver")
+                        .WithMany("ReceivedMessages")
+                        .HasForeignKey("ReceiverEmail")
+                        .HasPrincipalKey("Email")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("UserLoginData", "Sender")
+                        .WithMany("SentMessages")
+                        .HasForeignKey("SenderEmail")
+                        .HasPrincipalKey("Email")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Receiver");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("IdentityService.DataBase.Key", b =>
@@ -206,16 +289,25 @@ namespace AuthorizationServer.Migrations
                     b.Navigation("UserRegisterData");
                 });
 
-            modelBuilder.Entity("IdentityService.DataBase.UserLoginData", b =>
+            modelBuilder.Entity("P4Projekt2.API.User.AddToFriendList", b =>
                 {
-                    b.HasOne("UserRegisterData", "UserRegisterData")
-                        .WithMany("Userlogindata")
-                        .HasForeignKey("UserRegisterEmail")
+                    b.HasOne("UserLoginData", "Friend")
+                        .WithMany("ReceivedFriendRequests")
+                        .HasForeignKey("FriendEmail")
                         .HasPrincipalKey("Email")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("UserRegisterData");
+                    b.HasOne("UserLoginData", "Requester")
+                        .WithMany("SentFriendRequests")
+                        .HasForeignKey("RequesterEmail")
+                        .HasPrincipalKey("Email")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("Friend");
+
+                    b.Navigation("Requester");
                 });
 
             modelBuilder.Entity("RefreshToken", b =>
@@ -228,6 +320,29 @@ namespace AuthorizationServer.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
+                });
+
+            modelBuilder.Entity("UserLoginData", b =>
+                {
+                    b.HasOne("UserRegisterData", "Userregisterdata")
+                        .WithMany("Userlogindata")
+                        .HasForeignKey("UserRegisterEmail")
+                        .HasPrincipalKey("Email")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Userregisterdata");
+                });
+
+            modelBuilder.Entity("UserLoginData", b =>
+                {
+                    b.Navigation("ReceivedFriendRequests");
+
+                    b.Navigation("ReceivedMessages");
+
+                    b.Navigation("SentFriendRequests");
+
+                    b.Navigation("SentMessages");
                 });
 
             modelBuilder.Entity("UserRegisterData", b =>

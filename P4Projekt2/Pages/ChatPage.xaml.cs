@@ -10,8 +10,7 @@ namespace P4Projekt2.Pages
         public ChatPage()
         {
             InitializeComponent();
-            //_httpClient
-            BindingContext = new ChatPageViewModel();
+            BindingContext = new ChatPageViewModel(_httpClient);
 
 
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatSuccess", async (sender, message) =>

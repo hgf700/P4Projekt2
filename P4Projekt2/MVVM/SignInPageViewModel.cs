@@ -75,15 +75,15 @@ namespace P4Projekt2.MVVM
                     MessagingCenter.Send(this, "SignInSuccess", $"User has been successfully logged in: \n Redirecting to ChatPage ");
 
 
-                    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
-                    {
-                        if (!_navigated)
-                        {
-                            _navigated = true;
+                    //Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                    //{
+                        //if (!_navigated)
+                        //{
+                            //_navigated = true;
                             App.Current.MainPage = new ChatPage();
-                        }
-                        return false; // Zatrzymuje timer
-                    });
+                    //    }
+                    //    return false; // Zatrzymuje timer
+                    //});
                 }
                 else
                 {

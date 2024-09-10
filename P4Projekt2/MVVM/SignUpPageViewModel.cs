@@ -96,15 +96,15 @@ namespace P4Projekt2.MVVM
 
                     MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {tokenRequest?.Firstname} {tokenRequest?.Lastname} \n Redirecting to SignInPage ");
 
-                    Device.StartTimer(TimeSpan.FromSeconds(3), () =>
-                    {
-                        if (!_navigated)
-                        {
-                            _navigated = true;
+                    //Device.StartTimer(TimeSpan.FromSeconds(3), () =>
+                    //{
+                    //    //if (!_navigated)
+                        //{
+                        //    _navigated = true;
                             App.Current.MainPage = new SignInPage();
-                        }
-                        return false; // Zatrzymuje timer
-                    });
+                        //}
+                        //return false; // Zatrzymuje timer
+                    //});
                 }
                 else
                 {
