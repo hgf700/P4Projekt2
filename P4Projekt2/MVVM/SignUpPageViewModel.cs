@@ -8,6 +8,8 @@ using Newtonsoft.Json;
 using System.Text;
 using Refit;
 using static System.Formats.Asn1.AsnWriter;
+using Microsoft.AspNet.SignalR.Client.Http;
+using System.Net.Http;
 
 namespace P4Projekt2.MVVM
 {
@@ -92,23 +94,18 @@ namespace P4Projekt2.MVVM
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
+                    System.Diagnostics.Debug.WriteLine($"Response content: {responseContent}");
+
                     var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
                     MessagingCenter.Send(this, "SignUpSuccess", $"Data has been successfully sent for user: {tokenRequest?.Firstname} {tokenRequest?.Lastname} \n Redirecting to SignInPage ");
 
-                    //Device.StartTimer(TimeSpan.FromSeconds(3), () =>
-                    //{
-                    //    //if (!_navigated)
-                        //{
-                        //    _navigated = true;
-                            App.Current.MainPage = new SignInPage();
-                        //}
-                        //return false; // Zatrzymuje timer
-                    //});
+                    App.Current.MainPage = new SignInPage();
                 }
                 else
                 {
                     var errorResponse = await response.Content.ReadAsStringAsync();
+                    System.Diagnostics.Debug.WriteLine($"Error response content: {errorResponse}");
                     MessagingCenter.Send(this, "SignUpError", $"Error during sign-up: {response.ReasonPhrase} - {errorResponse}");
                 }
             }

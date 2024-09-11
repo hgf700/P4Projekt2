@@ -15,6 +15,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 
 
 namespace IdentityService.Controllers
@@ -36,8 +37,20 @@ namespace IdentityService.Controllers
         {
             try
             {
+                // Sprawdź, czy użytkownik z tym adresem e-mail już istnieje
+                var existingUser = await _context.UserRegisterData
+                    .FirstOrDefaultAsync(u => u.Email == authRequest.Email);
+
+                if (existingUser != null)
+                {
+                    // Zwróć odpowiedź z kodem 409 (Conflict), jeśli użytkownik z tym e-mailem już istnieje
+                    return Conflict("User with this email already exists.");
+                }
+
+                // Haszowanie hasła
                 var hashedPassword = HashPassword(authRequest.Password);
 
+                // Tworzenie nowego użytkownika
                 var RegisterUser = new UserRegisterData
                 {
                     ResponseType = authRequest.ResponseType,
@@ -53,10 +66,10 @@ namespace IdentityService.Controllers
                     CodeChallengeMethod = authRequest.CodeChallengeMethod,
                 };
 
-                //w bazie najpierw sie tworzy refresh token potem zwykly a nakoniec login token
                 await _context.UserRegisterData.AddAsync(RegisterUser);
                 await _context.SaveChangesAsync();
 
+                // Generowanie tokenu odświeżania
                 var refreshtoken = GenerateJwtToken(RegisterUser);
 
                 var Refreshtoken = new RefreshToken
@@ -64,20 +77,26 @@ namespace IdentityService.Controllers
                     Token = refreshtoken,
                     Expiration = DateTime.UtcNow.AddYears(10),
                     IsRevoked = false,
-                    UserEmail = RegisterUser.Email // Przypisanie UserId do RefreshToken
+                    UserEmail = RegisterUser.Email // Przypisanie UserEmail do RefreshToken
                 };
 
                 await _context.RefreshTokens.AddAsync(Refreshtoken);
                 await _context.SaveChangesAsync();
 
-                return Ok();
+                return new ContentResult
+                {
+                    Content = JsonConvert.SerializeObject(new { message = "User registered successfully" }),
+                    ContentType = "application/json",
+                    StatusCode = 200 // OK
+                };
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, $"Error while register: {ex.Message}");
-                return StatusCode(500, $"{ex.Message}");
+                _logger.LogError($"Error during registration: {ex.Message}");
+                return BadRequest(new { error = ex.Message });
             }
         }
+
 
         private string GenerateJwtToken(UserRegisterData user)
         {
@@ -163,6 +182,17 @@ namespace IdentityService.Controllers
                 }
 
                 var existingUser = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
+
+                if (existingUser != null)
+                {
+                    // Jeśli użytkownik już istnieje, możesz zaktualizować dane lub zgłosić błąd
+                    return new ContentResult
+                    {
+                        Content = JsonConvert.SerializeObject(new { message = "User logged successfully" }),
+                        ContentType = "application/json",
+                        StatusCode = 200 // OK
+                    };
+                }
 
                 var loginRequest = new UserLoginData
                 {
