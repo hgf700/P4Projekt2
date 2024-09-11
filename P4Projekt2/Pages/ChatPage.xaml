@@ -9,73 +9,95 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <!-- Width of ListView -->
             <ColumnDefinition Width="*" />
-            <!-- Remaining space for Chat -->
+            <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
 
-        <!-- ListView for Contacts -->
-        <ListView 
-            Grid.Column="0"
-            ItemsSource="{Binding Contacts}" 
-            SelectedItem="{Binding SelectedContact}">
+        <StackLayout Grid.Column="0"
+                     Grid.Row="0">
+            <Label
+                                Text="Contacts"
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="Center"
+                Margin="10" />
+        </StackLayout>
 
-            <ListView.Header>
-                <Label
-                    Text="Contacts"
-                    FontAttributes="Bold"
-                    FontSize="20"
-                    HorizontalOptions="Center"
-                    Margin="0,10" />
-            </ListView.Header>
-
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Orientation="Horizontal" Padding="10">
-                            <Label 
-                                Text="{Binding Name}"
-                                FontSize="18"
-                                VerticalOptions="Center" />
-                            <Button
-                                Text="Add User To Friend List"
-                                Command="{Binding AddFriendCommand}" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-
-        <!-- Chat window on the right side -->
         <StackLayout
-            Grid.Column="1"
-            Orientation="Vertical">
+                              Grid.Column="0"
+                Grid.Row="1">
+            <ListView 
+                ItemsSource="{Binding Contacts}" 
+                SelectedItem="{Binding SelectedContact}">
 
-            <!-- Display messages -->
-            <ScrollView>
-                <StackLayout
-                    Padding="10"
-                    Spacing="10"
-                    Orientation="Vertical">
-                    <!-- You can add ListView or other controls to display messages -->
-                    <Label Text="Chat messages will appear here." />
-                    <!-- Replace this with message controls -->
-                </StackLayout>
-            </ScrollView>
 
-            <!-- Message input and send button -->
-            <StackLayout
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="10">
+                                <Label 
+                                    Text="{Binding Name}"
+                                    FontSize="18"
+                                    VerticalOptions="Center" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+
+        <StackLayout
+            Grid.Column="0"
+            Grid.Row="2">
+            <Button
+                Text="Add User To Friend List"
+                Command="{Binding LogoutCommand}"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                Margin="10" />
+        </StackLayout>
+
+        <StackLayout
+                        Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Grid.Row="2"
                 Orientation="Horizontal"
                 Padding="10"
                 Spacing="10">
-                <Entry
+            <Entry
                     Placeholder="Enter message"
                     HorizontalOptions="FillAndExpand"
                     Text="{Binding NewMessage}" />
-                <Button
+            <Button
                     Text="Send"
                     Command="{Binding SendMessageCommand}" />
-            </StackLayout>
         </StackLayout>
+
+        <StackLayout Grid.Column="2"
+                     Grid.Row="0">
+            <Button
+                    Text="logout"
+                    Command="{Binding SendMessageCommand}" />
+        </StackLayout>
+
+
+
+        <StackLayout
+            Grid.Column="1"
+            Grid.Row="0"
+            Grid.RowSpan="1">
+            <Label
+                Text="chat area"/>
+        </StackLayout>
+
+        
+
+
     </Grid>
 </ContentPage>

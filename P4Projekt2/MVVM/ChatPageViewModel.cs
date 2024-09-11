@@ -45,6 +45,8 @@ namespace P4Projekt2.MVVM
         // Komendy
         public ICommand AddFriendCommand { get; }
         public ICommand SendMessageCommand { get; }
+        public ICommand LogoutCommand { get; }
+
         private string _userEmail;
         public ChatPageViewModel(HttpClient httpClient)
         {
@@ -60,11 +62,16 @@ namespace P4Projekt2.MVVM
 
             AddFriendCommand = new Command(AddFriend);
             SendMessageCommand = new Command(SendMessage);
+            LogoutCommand = new Command(Logout);
 
 
             _userEmail = Preferences.Get("UserEmail", string.Empty);
             _httpClient = httpClient;
+        }
 
+        async private void Logout()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new SignInPage());
         }
 
         async private void AddFriend()
@@ -124,5 +131,6 @@ namespace P4Projekt2.MVVM
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public string Email { get; set; }
+        public string Name => $"{Firstname} {Lastname}";
     }
 }
