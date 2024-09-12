@@ -35,7 +35,7 @@ namespace P4Projekt2.MVVM
             _httpClient = httpClient;
         }
 
-        private async void SignUp(object obj)
+        private async void SignUp()
         {
             await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
         }

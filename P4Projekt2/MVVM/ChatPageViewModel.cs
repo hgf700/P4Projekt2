@@ -42,8 +42,10 @@ namespace P4Projekt2.MVVM
                 // Możesz dodać logikę aktualizującą rozmowę po zmianie kontaktu
             }
         }
-        async private void Logout()
+        private async void Logout()
         {
+            Preferences.Set("UserEmail", null);
+
             await Application.Current.MainPage.Navigation.PushModalAsync(new SignInPage());
         }
         async private void AddFriend()
@@ -65,9 +67,10 @@ namespace P4Projekt2.MVVM
             Contacts = new ObservableCollection<Contact>();
             LoadFriendsCommand = new Command(async () => await LoadFriends());
             AddFriendCommand = new Command(AddFriend);
+            LogoutCommand = new Command(Logout);
             _userEmail = Preferences.Get("UserEmail", string.Empty);
 
-            // Load friends initially
+
             LoadFriendsCommand.Execute(null);
         }
 
@@ -79,25 +82,44 @@ namespace P4Projekt2.MVVM
 
             var urlload = $"https://localhost:5014/authorization/user/friends/{_userEmail}";
 
-            //try
-            //{
-            //    var response = await _httpClient.GetAsync(urlload);
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var responseContent = await response.Content.ReadAsStringAsync();
-            //        var friends = JsonConvert.DeserializeObject<List<Contact>>(responseContent);
-            //        Contacts.Clear();
-            //        foreach (var friend in friends)
-            //        {
-            //            Contacts.Add(friend);
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessagingCenter.Send(this, "loadfriendserror", $"{ex.Message}");
-            //}
+            try
+            {
+                var response = await _httpClient.GetAsync(urlload);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+
+                    // Deserialize the response into List<Contact>
+                    var friends = JsonConvert.DeserializeObject<List<Contact>>(responseContent);
+
+                    if (friends != null && friends.Any())
+                    {
+                        Contacts.Clear();
+                        foreach (var friend in friends)
+                        {
+                            Contacts.Add(friend);
+                        }
+                        MessagingCenter.Send(this, "ChatSuccess", "Friends loaded successfully.");
+                    }
+                    else
+                    {
+                        MessagingCenter.Send(this, "ChatError", "No friends found.");
+                    }
+                }
+                else
+                {
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "ChatError", $"Error: {response.ReasonPhrase} - {errorResponse}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessagingCenter.Send(this, "ChatError", $"Exception: {ex.Message}");
+            }
         }
+
+
+
     }
     public class Contact
     {

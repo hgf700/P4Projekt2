@@ -17,6 +17,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Identity.Data;
+using System.Xml.Linq;
 
 
 namespace IdentityService.Controllers
@@ -97,60 +98,6 @@ namespace IdentityService.Controllers
                 return BadRequest(new { error = ex.Message });
             }
         }
-
-        public string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
-            }
-        }
-
-        private string GenerateJwtToken(UserRegisterData user)
-        {
-            try
-            {
-                var tokenHandler = new JwtSecurityTokenHandler();
-                var key = Encoding.ASCII.GetBytes("A_very_long_secret_key_that_is_at_least_32_bytes_long");
-
-                var tokenDescriptor = new SecurityTokenDescriptor
-                {
-                    Subject = new ClaimsIdentity(new[]
-                    {
-                        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
-                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-                    }),
-                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-                };
-
-                var token = tokenHandler.CreateToken(tokenDescriptor);
-
-                var tokenString = tokenHandler.WriteToken(token);
-
-                // Tworzenie i zapisywanie instancji Key
-                var keyEntry = new Key
-                {
-                    GuidId = Guid.NewGuid(),
-                    AuthorizationKey = tokenString,
-                    Expire = DateTime.UtcNow.AddMinutes(30),
-                    UserRegisterEmail = user.Email
-                };
-
-                _context.Keys.Add(keyEntry);
-                _context.SaveChanges();
-
-                return tokenString;
-            }
-            catch (Exception ex)
-            {
-                // Logowanie błędu
-                Console.WriteLine($"Error generating JWT token: {ex.Message}"); // Logowanie błędu do konsoli
-                return $"Error generating JWT token: {ex.Message}";
-            }
-
-        }
-
 
         [HttpPost("login")]
         public async Task<IActionResult> SignIn([FromBody] LoginAccount loginauthRequest)
@@ -263,14 +210,22 @@ namespace IdentityService.Controllers
                     return BadRequest("User not found");
                 }
 
-                var friendRequest = new AddToFriendList
+                var friendRequestForRequestUser = new AddToFriendList
                 {
                     RequesterEmail = requester.Email1,  // Changed to Email
                     FriendEmail = friend.Email2,        // Changed to Email
                     RequestedAt = request.RequestedAt
                 };
 
-                _context.AddToFriendList.Add(friendRequest);
+                var friendRequestForReceiverUser= new AddToFriendList
+                {
+                    RequesterEmail = friend.Email2,    // Changed to Email
+                    FriendEmail = requester.Email1,   // Changed to Email
+                    RequestedAt = request.RequestedAt
+                };
+
+                _context.AddToFriendList.Add(friendRequestForRequestUser);
+                _context.AddToFriendList.Add(friendRequestForReceiverUser);
                 await _context.SaveChangesAsync();
 
                 return new ContentResult
@@ -280,12 +235,118 @@ namespace IdentityService.Controllers
                     StatusCode = 200 // OK
                 };
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, $"Error while adding friend: {ex.Message}");
                 return StatusCode(500, $"{ex.Message}");
             }
-            
+
+        }
+
+        [HttpGet("friends/{email}")]
+        public async Task<IActionResult> GetFriends(string email)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email))
+                {
+                    return BadRequest("Email is required.");
+                }
+
+                // Query the AddToFriendList to find friends of the user
+                var addedFriends = await _context.AddToFriendList
+                                                 .Where(f => f.FriendEmail == email)
+                                                 .ToListAsync();
+
+                if (!addedFriends.Any())
+                {
+                    // Return an empty list instead of NotFound
+                    return Ok(new List<object>()); // Empty list
+                }
+
+                // Get requester emails from the AddToFriendList
+                var requesterEmails = addedFriends.Select(f => f.RequesterEmail).ToList();
+
+                // Query the UserRegisterData table to retrieve the friend's details
+                var friends = await _context.UserRegisterData
+                                            .Where(u => requesterEmails.Contains(u.Email))
+                                            .Select(u => new
+                                            {
+                                                Firstname = u.Firstname,
+                                                Lastname = u.Lastname,
+                                                Email = u.Email
+                                            })
+                                            .ToListAsync();
+
+                return Ok(friends);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while retrieving friends: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        public string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
+
+        private string GenerateJwtToken(UserRegisterData user)
+        {
+            try
+            {
+                var tokenHandler = new JwtSecurityTokenHandler();
+                var key = Encoding.ASCII.GetBytes("A_very_long_secret_key_that_is_at_least_32_bytes_long");
+
+                var tokenDescriptor = new SecurityTokenDescriptor
+                {
+                    Subject = new ClaimsIdentity(new[]
+                    {
+                        new Claim(JwtRegisteredClaimNames.Sub, user.Email),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
+                    }),
+                    SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                };
+
+                var token = tokenHandler.CreateToken(tokenDescriptor);
+
+                var tokenString = tokenHandler.WriteToken(token);
+
+                // Tworzenie i zapisywanie instancji Key
+                var keyEntry = new Key
+                {
+                    GuidId = Guid.NewGuid(),
+                    AuthorizationKey = tokenString,
+                    Expire = DateTime.UtcNow.AddMinutes(30),
+                    UserRegisterEmail = user.Email
+                };
+
+                _context.Keys.Add(keyEntry);
+                _context.SaveChanges();
+
+                return tokenString;
+            }
+            catch (Exception ex)
+            {
+                // Logowanie błędu
+                Console.WriteLine($"Error generating JWT token: {ex.Message}"); // Logowanie błędu do konsoli
+                return $"Error generating JWT token: {ex.Message}";
+            }
+
         }
     }
 }
