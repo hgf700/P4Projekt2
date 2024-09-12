@@ -19,20 +19,6 @@ namespace P4Projekt2.MVVM
     {
         private readonly HttpClient _httpClient;
 
-        private string _Firstname;
-        public string Firstname
-        {
-            get => _Firstname;
-            set => SetProperty(ref _Firstname, value);
-        }
-
-        private string _Lastname;
-        public string Lastname
-        {
-            get => _Lastname;
-            set => SetProperty(ref _Lastname, value);
-        }
-
         private string _Email;
         public string Email
         {
@@ -40,15 +26,24 @@ namespace P4Projekt2.MVVM
             set => SetProperty(ref _Email, value);
         }
 
-        public ICommand AddUserCommand { get; }
-        public ICommand BackChatCommand { get; }
-
-        public AddtofriendlistPageViewModel(HttpClient httpClient = null)
+        private Contact _selectedContact;
+        public Contact SelectedContact
         {
-            AddUserCommand = new Command(AddUser);
-            BackChatCommand= new Command(BackChat);
+            get => _selectedContact;
+            set => SetProperty(ref _selectedContact, value);
+        }
 
-            _httpClient = httpClient ?? new HttpClient();
+        public ICommand BackChatCommand { get; }
+        public ICommand AddFriendCommand { get; }
+        private string _userEmail;
+
+        public AddtofriendlistPageViewModel(HttpClient httpClient)
+        {
+            BackChatCommand = new Command(BackChat);
+            AddFriendCommand = new Command(AddFriend);
+            _userEmail = Preferences.Get("UserEmail", string.Empty); // Corrected here
+
+            _httpClient = httpClient;
         }
 
         private async void BackChat(object obj)
@@ -56,9 +51,52 @@ namespace P4Projekt2.MVVM
             await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
         }
 
-        private async void AddUser()
+        private async void AddFriend()
         {
-            //a
+            // Pobierz zalogowanego użytkownika (RequesterEmail)
+            var requesterEmail = Preferences.Get("UserEmail", string.Empty); // Now getting the email correctly
+
+            if (_selectedContact == null)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Please select a contact to add as a friend.", "OK");
+                return;
+            }
+
+            // Upewnij się, że wybrany kontakt ma Email
+            if (string.IsNullOrEmpty(_selectedContact.Email))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Selected contact has no email.", "OK");
+                return;
+            }
+
+            var friendRequest = new AddFriendRequest()
+            {
+                RequesterIdLogin = requesterEmail,        // Email zalogowanego użytkownika
+                FriendIdLogin = _selectedContact.Email,   // Email wybranego kontaktu
+                RequestedAt = DateTime.UtcNow,
+            };
+
+            // Wyślij żądanie HTTP do API
+            var url = "https://localhost:5014/authorization/user/addfriend";
+            var jsonContent = new StringContent(JsonConvert.SerializeObject(friendRequest), Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await _httpClient.PostAsync(url, jsonContent);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Success", "Friend request sent successfully.", "OK");
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Failed to send friend request.", "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
+            }
         }
     }
 }

@@ -10,3 +10,11 @@
 //curl -X POST "https://localhost:5014/authorization/register
 //-H "Content-Type: application/json" ^
 //-d "{\"Granttype\": \"client_credentials\", \"Firstname\": \"John\", \"Lastname\": \"Doe\", \"Email\": \"johndoe@example.com\", \"Password\": \"securepassword\", \"ClientId\": \"client123\"}"
+
+curl -X POST "https://localhost:5014/authorization/user/addfriend" \
+-H "Content-Type: application/json" \
+-d "{\"RequesterEmail\": \"asd\", \"FriendEmail\": \"qwe\", \"RequestedAt\": \"2024-09-10T12:00:00Z\"}"
+
+curl -X POST "https://localhost:5014/authorization/user/addfriend" \
+-H "Content-Type: application/json" \
+-d "{\"RequesterEmail\": \"asd\", \"FriendEmail\": \"qwe\", \"RequestedAt\": \"2024-09-10T12:00:00Z\"}"

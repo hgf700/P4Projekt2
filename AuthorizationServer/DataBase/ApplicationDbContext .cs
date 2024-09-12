@@ -136,16 +136,16 @@ public class ApplicationDbContext : DbContext
         {
             entity.HasKey(f => f.Id);
 
-            // Relacja z UserLoginData (wysyłający zaproszenie)
+            // Relationship to UserLoginData (Requester)
             entity.HasOne(f => f.Requester)
-                  .WithMany(u => u.SentFriendRequests) // Związane tylko z UserLoginData
+                  .WithMany(u => u.SentFriendRequests)
                   .HasForeignKey(f => f.RequesterEmail)
                   .HasPrincipalKey(u => u.Email)
                   .OnDelete(DeleteBehavior.Restrict);
 
-            // Relacja z UserLoginData (otrzymujący zaproszenie)
+            // Relationship to UserLoginData (Friend)
             entity.HasOne(f => f.Friend)
-                  .WithMany(u => u.ReceivedFriendRequests) // Związane tylko z UserLoginData
+                  .WithMany(u => u.ReceivedFriendRequests)
                   .HasForeignKey(f => f.FriendEmail)
                   .HasPrincipalKey(u => u.Email)
                   .OnDelete(DeleteBehavior.Restrict);

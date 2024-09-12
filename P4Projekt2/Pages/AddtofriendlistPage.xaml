@@ -31,7 +31,7 @@
                     TextColor="#929292"
                     VerticalOptions="Center" />
             <StackLayout Margin="0,50,0,0" Spacing="40">
-                <StackLayout Spacing="0">
+                <!--<StackLayout Spacing="0">
                     <Label
                             FontSize="14"
                             HorizontalOptions="Start"
@@ -55,7 +55,7 @@
                             IsPassword="True"
                             Placeholder="Enter Lastname of your firend"
                             Text="{Binding Lastname}" />
-                </StackLayout>
+                </StackLayout>-->
                 <StackLayout Margin="0" Spacing="0">
                     <Label
                             FontSize="14"
@@ -75,16 +75,11 @@
             <Button
                     Padding="16"
                     Background="{DynamicResource Primary}"
-                    Command="{Binding LoginCommand}"
+                    Command="{Binding AddFriendCommand}"
                     CornerRadius="4"
-                    Text="SIGN IN"
+                    Text="Add firend"
                     TextColor="{DynamicResource White}" />
 
-
-            <StackLayout Margin="0,20" Spacing="20">
-
-
-            </StackLayout>
 
         </VerticalStackLayout>
     </ScrollView>

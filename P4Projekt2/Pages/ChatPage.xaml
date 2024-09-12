@@ -29,26 +29,24 @@
         </StackLayout>
 
         <StackLayout
-                              Grid.Column="0"
+                Grid.Column="0"
                 Grid.Row="1">
-            <ListView 
-                ItemsSource="{Binding Contacts}" 
-                SelectedItem="{Binding SelectedContact}">
-
-
+            
+            
+            
+            <ListView ItemsSource="{Binding Contacts}" 
+                  SelectedItem="{Binding SelectedContact}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="10">
-                                <Label 
-                                    Text="{Binding Name}"
-                                    FontSize="18"
-                                    VerticalOptions="Center" />
+                                <Label Text="{Binding Name}" FontSize="18" VerticalOptions="Center" />
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button Text="Load Friends" Command="{Binding LoadFriendsCommand}" />
         </StackLayout>
 
 
@@ -57,7 +55,7 @@
             Grid.Row="2">
             <Button
                 Text="Add User To Friend List"
-                Command="{Binding LogoutCommand}"
+                Command="{Binding AddFriendCommand}"
                 VerticalOptions="End"
                 HorizontalOptions="Center"
                 Margin="10" />

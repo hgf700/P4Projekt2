@@ -6,11 +6,15 @@ namespace P4Projekt2.Pages
 {
     public partial class ChatPage : ContentPage
     {
-        private HttpClient _httpClient;
+        //private HttpClient _httpClient;
+        private ChatPageViewModel _viewModel;
         public ChatPage()
         {
             InitializeComponent();
-            BindingContext = new ChatPageViewModel(_httpClient);
+            var httpClient = new HttpClient();
+            _viewModel = new ChatPageViewModel(httpClient);
+
+            BindingContext = _viewModel;
 
 
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatSuccess", async (sender, message) =>

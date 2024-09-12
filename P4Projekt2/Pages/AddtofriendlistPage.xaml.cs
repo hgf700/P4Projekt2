@@ -1,15 +1,34 @@
 ﻿using P4Projekt2.MVVM;
+using System.Net.Http;
 
 namespace P4Projekt2.Pages
 {
     public partial class AddtofriendlistPage : ContentPage
     {
-        public AddtofriendlistPage()
+        private readonly HttpClient _httpClient;
+
+        public AddtofriendlistPage(HttpClient httpClient)
         {
             InitializeComponent();
-            BindingContext = new AddtofriendlistPageViewModel();
-            // Additional initialization code
+            _httpClient = httpClient;
+
+
+            MessagingCenter.Subscribe<AddtofriendlistPageViewModel, string>(this, "AddfirendSuccess", async (sender, message) =>
+            {
+                await DisplayAlert("Success", message, "OK");
+            });
+
+            MessagingCenter.Subscribe<AddtofriendlistPageViewModel, string>(this, "AddfirendError", async (sender, message) =>
+            {
+                await DisplayAlert("Error", message, "OK");
+            });
+
         }
-        // Additional methods and properties
+        protected override void OnDisappearing()
+        {
+            base.OnDisappearing();
+            MessagingCenter.Unsubscribe<AddtofriendlistPageViewModel, string>(this, "AddfirendSuccess");
+            MessagingCenter.Unsubscribe<AddtofriendlistPageViewModel, string>(this, "AddfirendError");
+        }
     }
 }

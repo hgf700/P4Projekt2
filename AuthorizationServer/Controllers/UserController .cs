@@ -16,6 +16,7 @@ using Microsoft.AspNetCore.Identity;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using Microsoft.AspNetCore.Identity.Data;
 
 
 namespace IdentityService.Controllers
@@ -97,6 +98,14 @@ namespace IdentityService.Controllers
             }
         }
 
+        public string HashPassword(string password)
+        {
+            using (var sha256 = SHA256.Create())
+            {
+                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
+            }
+        }
 
         private string GenerateJwtToken(UserRegisterData user)
         {
@@ -239,37 +248,56 @@ namespace IdentityService.Controllers
 
         }
 
-        //[HttpPost("addfriend")]
-        //public async Task<IActionResult> AddFriend([FromBody] AddToFriendList friendRequest)
+        [HttpPost("addfriend")]
+        public async Task<IActionResult> AddFriend([FromBody] AddToFriendList request)
+        {
+            var requester = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == request.RequesterEmail);
+
+            var friend = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == request.FriendEmail);
+
+            if (requester == null || friend == null)
+            {
+                return BadRequest("User not found");
+            }
+
+            var friendRequest = new AddToFriendList
+            {
+                RequesterEmail = requester.Email,  // Changed to Email
+                FriendEmail = friend.Email,        // Changed to Email
+                RequestedAt = request.RequestedAt
+            };
+
+            _context.AddToFriendList.Add(friendRequest);
+            await _context.SaveChangesAsync();
+
+            return Ok("Friend added successfully");
+        }
+
+
+        //[HttpGet("friends/{email}")]
+        //public async Task<IActionResult> GetFriends(string email)
         //{
         //    try
         //    {
-        //        // Check if a friend request already exists
-        //        //var existingRequest = await _context.FriendList
-        //        //    .FirstOrDefaultAsync(f => f.RequesterEmail == friendRequest.RequesterEmail && f.FriendEmail == friendRequest.FriendEmail);
+        //        // Retrieve the list of friends for the given email
+        //        var friendRequests = await _context.AddToFriendList
+        //            .Where(fr => fr.RequesterEmail == email || fr.FriendEmail == email)
+        //            .ToListAsync();
 
-        //        //if (existingRequest != null)
-        //        //{
-        //        //    return Conflict("Friend request already exists.");
-        //        //}
-
-        //        var addfriend = new AddToFriendList
+        //        // Map to a simpler DTO if necessary
+        //        var friends = friendRequests.Select(fr => new
         //        {
+        //            Id = fr.Id,
+        //            RequesterEmail = fr.RequesterEmail,
+        //            FriendEmail = fr.FriendEmail,
+        //            RequestedAt = fr.RequestedAt
+        //        }).ToList();
 
-        //        };
-
-        //        // Set default values
-        //        friendRequest.RequestedAt = DateTime.UtcNow;
-        //        friendRequest.IsAccepted = false; // Initially, the request is not accepted
-
-        //        await _context.FriendList.AddAsync(friendRequest);
-        //        await _context.SaveChangesAsync();
-
-        //        return Ok("Friend request sent.");
+        //        return Ok(friends);
         //    }
         //    catch (Exception ex)
         //    {
-        //        _logger.LogError(ex, $"Error while adding friend: {ex.Message}");
+        //        _logger.LogError(ex, $"Error while retrieving friends: {ex.Message}");
         //        return StatusCode(500, "Internal server error.");
         //    }
         //}
@@ -279,14 +307,5 @@ namespace IdentityService.Controllers
 
 
 
-
-        public string HashPassword(string password)
-        {
-            using (var sha256 = SHA256.Create())
-            {
-                var hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
-                return BitConverter.ToString(hashedBytes).Replace("-", "").ToLower();
-            }
-        }
     }
 }

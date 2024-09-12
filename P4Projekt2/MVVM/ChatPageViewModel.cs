@@ -17,7 +17,6 @@ namespace P4Projekt2.MVVM
         private readonly HttpClient _httpClient;
         public ObservableCollection<Contact> Contacts { get; set; }
 
-        // Właściwość do wprowadzenia nowej wiadomości
         private string _newMessage;
         public string NewMessage
         {
@@ -41,88 +40,61 @@ namespace P4Projekt2.MVVM
                 // Możesz dodać logikę aktualizującą rozmowę po zmianie kontaktu
             }
         }
+        async private void Logout()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new SignInPage());
+        }
+        async private void AddFriend()
+        {
+            await Application.Current.MainPage.Navigation.PushModalAsync(new AddtofriendlistPage(_httpClient));
+        }
 
         // Komendy
         public ICommand AddFriendCommand { get; }
         public ICommand SendMessageCommand { get; }
         public ICommand LogoutCommand { get; }
+        public ICommand LoadFriendsCommand { get; }
 
         private string _userEmail;
+
         public ChatPageViewModel(HttpClient httpClient)
         {
+            _httpClient = httpClient; // Use the passed-in httpClient
 
-            Contacts = new ObservableCollection<Contact>
-            {
-                new Contact { Firstname = "Jane", Lastname="Smith" , Email = "jane.smith@example.com" },
-                new Contact { Firstname = "John", Lastname="Doe", Email = "john.doe@example.com" },
-            };
-
-            // Sprawdź, czy Contacts jest poprawnie zainicjalizowane
-            OnPropertyChanged(nameof(Contacts));
-
+            Contacts = new ObservableCollection<Contact>();
+            LoadFriendsCommand = new Command(async () => await LoadFriends());
             AddFriendCommand = new Command(AddFriend);
-            SendMessageCommand = new Command(SendMessage);
-            LogoutCommand = new Command(Logout);
-
-
             _userEmail = Preferences.Get("UserEmail", string.Empty);
-            _httpClient = httpClient;
+
+            // Load friends initially
+            LoadFriendsCommand.Execute(null);
         }
 
-        async private void Logout()
+
+        private async Task LoadFriends()
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new SignInPage());
-        }
-
-        async private void AddFriend()
-        {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new AddtofriendlistPage());
-        }
-
-        private async void SendMessage()
-        {
-
-            var message = new UserChatData
-            {
-                Message = NewMessage,
-                SenderEmail = _userEmail,
-                Timestamp = DateTime.UtcNow,
-                ReceiverEmail = "avc"
-                //SelectedContact.Email
-            };
-
-
-            if (string.IsNullOrEmpty(message.Message))
-            {
-                MessagingCenter.Send(this, "message error", "insert data to message box");
+            if (string.IsNullOrEmpty(_userEmail))
                 return;
-            }
-            if (string.IsNullOrEmpty(message.ReceiverEmail))
-            {
-                MessagingCenter.Send(this, "message error", "choose user to send data");
-                return;
-            }
 
-            var url = "https://localhost:5014/authorization/user/message";
+            var urlload = $"https://localhost:5014/authorization/user/friends/{_userEmail}";
 
             try
             {
-                var httpContent = new StringContent(JsonConvert.SerializeObject(message), Encoding.UTF8, "application/json");
-                var response = await _httpClient.PostAsync(url, httpContent);
+                var response = await _httpClient.GetAsync(urlload);
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
-                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
-
-                    MessagingCenter.Send(this, "send", "Data sended");
-
+                    var friends = JsonConvert.DeserializeObject<List<Contact>>(responseContent);
+                    Contacts.Clear();
+                    foreach (var friend in friends)
+                    {
+                        Contacts.Add(friend);
+                    }
                 }
-
-
             }
             catch (Exception ex)
             {
-                MessagingCenter.Send(this, "sendmessageerror", $"{ex.Message}");
+                MessagingCenter.Send(this, "loadfriendserror", $"{ex.Message}");
             }
         }
     }
@@ -133,4 +105,5 @@ namespace P4Projekt2.MVVM
         public string Email { get; set; }
         public string Name => $"{Firstname} {Lastname}";
     }
+
 }
