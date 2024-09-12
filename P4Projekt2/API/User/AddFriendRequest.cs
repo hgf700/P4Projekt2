@@ -8,8 +8,8 @@ namespace P4Projekt2.API.User
 {
     public class AddFriendRequest
     {
-        public string RequesterIdLogin { get; set; }
-        public string FriendIdLogin { get; set; }
+        public string RequesterEmail { get; set; }
+        public string FriendEmail { get; set; }
         public DateTime RequestedAt { get; set; }
     }
 

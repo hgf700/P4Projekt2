@@ -87,7 +87,8 @@ namespace AuthorizationServer.Migrations
                     IdLogin = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ResponseType = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    Email = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    Email1 = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
+                    Email2 = table.Column<string>(type: "character varying(255)", maxLength: 255, nullable: false),
                     Password = table.Column<string>(type: "character varying(500)", maxLength: 500, nullable: false),
                     ClientId = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     UserRegisterEmail = table.Column<string>(type: "character varying(255)", nullable: false)
@@ -95,7 +96,8 @@ namespace AuthorizationServer.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_UserLoginData", x => x.IdLogin);
-                    table.UniqueConstraint("AK_UserLoginData_Email", x => x.Email);
+                    table.UniqueConstraint("AK_UserLoginData_Email1", x => x.Email1);
+                    table.UniqueConstraint("AK_UserLoginData_Email2", x => x.Email2);
                     table.ForeignKey(
                         name: "FK_UserLoginData_UserRegisterData_UserRegisterEmail",
                         column: x => x.UserRegisterEmail,
@@ -121,13 +123,13 @@ namespace AuthorizationServer.Migrations
                         name: "FK_AddToFriendList_UserLoginData_FriendEmail",
                         column: x => x.FriendEmail,
                         principalTable: "UserLoginData",
-                        principalColumn: "Email",
+                        principalColumn: "Email2",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_AddToFriendList_UserLoginData_RequesterEmail",
                         column: x => x.RequesterEmail,
                         principalTable: "UserLoginData",
-                        principalColumn: "Email",
+                        principalColumn: "Email1",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -149,13 +151,13 @@ namespace AuthorizationServer.Migrations
                         name: "FK_ChatData_UserLoginData_ReceiverEmail",
                         column: x => x.ReceiverEmail,
                         principalTable: "UserLoginData",
-                        principalColumn: "Email",
+                        principalColumn: "Email2",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ChatData_UserLoginData_SenderEmail",
                         column: x => x.SenderEmail,
                         principalTable: "UserLoginData",
-                        principalColumn: "Email",
+                        principalColumn: "Email1",
                         onDelete: ReferentialAction.Restrict);
                 });
 

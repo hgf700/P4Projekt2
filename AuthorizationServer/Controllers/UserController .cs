@@ -190,7 +190,7 @@ namespace IdentityService.Controllers
                     await _context.SaveChangesAsync();
                 }
 
-                var existingUser = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
+                var existingUser = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email1 == loginauthRequest.Email);
 
                 if (existingUser != null)
                 {
@@ -206,7 +206,8 @@ namespace IdentityService.Controllers
                 var loginRequest = new UserLoginData
                 {
                     ResponseType = loginauthRequest.ResponseType,
-                    Email = loginauthRequest.Email,
+                    Email1 = loginauthRequest.Email,
+                    Email2 = loginauthRequest.Email,
                     Password = hashedPassword,
                     ClientId = loginauthRequest.ClientId,
                     UserRegisterEmail = user.Email
@@ -249,63 +250,37 @@ namespace IdentityService.Controllers
         }
 
         [HttpPost("addfriend")]
-        public async Task<IActionResult> AddFriend([FromBody] AddToFriendList request)
+        public async Task<IActionResult> AddFriend([FromBody] AddFriendRequest request)
         {
-            var requester = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == request.RequesterEmail);
-
-            var friend = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email == request.FriendEmail);
-
-            if (requester == null || friend == null)
+            try
             {
-                return BadRequest("User not found");
+                var requester = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email1 == request.RequesterEmail);
+
+                var friend = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email2 == request.FriendEmail);
+
+                if (requester == null || friend == null)
+                {
+                    return BadRequest("User not found");
+                }
+
+                var friendRequest = new AddToFriendList
+                {
+                    RequesterEmail = requester.Email1,  // Changed to Email
+                    FriendEmail = friend.Email2,        // Changed to Email
+                    RequestedAt = request.RequestedAt
+                };
+
+                _context.AddToFriendList.Add(friendRequest);
+                await _context.SaveChangesAsync();
+
+                return Ok("Friend added successfully");
             }
-
-            var friendRequest = new AddToFriendList
+            catch(Exception ex)
             {
-                RequesterEmail = requester.Email,  // Changed to Email
-                FriendEmail = friend.Email,        // Changed to Email
-                RequestedAt = request.RequestedAt
-            };
-
-            _context.AddToFriendList.Add(friendRequest);
-            await _context.SaveChangesAsync();
-
-            return Ok("Friend added successfully");
+                _logger.LogError(ex, $"Error while adding friend: {ex.Message}");
+                return StatusCode(500, $"{ex.Message}");
+            }
+            
         }
-
-
-        //[HttpGet("friends/{email}")]
-        //public async Task<IActionResult> GetFriends(string email)
-        //{
-        //    try
-        //    {
-        //        // Retrieve the list of friends for the given email
-        //        var friendRequests = await _context.AddToFriendList
-        //            .Where(fr => fr.RequesterEmail == email || fr.FriendEmail == email)
-        //            .ToListAsync();
-
-        //        // Map to a simpler DTO if necessary
-        //        var friends = friendRequests.Select(fr => new
-        //        {
-        //            Id = fr.Id,
-        //            RequesterEmail = fr.RequesterEmail,
-        //            FriendEmail = fr.FriendEmail,
-        //            RequestedAt = fr.RequestedAt
-        //        }).ToList();
-
-        //        return Ok(friends);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, $"Error while retrieving friends: {ex.Message}");
-        //        return StatusCode(500, "Internal server error.");
-        //    }
-        //}
-
-
-
-
-
-
     }
 }

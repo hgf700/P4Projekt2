@@ -15,7 +15,6 @@ namespace P4Projekt2.MVVM
 {
     public partial class SignInPageViewModel : BaseViewModel
     {
-        private bool _navigated = false;
         private readonly HttpClient _httpClient;
         private string _Email;
         public string Email

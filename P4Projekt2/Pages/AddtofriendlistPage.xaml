@@ -22,14 +22,6 @@
                         HorizontalOptions="EndAndExpand"
                         Text="Back to Chat Page" />
             </StackLayout>
-
-            <Label
-                    FontAttributes="Bold"
-                    FontSize="14"
-                    HorizontalOptions="Start"
-                    Text="Sign in to Continue"
-                    TextColor="#929292"
-                    VerticalOptions="Center" />
             <StackLayout Margin="0,50,0,0" Spacing="40">
                 <!--<StackLayout Spacing="0">
                     <Label
@@ -65,7 +57,6 @@
                             VerticalOptions="Center" />
                     <Entry
                             FontSize="18"
-                            IsPassword="True"
                             Placeholder="Enter Email of your firend"
                             Text="{Binding Email}" />
                 </StackLayout>
@@ -77,7 +68,7 @@
                     Background="{DynamicResource Primary}"
                     Command="{Binding AddFriendCommand}"
                     CornerRadius="4"
-                    Text="Add firend"
+                    Text="Add friend"
                     TextColor="{DynamicResource White}" />
 
 

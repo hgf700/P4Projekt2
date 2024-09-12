@@ -26,13 +26,6 @@ namespace P4Projekt2.MVVM
             set => SetProperty(ref _Email, value);
         }
 
-        private Contact _selectedContact;
-        public Contact SelectedContact
-        {
-            get => _selectedContact;
-            set => SetProperty(ref _selectedContact, value);
-        }
-
         public ICommand BackChatCommand { get; }
         public ICommand AddFriendCommand { get; }
         private string _userEmail;
@@ -46,51 +39,55 @@ namespace P4Projekt2.MVVM
             _httpClient = httpClient;
         }
 
-        private async void BackChat(object obj)
+        private void BackChat(object obj)
         {
-            await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
+            App.Current.MainPage = new ChatPage();
         }
 
         private async void AddFriend()
         {
-            // Pobierz zalogowanego użytkownika (RequesterEmail)
-            var requesterEmail = Preferences.Get("UserEmail", string.Empty); // Now getting the email correctly
+            var requesterEmail = Preferences.Get("UserEmail", string.Empty);
 
-            if (_selectedContact == null)
+            var friendRequest = new AddFriendRequest
             {
-                await Application.Current.MainPage.DisplayAlert("Error", "Please select a contact to add as a friend.", "OK");
-                return;
-            }
-
-            // Upewnij się, że wybrany kontakt ma Email
-            if (string.IsNullOrEmpty(_selectedContact.Email))
-            {
-                await Application.Current.MainPage.DisplayAlert("Error", "Selected contact has no email.", "OK");
-                return;
-            }
-
-            var friendRequest = new AddFriendRequest()
-            {
-                RequesterIdLogin = requesterEmail,        // Email zalogowanego użytkownika
-                FriendIdLogin = _selectedContact.Email,   // Email wybranego kontaktu
-                RequestedAt = DateTime.UtcNow,
+                RequesterEmail = requesterEmail,
+                FriendEmail = _Email,
+                RequestedAt = DateTime.UtcNow
             };
 
-            // Wyślij żądanie HTTP do API
+            // Validate input
+            if (string.IsNullOrEmpty(friendRequest.RequesterEmail))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Requester email is not set.", "OK");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(friendRequest.FriendEmail))
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", "Friend email is required.", "OK");
+                return;
+            }
+
             var url = "https://localhost:5014/authorization/user/addfriend";
-            var jsonContent = new StringContent(JsonConvert.SerializeObject(friendRequest), Encoding.UTF8, "application/json");
 
             try
             {
-                var response = await _httpClient.PostAsync(url, jsonContent);
+                var httpContent = new StringContent(JsonConvert.SerializeObject(friendRequest), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(url, httpContent);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Success", "Friend request sent successfully.", "OK");
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+                    MessagingCenter.Send(this, "Addfriendsuccess", $"Addfriendsuccess ");
+
+                    App.Current.MainPage = new ChatPage();
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Error", "Failed to send friend request.", "OK");
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "SignUpError", $"Error during sign-up: {response.ReasonPhrase} - {errorResponse}");
                 }
             }
             catch (Exception ex)
@@ -98,5 +95,6 @@ namespace P4Projekt2.MVVM
                 await Application.Current.MainPage.DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
         }
+
     }
 }

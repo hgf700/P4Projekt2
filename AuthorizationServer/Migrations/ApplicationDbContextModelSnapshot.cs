@@ -154,7 +154,12 @@ namespace AuthorizationServer.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Email1")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("character varying(255)");
+
+                    b.Property<string>("Email2")
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("character varying(255)");
@@ -255,14 +260,14 @@ namespace AuthorizationServer.Migrations
                     b.HasOne("UserLoginData", "Friend")
                         .WithMany("ReceivedFriendRequests")
                         .HasForeignKey("FriendEmail")
-                        .HasPrincipalKey("Email")
+                        .HasPrincipalKey("Email2")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("UserLoginData", "Requester")
                         .WithMany("SentFriendRequests")
                         .HasForeignKey("RequesterEmail")
-                        .HasPrincipalKey("Email")
+                        .HasPrincipalKey("Email1")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -276,14 +281,14 @@ namespace AuthorizationServer.Migrations
                     b.HasOne("UserLoginData", "Receiver")
                         .WithMany("ReceivedMessages")
                         .HasForeignKey("ReceiverEmail")
-                        .HasPrincipalKey("Email")
+                        .HasPrincipalKey("Email2")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("UserLoginData", "Sender")
                         .WithMany("SentMessages")
                         .HasForeignKey("SenderEmail")
-                        .HasPrincipalKey("Email")
+                        .HasPrincipalKey("Email1")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

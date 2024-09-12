@@ -80,7 +80,10 @@ public class ApplicationDbContext : DbContext
             entity.HasKey(e => e.IdLogin);
 
             entity.Property(e => e.ResponseType).HasMaxLength(100);
-            entity.Property(e => e.Email)
+            entity.Property(e => e.Email1)
+                  .IsRequired()
+                  .HasMaxLength(255); // Usunięcie unikalności
+            entity.Property(e => e.Email2)
                   .IsRequired()
                   .HasMaxLength(255); // Usunięcie unikalności
 
@@ -121,14 +124,14 @@ public class ApplicationDbContext : DbContext
             entity.HasOne(e => e.Sender)
                   .WithMany(u => u.SentMessages)
                   .HasForeignKey(e => e.SenderEmail)
-                  .HasPrincipalKey(u => u.Email)
+                  .HasPrincipalKey(u => u.Email1)
                   .OnDelete(DeleteBehavior.Restrict);
 
             // Relacja do UserLoginData dla Receiver, na podstawie Email
             entity.HasOne(e => e.Receiver)
                   .WithMany(u => u.ReceivedMessages)
                   .HasForeignKey(e => e.ReceiverEmail)
-                  .HasPrincipalKey(u => u.Email)
+                  .HasPrincipalKey(u => u.Email2)
                   .OnDelete(DeleteBehavior.Restrict);
         });
 
@@ -140,14 +143,14 @@ public class ApplicationDbContext : DbContext
             entity.HasOne(f => f.Requester)
                   .WithMany(u => u.SentFriendRequests)
                   .HasForeignKey(f => f.RequesterEmail)
-                  .HasPrincipalKey(u => u.Email)
+                  .HasPrincipalKey(u => u.Email1)
                   .OnDelete(DeleteBehavior.Restrict);
 
             // Relationship to UserLoginData (Friend)
             entity.HasOne(f => f.Friend)
                   .WithMany(u => u.ReceivedFriendRequests)
                   .HasForeignKey(f => f.FriendEmail)
-                  .HasPrincipalKey(u => u.Email)
+                  .HasPrincipalKey(u => u.Email2)
                   .OnDelete(DeleteBehavior.Restrict);
         });
 

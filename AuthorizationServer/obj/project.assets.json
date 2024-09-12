@@ -11599,11 +11599,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER098\\Documents\\GitHub\\AuthorizationServer\\AuthorizationServer.csproj",
+      "projectUniqueName": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AuthorizationServer\\AuthorizationServer.csproj",
       "projectName": "AuthorizationServer",
-      "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\AuthorizationServer\\AuthorizationServer.csproj",
+      "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AuthorizationServer\\AuthorizationServer.csproj",
       "packagesPath": "C:\\Users\\USER098\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER098\\Documents\\GitHub\\AuthorizationServer\\obj\\",
+      "outputPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AuthorizationServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -11625,8 +11625,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj": {
-              "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj"
+            "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2\\P4Projekt2.csproj": {
+              "projectPath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2\\P4Projekt2.csproj"
             }
           }
         }

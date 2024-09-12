@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gCmZugUxCMT52wb9PzLC+JK4f+Ws/NkXQtCpdsgcN1l2Mu+8LYk3m1r6YLTyoRyRhCGskjQd/rR6WyVrVVGDWA==",
+  "dgSpecHash": "pOEODsjiELYQZm+9CPAEQ8jxmGg0VztDTUg8Voa7FXAGUfQxYG+NN50V6kaQes58MESlai0Rk9M3QKSMDwIW2w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2.csproj",
+  "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2\\P4Projekt2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER098\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
