@@ -23,31 +23,6 @@
                         Text="Back to Chat Page" />
             </StackLayout>
             <StackLayout Margin="0,50,0,0" Spacing="40">
-                <!--<StackLayout Spacing="0">
-                    <Label
-                            FontSize="14"
-                            HorizontalOptions="Start"
-                            Text="Email"
-                            TextColor="#929292"
-                            VerticalOptions="Center" />
-                    <Entry
-                            FontSize="18"
-                            Placeholder="Enter Firstname of your firend"
-                            Text="{Binding Firstname}" />
-                </StackLayout>
-                <StackLayout Margin="0" Spacing="0">
-                    <Label
-                            FontSize="14"
-                            HorizontalOptions="Start"
-                            Text="Password"
-                            TextColor="#929292"
-                            VerticalOptions="Center" />
-                    <Entry
-                            FontSize="18"
-                            IsPassword="True"
-                            Placeholder="Enter Lastname of your firend"
-                            Text="{Binding Lastname}" />
-                </StackLayout>-->
                 <StackLayout Margin="0" Spacing="0">
                     <Label
                             FontSize="14"

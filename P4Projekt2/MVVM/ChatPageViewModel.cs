@@ -17,6 +17,8 @@ namespace P4Projekt2.MVVM
         private readonly HttpClient _httpClient;
         public ObservableCollection<Contact> Contacts { get; set; }
 
+        private string _userEmail;
+
         private string _newMessage;
         public string NewMessage
         {
@@ -55,7 +57,6 @@ namespace P4Projekt2.MVVM
         public ICommand LogoutCommand { get; }
         public ICommand LoadFriendsCommand { get; }
 
-        private string _userEmail;
 
         public ChatPageViewModel(HttpClient httpClient)
         {
@@ -78,24 +79,24 @@ namespace P4Projekt2.MVVM
 
             var urlload = $"https://localhost:5014/authorization/user/friends/{_userEmail}";
 
-            try
-            {
-                var response = await _httpClient.GetAsync(urlload);
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    var friends = JsonConvert.DeserializeObject<List<Contact>>(responseContent);
-                    Contacts.Clear();
-                    foreach (var friend in friends)
-                    {
-                        Contacts.Add(friend);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessagingCenter.Send(this, "loadfriendserror", $"{ex.Message}");
-            }
+            //try
+            //{
+            //    var response = await _httpClient.GetAsync(urlload);
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var responseContent = await response.Content.ReadAsStringAsync();
+            //        var friends = JsonConvert.DeserializeObject<List<Contact>>(responseContent);
+            //        Contacts.Clear();
+            //        foreach (var friend in friends)
+            //        {
+            //            Contacts.Add(friend);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessagingCenter.Send(this, "loadfriendserror", $"{ex.Message}");
+            //}
         }
     }
     public class Contact

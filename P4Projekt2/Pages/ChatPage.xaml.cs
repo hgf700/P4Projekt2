@@ -27,6 +27,7 @@ namespace P4Projekt2.Pages
                 await DisplayAlert("Error", message, "OK");
             });
 
+
         }
         protected override void OnDisappearing()
         {

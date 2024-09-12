@@ -273,7 +273,12 @@ namespace IdentityService.Controllers
                 _context.AddToFriendList.Add(friendRequest);
                 await _context.SaveChangesAsync();
 
-                return Ok("Friend added successfully");
+                return new ContentResult
+                {
+                    Content = JsonConvert.SerializeObject(new { message = "User added successfully" }),
+                    ContentType = "application/json",
+                    StatusCode = 200 // OK
+                };
             }
             catch(Exception ex)
             {

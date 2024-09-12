@@ -1,23 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Refit;
-using P4Projekt2.API.Authorization;
-using P4Projekt2.API.User;
-using System.Diagnostics;
-using Microsoft.Win32;
 using System.Windows.Input;
-using P4Projekt2.Pages;
 using Newtonsoft.Json;
+using Microsoft.Maui.Controls;
 using Microsoft.Maui.Storage;
+using P4Projekt2.API.User;
+using P4Projekt2.Pages;
 
 namespace P4Projekt2.MVVM
 {
     public partial class AddtofriendlistPageViewModel : BaseViewModel
     {
         private readonly HttpClient _httpClient;
+        private string _userEmail;
 
         private string _Email;
         public string Email
@@ -28,29 +25,26 @@ namespace P4Projekt2.MVVM
 
         public ICommand BackChatCommand { get; }
         public ICommand AddFriendCommand { get; }
-        private string _userEmail;
 
         public AddtofriendlistPageViewModel(HttpClient httpClient)
         {
-            BackChatCommand = new Command(BackChat);
+            BackChatCommand = new Command(SignUp);
             AddFriendCommand = new Command(AddFriend);
-            _userEmail = Preferences.Get("UserEmail", string.Empty); // Corrected here
+            _userEmail = Preferences.Get("UserEmail", string.Empty);
 
             _httpClient = httpClient;
         }
 
-        private void BackChat(object obj)
+        private async void SignUp(object obj)
         {
-            App.Current.MainPage = new ChatPage();
+            await Application.Current.MainPage.Navigation.PushModalAsync(new ChatPage());
         }
 
         private async void AddFriend()
         {
-            var requesterEmail = Preferences.Get("UserEmail", string.Empty);
-
             var friendRequest = new AddFriendRequest
             {
-                RequesterEmail = requesterEmail,
+                RequesterEmail = _userEmail,
                 FriendEmail = _Email,
                 RequestedAt = DateTime.UtcNow
             };
@@ -75,26 +69,36 @@ namespace P4Projekt2.MVVM
                 var httpContent = new StringContent(JsonConvert.SerializeObject(friendRequest), Encoding.UTF8, "application/json");
                 var response = await _httpClient.PostAsync(url, httpContent);
 
+                var responseContent = await response.Content.ReadAsStringAsync();
                 if (response.IsSuccessStatusCode)
                 {
-                    var responseContent = await response.Content.ReadAsStringAsync();
-                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
-
-                    MessagingCenter.Send(this, "Addfriendsuccess", $"Addfriendsuccess ");
+                    // Check if the response content is valid JSON
+                    if (!string.IsNullOrWhiteSpace(responseContent))
+                    {
+                        // Optionally parse the response if needed
+                        var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
+                        MessagingCenter.Send(this, "Addfriendsuccess", $"Friend request sent successfully.");
+                    }
+                    else
+                    {
+                        MessagingCenter.Send(this, "SignUpError", "Empty response from server.");
+                    }
 
                     App.Current.MainPage = new ChatPage();
                 }
                 else
                 {
-                    var errorResponse = await response.Content.ReadAsStringAsync();
-                    MessagingCenter.Send(this, "SignUpError", $"Error during sign-up: {response.ReasonPhrase} - {errorResponse}");
+                    MessagingCenter.Send(this, "SignUpError", $"Error during friend request: {response.ReasonPhrase} - {responseContent}");
                 }
+            }
+            catch (JsonException ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", $"Error parsing response: {ex.Message}", "OK");
             }
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", $"An error occurred: {ex.Message}", "OK");
             }
         }
-
     }
 }

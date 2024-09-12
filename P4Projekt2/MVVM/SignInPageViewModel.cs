@@ -10,6 +10,7 @@ using Microsoft.Win32;
 using System.Windows.Input;
 using P4Projekt2.Pages;
 using Newtonsoft.Json;
+using Microsoft.Maui.ApplicationModel.Communication;
 
 namespace P4Projekt2.MVVM
 {
@@ -76,8 +77,9 @@ namespace P4Projekt2.MVVM
 
                     MessagingCenter.Send(this, "SignInSuccess", $"User has been successfully logged in: \n Redirecting to ChatPage ");
 
+                    Preferences.Set("UserEmail", _Email);
 
-                            App.Current.MainPage = new ChatPage();
+                    App.Current.MainPage = new ChatPage();
                 }
                 else
                 {
