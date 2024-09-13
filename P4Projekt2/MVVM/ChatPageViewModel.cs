@@ -124,6 +124,8 @@ namespace P4Projekt2.MVVM
                     var responseContent = await response.Content.ReadAsStringAsync();
                     var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
 
+
+                    NewMessage = string.Empty;
                 }
                 else
                 {

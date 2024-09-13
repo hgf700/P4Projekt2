@@ -96,13 +96,28 @@
                 VerticalOptions="End"
                 HorizontalOptions="Center"
                 Margin="10" />
+
+
+
             <ListView ItemsSource="{Binding Messages}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Message}" Detail="{Binding SenderEmail}" />
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10">
+                                <Label Text="{Binding SenderEmail}" FontSize="15" TextColor="White" />
+                                <Label Text="{Binding Message}" FontSize="20" TextColor="White" />
+                                <Label Text="{Binding Timestamp, StringFormat='Sent: {0:HH:mm}'}" FontSize="12" TextColor="White" />
+                            </StackLayout>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+
+
         </StackLayout>
+        
+        
+        
     </Grid>
 </ContentPage>
