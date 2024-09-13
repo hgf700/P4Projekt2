@@ -27,12 +27,43 @@ namespace P4Projekt2.Pages
             {
                 await DisplayAlert("Error", message, "OK");
             });
+
+            // Subscribe to success messages
+            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "SendMesageSuccess", async (sender, message) =>
+            {
+                await DisplayAlert("Success", message, "OK");
+            });
+
+            // Subscribe to error messages
+            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "SendMesageError", async (sender, message) =>
+            {
+                await DisplayAlert("Error", message, "OK");
+            });
+
+            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesSuccess", async (sender, message) =>
+            {
+                await DisplayAlert("Success", message, "OK");
+            });
+
+            // Subscribe to error messages
+            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesError", async (sender, message) =>
+            {
+                await DisplayAlert("Error", message, "OK");
+            });
+
+
+            // Subscribe to error messages
+            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesexceptionError", async (sender, message) =>
+            {
+                await DisplayAlert("Error", message, "OK");
+            });
+
+            
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            // Unsubscribe to avoid memory leaks
             MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatSuccess");
             MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatError");
         }

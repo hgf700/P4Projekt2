@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using Microsoft.AspNetCore.Identity.Data;
 using System.Xml.Linq;
+using Microsoft.AspNet.SignalR.Client.Http;
 
 
 namespace IdentityService.Controllers
@@ -172,30 +173,6 @@ namespace IdentityService.Controllers
             }
         }
 
-        [HttpPost("message")]
-        public async Task<IActionResult> SendMessage([FromBody] UserChatData userchatdata)
-        {
-            try
-            {
-                var chatdata = new ChatData
-                {
-                    Message = userchatdata.Message,
-                    SenderEmail = userchatdata.SenderEmail,
-                    ReceiverEmail = userchatdata.ReceiverEmail,
-                    Timestamp = userchatdata.Timestamp,
-                };
-                await _context.ChatData.AddAsync(chatdata);
-                await _context.SaveChangesAsync();
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error while messaging: {ex.Message}");
-                return StatusCode(500, $"{ex.Message}");
-            }
-
-        }
-
         [HttpPost("addfriend")]
         public async Task<IActionResult> AddFriend([FromBody] AddFriendRequest request)
         {
@@ -207,7 +184,7 @@ namespace IdentityService.Controllers
 
                 if (requester == null || friend == null)
                 {
-                    return BadRequest("User not found");
+                    return BadRequest("requester addfriend not found");
                 }
 
                 var friendRequestForRequestUser = new AddToFriendList
@@ -242,6 +219,78 @@ namespace IdentityService.Controllers
             }
 
         }
+
+        [HttpPost("message")]
+        public async Task<IActionResult> SendMessage([FromBody] UserChatData messageRequest)
+        {
+            try
+            {
+                var requester = await _context.AddToFriendList
+                                               .FirstOrDefaultAsync(u => u.RequesterEmail == messageRequest.SenderEmail);
+                if (requester == null)
+                {
+                    return BadRequest("Requester not found.");
+                }
+
+                var message = new ChatData
+                {
+                    Message = messageRequest.Message,
+                    Timestamp = messageRequest.Timestamp,
+                    SenderEmail = messageRequest.SenderEmail,
+                    ReceiverEmail = messageRequest.ReceiverEmail,
+                };
+
+                _context.ChatData.Add(message);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "User sent message successfully" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while sending message: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("getmessages/{email}/{contactEmail}")]
+        public async Task<IActionResult> GetMessages(string email, string contactEmail)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contactEmail))
+                {
+                    return BadRequest("Both email and contactEmail are required.");
+                }
+
+                // Retrieve sent and received messages
+                var messages = await _context.ChatData
+                                             .Where(m => (m.SenderEmail == email && m.ReceiverEmail == contactEmail) ||
+                                                         (m.SenderEmail == contactEmail && m.ReceiverEmail == email))
+                                             .OrderBy(m => m.Timestamp)
+                                             .ToListAsync();
+
+                if (messages == null || !messages.Any())
+                {
+                    return Ok(new List<object>()); // Return empty list if no messages are found
+                }
+
+                var messageDtos = messages.Select(m => new
+                {
+                    m.Message,
+                    m.SenderEmail,
+                    m.ReceiverEmail,
+                    m.Timestamp
+                }).ToList();
+
+                return Ok(messageDtos);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while retrieving messages: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
 
         [HttpGet("friends/{email}")]
         public async Task<IActionResult> GetFriends(string email)
@@ -286,15 +335,6 @@ namespace IdentityService.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
-
-
-
-
-
-
-
-
 
         public string HashPassword(string password)
         {

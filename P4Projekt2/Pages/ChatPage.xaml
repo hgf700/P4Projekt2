@@ -9,7 +9,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1000" />
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -81,21 +81,28 @@
                      Grid.Row="0">
             <Button
                     Text="logout"
-                    Command="{Binding SendMessageCommand}" />
+                    Command="{Binding LogoutCommand}" />
         </StackLayout>
 
 
 
         <StackLayout
-            Grid.Column="1"
-            Grid.Row="0"
-            Grid.RowSpan="1">
-            <Label
-                Text="chat area"/>
+                Grid.Column="1"
+                Grid.Row="1">
+            <Label Text="messages should be shown there"/>
+            <Button
+                Text="Load existing messages"
+                Command="{Binding LoadMessagesCommand}"
+                VerticalOptions="End"
+                HorizontalOptions="Center"
+                Margin="10" />
+            <ListView ItemsSource="{Binding Messages}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Message}" Detail="{Binding SenderEmail}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
-
-        
-
-
     </Grid>
 </ContentPage>

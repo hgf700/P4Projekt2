@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Text;
 using System;
 using System.Net.Http;
+using Microsoft.AspNet.SignalR.Client.Http;
 
 
 namespace P4Projekt2.MVVM
@@ -16,6 +17,7 @@ namespace P4Projekt2.MVVM
     {
         private readonly HttpClient _httpClient;
         public ObservableCollection<Contact> Contacts { get; set; }
+        public ObservableCollection<MessageData> Messages { get; set; }
 
         private string _userEmail;
 
@@ -58,6 +60,7 @@ namespace P4Projekt2.MVVM
         public ICommand SendMessageCommand { get; }
         public ICommand LogoutCommand { get; }
         public ICommand LoadFriendsCommand { get; }
+        public ICommand LoadMessagesCommand { get; }
 
 
         public ChatPageViewModel(HttpClient httpClient)
@@ -65,14 +68,77 @@ namespace P4Projekt2.MVVM
             _httpClient = httpClient; // Use the passed-in httpClient
 
             Contacts = new ObservableCollection<Contact>();
+
+            Messages = new ObservableCollection<MessageData>();
+
+
             LoadFriendsCommand = new Command(async () => await LoadFriends());
             AddFriendCommand = new Command(AddFriend);
             LogoutCommand = new Command(Logout);
+            SendMessageCommand = new Command(SendMesage);
             _userEmail = Preferences.Get("UserEmail", string.Empty);
+            LoadMessagesCommand = new Command(async () => await LoadMessages());
 
-
+            LoadMessagesCommand.Execute(null);
             LoadFriendsCommand.Execute(null);
         }
+        private async void SendMesage()
+        {
+            if (_selectedContact == null)
+            {
+                MessagingCenter.Send(this, "SendMesageError", "No contact selected.");
+                return;
+            }
+
+            var messageRequest = new UserChatData()
+            {
+                Message = _newMessage,
+                SenderEmail = _userEmail,
+                ReceiverEmail = _selectedContact.Email,
+                Timestamp = DateTime.UtcNow,
+            };
+
+            if (string.IsNullOrEmpty(messageRequest.Message))
+            {
+                MessagingCenter.Send(this, "SendMesageError", "Message box is empty");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(messageRequest.SenderEmail) || string.IsNullOrEmpty(messageRequest.ReceiverEmail))
+            {
+                MessagingCenter.Send(this, "SendMesageError", "Sender email or receiver email is null");
+                return;
+            }
+
+            var url = "https://localhost:5014/authorization/user/message";
+
+            try
+            {
+                var httpContent = new StringContent(JsonConvert.SerializeObject(messageRequest), Encoding.UTF8, "application/json");
+                var response = await _httpClient.PostAsync(url, httpContent);
+
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessagingCenter.Send(this, "SendMesageSuccess", "Message sent successfully.");
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var responseData = JsonConvert.DeserializeObject<dynamic>(responseContent);
+
+                }
+                else
+                {
+
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "SendMesageError", $"Error during sending message: {response.ReasonPhrase} - {errorResponse}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessagingCenter.Send(this, "SendMesageError", $"Exception occurred: {ex.Message}");
+            }
+        }
+
+
 
 
         private async Task LoadFriends()
@@ -120,7 +186,52 @@ namespace P4Projekt2.MVVM
 
 
 
+        private async Task LoadMessages()
+        {
+            if (_selectedContact == null || string.IsNullOrEmpty(_userEmail))
+                return;
+
+            var url = $"https://localhost:5014/authorization/user/getmessages/{_userEmail}/{_selectedContact.Email}";
+
+            try
+            {
+                var response = await _httpClient.GetAsync(url);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var messages = JsonConvert.DeserializeObject<List<MessageData>>(responseContent);
+
+                    if (messages != null && messages.Any())
+                    {
+                        // Assuming you have an ObservableCollection<MessageData> Messages in your ViewModel
+                        Messages.Clear();
+                        foreach (var message in messages)
+                        {
+                            Messages.Add(message);
+                        }
+                        MessagingCenter.Send(this, "LoadMessagesSuccess", "Messages loaded successfully.");
+                    }
+                    else
+                    {
+                        MessagingCenter.Send(this, "LoadMessagesError", "No messages found.");
+                    }
+                }
+                else
+                {
+                    var errorResponse = await response.Content.ReadAsStringAsync();
+                    MessagingCenter.Send(this, "LoadMessagesexceptionError", $"Error: {response.ReasonPhrase} - {errorResponse}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessagingCenter.Send(this, "ChatError", $"Exception: {ex.Message}");
+            }
+        }
+
     }
+
+
+}
     public class Contact
     {
         public string Firstname { get; set; }
@@ -129,4 +240,12 @@ namespace P4Projekt2.MVVM
         public string Name => $"{Firstname} {Lastname}";
     }
 
-}
+    public class MessageData
+    {
+        public string Message { get; set; }
+        public string SenderEmail { get; set; }
+        public string ReceiverEmail { get; set; }
+        public DateTime Timestamp { get; set; }
+    }
+
+
