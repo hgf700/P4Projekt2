@@ -4,12 +4,19 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:vm="clr-namespace:P4Projekt2.MVVM"
+    xmlns:local="clr-namespace:P4Projekt2.ChatConverter"
     Title="ChatPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:BooleanToHorizontalOptionsConverter x:Key="BooleanToHorizontalOptionsConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
-            <ColumnDefinition Width="1000" />
+            <ColumnDefinition Width="*" />
             <ColumnDefinition Width="100" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -18,24 +25,18 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <StackLayout Grid.Column="0"
-                     Grid.Row="0">
+        <StackLayout Grid.Column="0" Grid.Row="0">
             <Label
-                                Text="Contacts"
+                Text="Contacts"
                 FontAttributes="Bold"
                 FontSize="20"
                 HorizontalOptions="Center"
                 Margin="10" />
         </StackLayout>
 
-        <StackLayout
-                Grid.Column="0"
-                Grid.Row="1">
-            
-            
-            
+        <StackLayout Grid.Column="0" Grid.Row="1">
             <ListView ItemsSource="{Binding Contacts}" 
-                  SelectedItem="{Binding SelectedContact}">
+                      SelectedItem="{Binding SelectedContact}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -49,10 +50,7 @@
             <Button Text="Load Friends" Command="{Binding LoadFriendsCommand}" />
         </StackLayout>
 
-
-        <StackLayout
-            Grid.Column="0"
-            Grid.Row="2">
+        <StackLayout Grid.Column="0" Grid.Row="2">
             <Button
                 Text="Add User To Friend List"
                 Command="{Binding AddFriendCommand}"
@@ -61,34 +59,26 @@
                 Margin="10" />
         </StackLayout>
 
-        <StackLayout
-                        Grid.Column="1"
-            Grid.ColumnSpan="2"
-            Grid.Row="2"
-                Orientation="Horizontal"
-                Padding="10"
-                Spacing="10">
+        <StackLayout Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2"
+                     Orientation="Horizontal"
+                     Padding="10"
+                     Spacing="10">
             <Entry
-                    Placeholder="Enter message"
-                    HorizontalOptions="FillAndExpand"
-                    Text="{Binding NewMessage}" />
+                Placeholder="Enter message"
+                HorizontalOptions="FillAndExpand"
+                Text="{Binding NewMessage}" />
             <Button
-                    Text="Send"
-                    Command="{Binding SendMessageCommand}" />
+                Text="Send"
+                Command="{Binding SendMessageCommand}" />
         </StackLayout>
 
-        <StackLayout Grid.Column="2"
-                     Grid.Row="0">
+        <StackLayout Grid.Column="2" Grid.Row="0">
             <Button
-                    Text="logout"
-                    Command="{Binding LogoutCommand}" />
+                Text="logout"
+                Command="{Binding LogoutCommand}" />
         </StackLayout>
 
-
-
-        <StackLayout
-                Grid.Column="1"
-                Grid.Row="1">
+        <StackLayout Grid.Column="1" Grid.Row="1">
             <Label Text="messages should be shown there"/>
             <Button
                 Text="Load existing messages"
@@ -97,27 +87,29 @@
                 HorizontalOptions="Center"
                 Margin="10" />
 
-
-
             <ListView ItemsSource="{Binding Messages}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Vertical" Padding="10">
-                                <Label Text="{Binding SenderEmail}" FontSize="15" TextColor="White" />
-                                <Label Text="{Binding Message}" FontSize="20" TextColor="White" />
-                                <Label Text="{Binding Timestamp, StringFormat='Sent: {0:HH:mm}'}" FontSize="12" TextColor="White" />
-                            </StackLayout>
+                            <ContentView>
+                                <ContentView.Triggers>
+                                    <DataTrigger TargetType="ContentView" Binding="{Binding IsSentByCurrentUser}" Value="True">
+                                        <Setter Property="HorizontalOptions" Value="End" />
+                                    </DataTrigger>
+                                    <DataTrigger TargetType="ContentView" Binding="{Binding IsSentByCurrentUser}" Value="False">
+                                        <Setter Property="HorizontalOptions" Value="Start" />
+                                    </DataTrigger>
+                                </ContentView.Triggers>
+                                <StackLayout Padding="10" HorizontalOptions="{Binding IsSentByCurrentUser, Converter={StaticResource BooleanToHorizontalOptionsConverter}}">
+                                    <Label Text="{Binding SenderEmail}" FontSize="18" VerticalOptions="Center" />
+                                    <Label Text="{Binding Message}" FontSize="18" VerticalOptions="Center" />
+                                    <Label Text="{Binding Timestamp, StringFormat='{0:HH:mm}'}" FontSize="14" VerticalOptions="Center" />
+                                </StackLayout>
+                            </ContentView>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
-
-
         </StackLayout>
-        
-        
-        
     </Grid>
 </ContentPage>

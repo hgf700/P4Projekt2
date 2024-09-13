@@ -96,6 +96,7 @@ namespace P4Projekt2.MVVM
                 SenderEmail = _userEmail,
                 ReceiverEmail = _selectedContact.Email,
                 Timestamp = DateTime.UtcNow,
+                IsSentByCurrentUser=true,
             };
 
             if (string.IsNullOrEmpty(messageRequest.Message))
@@ -205,23 +206,28 @@ namespace P4Projekt2.MVVM
 
                     if (messages != null && messages.Any())
                     {
-                        // Assuming you have an ObservableCollection<MessageData> Messages in your ViewModel
+                        // Update IsSentByCurrentUser property
+                        foreach (var message in messages)
+                        {
+                            message.IsSentByCurrentUser = message.SenderEmail == _userEmail;
+                        }
+
                         Messages.Clear();
                         foreach (var message in messages)
                         {
                             Messages.Add(message);
                         }
-                        MessagingCenter.Send(this, "LoadMessagesSuccess", "Messages loaded successfully.");
+                        MessagingCenter.Send(this, "ChatSuccess", "Messages loaded successfully.");
                     }
                     else
                     {
-                        MessagingCenter.Send(this, "LoadMessagesError", "No messages found.");
+                        MessagingCenter.Send(this, "ChatError", "No messages found.");
                     }
                 }
                 else
                 {
                     var errorResponse = await response.Content.ReadAsStringAsync();
-                    MessagingCenter.Send(this, "LoadMessagesexceptionError", $"Error: {response.ReasonPhrase} - {errorResponse}");
+                    MessagingCenter.Send(this, "ChatError", $"Error: {response.ReasonPhrase} - {errorResponse}");
                 }
             }
             catch (Exception ex)
@@ -230,24 +236,40 @@ namespace P4Projekt2.MVVM
             }
         }
 
+
+
     }
 
 
 }
-    public class Contact
-    {
-        public string Firstname { get; set; }
-        public string Lastname { get; set; }
-        public string Email { get; set; }
-        public string Name => $"{Firstname} {Lastname}";
-    }
+public class Contact
+{
+    public string Firstname { get; set; }
+    public string Lastname { get; set; }
+    public string Email { get; set; }
+    public string Name => $"{Firstname} {Lastname}";
+}
 
-    public class MessageData
+public class MessageData
+{
+    public string Message { get; set; }
+    public string SenderEmail { get; set; }
+    public string ReceiverEmail { get; set; }
+    public DateTime Timestamp { get; set; }
+    public bool IsSentByCurrentUser { get; set; } // Add this property
+}
+
+public class MessageTemplateSelector : DataTemplateSelector
+{
+    public DataTemplate SentTemplate { get; set; }
+    public DataTemplate ReceivedTemplate { get; set; }
+
+    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
     {
-        public string Message { get; set; }
-        public string SenderEmail { get; set; }
-        public string ReceiverEmail { get; set; }
-        public DateTime Timestamp { get; set; }
+        var message = item as MessageData;
+        return message.IsSentByCurrentUser ? SentTemplate : ReceivedTemplate;
     }
+}
+
 
 

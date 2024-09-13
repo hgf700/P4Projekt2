@@ -17,6 +17,10 @@ namespace IdentityService.DataBase
         // Email odbiorcy
         public string ReceiverEmail { get; set; }
 
+        // This property is not mapped to the database
+        [NotMapped]
+        public bool IsSentByCurrentUser { get; set; }
+
         // Nawigacja do nadawcy
         [ForeignKey("SenderEmail")]
         public UserLoginData Sender { get; set; }

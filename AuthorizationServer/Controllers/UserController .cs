@@ -238,6 +238,7 @@ namespace IdentityService.Controllers
                     Timestamp = messageRequest.Timestamp,
                     SenderEmail = messageRequest.SenderEmail,
                     ReceiverEmail = messageRequest.ReceiverEmail,
+                    IsSentByCurrentUser=messageRequest.IsSentByCurrentUser
                 };
 
                 _context.ChatData.Add(message);
@@ -279,7 +280,8 @@ namespace IdentityService.Controllers
                     m.Message,
                     m.SenderEmail,
                     m.ReceiverEmail,
-                    m.Timestamp
+                    m.Timestamp,
+                    m.IsSentByCurrentUser
                 }).ToList();
 
                 return Ok(messageDtos);
