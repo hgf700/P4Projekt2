@@ -293,7 +293,6 @@ namespace IdentityService.Controllers
             }
         }
 
-
         [HttpGet("friends/{email}")]
         public async Task<IActionResult> GetFriends(string email)
         {

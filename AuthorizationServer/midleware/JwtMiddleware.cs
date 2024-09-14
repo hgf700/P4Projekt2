@@ -44,9 +44,9 @@ namespace IdentityService.midleware
                 // Przypisanie użytkownika do kontekstu, jeśli token jest poprawny
                 context.Items["User"] = user;
             }
-            catch
+            catch(Exception ex)
             {
-                // Jeśli token jest niepoprawny, użytkownik nie zostanie przypisany do kontekstu
+                Console.WriteLine($"Błąd podczas weryfikacji tokenu lub dostępu do bazy danych: {ex.Message}");
             }
         }
     }
