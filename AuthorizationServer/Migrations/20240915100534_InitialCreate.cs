@@ -124,13 +124,13 @@ namespace AuthorizationServer.Migrations
                         column: x => x.FriendEmail,
                         principalTable: "UserLoginData",
                         principalColumn: "Email2",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.SetNull);
                     table.ForeignKey(
                         name: "FK_AddToFriendList_UserLoginData_RequesterEmail",
                         column: x => x.RequesterEmail,
                         principalTable: "UserLoginData",
                         principalColumn: "Email1",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(

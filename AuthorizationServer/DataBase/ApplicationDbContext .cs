@@ -82,7 +82,8 @@ public class ApplicationDbContext : DbContext
             entity.Property(e => e.ResponseType).HasMaxLength(100);
             entity.Property(e => e.Email1)
                   .IsRequired()
-                  .HasMaxLength(255); // Usunięcie unikalności
+                  .HasMaxLength(255);
+
             entity.Property(e => e.Email2)
                   .IsRequired()
                   .HasMaxLength(255); // Usunięcie unikalności
@@ -144,14 +145,15 @@ public class ApplicationDbContext : DbContext
                   .WithMany(u => u.SentFriendRequests)
                   .HasForeignKey(f => f.RequesterEmail)
                   .HasPrincipalKey(u => u.Email1)
-                  .OnDelete(DeleteBehavior.Restrict);
+                  .OnDelete(DeleteBehavior.SetNull);
 
             // Relationship to UserLoginData (Friend)
             entity.HasOne(f => f.Friend)
                   .WithMany(u => u.ReceivedFriendRequests)
                   .HasForeignKey(f => f.FriendEmail)
                   .HasPrincipalKey(u => u.Email2)
-                  .OnDelete(DeleteBehavior.Restrict);
+                  .OnDelete(DeleteBehavior.SetNull);
+
         });
 
 

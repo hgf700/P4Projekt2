@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240912154320_InitialCreate")]
+    [Migration("20240915100534_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -264,14 +264,14 @@ namespace AuthorizationServer.Migrations
                         .WithMany("ReceivedFriendRequests")
                         .HasForeignKey("FriendEmail")
                         .HasPrincipalKey("Email2")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("UserLoginData", "Requester")
                         .WithMany("SentFriendRequests")
                         .HasForeignKey("RequesterEmail")
                         .HasPrincipalKey("Email1")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.Navigation("Friend");

@@ -261,14 +261,14 @@ namespace AuthorizationServer.Migrations
                         .WithMany("ReceivedFriendRequests")
                         .HasForeignKey("FriendEmail")
                         .HasPrincipalKey("Email2")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.HasOne("UserLoginData", "Requester")
                         .WithMany("SentFriendRequests")
                         .HasForeignKey("RequesterEmail")
                         .HasPrincipalKey("Email1")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.SetNull)
                         .IsRequired();
 
                     b.Navigation("Friend");

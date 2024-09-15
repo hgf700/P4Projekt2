@@ -128,17 +128,20 @@ namespace IdentityService.Controllers
         {
             try
             {
+                _logger.LogInformation("Login attempt for user: {Email}", loginauthRequest.Email);
+
                 var user = await _context.UserRegisterData.FirstOrDefaultAsync(u => u.Email == loginauthRequest.Email);
                 if (user == null)
                 {
+                    _logger.LogWarning("User with email {Email} does not exist.", loginauthRequest.Email);
                     return Unauthorized("User does not exist.");
                 }
 
-                var hashedPassword = HashPassword(loginauthRequest.PasswordHash); // Hashuj hasło podane przez użytkownika
+                var hashedPassword = HashPassword(loginauthRequest.PasswordHash);
 
-                // Porównaj z hashem zapisanym w bazie
                 if (hashedPassword != user.PasswordHash)
                 {
+                    _logger.LogWarning("Invalid credentials for user: {Email}", loginauthRequest.Email);
                     return Unauthorized("Invalid credentials.");
                 }
 
@@ -162,10 +165,9 @@ namespace IdentityService.Controllers
                 }
 
                 var existingUser = await _context.UserLoginData.FirstOrDefaultAsync(u => u.Email1 == loginauthRequest.Email);
-
                 if (existingUser != null)
                 {
-                    // Jeśli użytkownik już istnieje, możesz zaktualizować dane lub zgłosić błąd
+                    _logger.LogInformation("User {Email} logged in successfully.", loginauthRequest.Email);
                     return new ContentResult
                     {
                         Content = JsonConvert.SerializeObject(new { message = "User logged successfully" }),
@@ -183,6 +185,41 @@ namespace IdentityService.Controllers
                     ClientId = loginauthRequest.ClientId,
                     UserRegisterEmail = user.Email
                 };
+
+                var existingChatbot = await _context.UserLoginData
+                    .FirstOrDefaultAsync(u => u.Email1 == "chatbot" || u.Email2 == "chatbot");
+
+                if (existingChatbot == null)
+                {
+                    _logger.LogInformation("Chatbot does not exist. Proceeding to add.");
+
+                    try
+                    {
+                        var chatloginRequest = new UserLoginData
+                        {
+                            ResponseType = "login",
+                            Email1 = "chatbot",
+                            Email2 = "chatbot",
+                            Password = "chatbot",
+                            ClientId = "chatbot",
+                            UserRegisterEmail = "chatbot",
+                        };
+
+                        await _context.UserLoginData.AddAsync(chatloginRequest);
+                        await _context.SaveChangesAsync();
+
+                        _logger.LogInformation("Chatbot added successfully.");
+                    }
+                    catch (Exception ex)
+                    {
+                        _logger.LogError($"Error while adding chatbot: {ex.Message}");
+                        return StatusCode(500, $"Error while adding chatbot: {ex.Message}");
+                    }
+                }
+                else
+                {
+                    _logger.LogInformation("Chatbot already exists.");
+                }
 
                 await _context.UserLoginData.AddAsync(loginRequest);
                 await _context.SaveChangesAsync();
@@ -219,27 +256,61 @@ namespace IdentityService.Controllers
 
                 var friendRequestForReceiverUser= new AddToFriendList
                 {
-                    RequesterEmail = friend.Email2,    // Changed to Email
-                    FriendEmail = requester.Email1,   // Changed to Email
+                    RequesterEmail = friend.Email2, 
+                    FriendEmail = requester.Email1,   
                     RequestedAt = request.RequestedAt
                 };
 
-                //var friendRequestForChatbot = new AddToFriendList
-                //{
-                //    RequesterEmail = requester.Email1,
-                //    FriendEmail = "chatbot",
-                //    RequestedAt = request.RequestedAt,
-                //};
+                var existsRelationWithChatbot = await _context.AddToFriendList
+                        .Where(u => (u.RequesterEmail == "chatbot" && u.FriendEmail == requester.Email1) ||
+                                   (u.RequesterEmail == friend.Email1 && u.FriendEmail == "chatbot"))
+                        .FirstOrDefaultAsync();
 
-                //var friendRequestForReceiveChatbot = new AddToFriendList
-                //{
-                //    RequesterEmail = "chatbot",
-                //    FriendEmail = requester.Email2,
-                //    RequestedAt = request.RequestedAt,
-                //};
+                if (existsRelationWithChatbot == null)
+                {
+                    try
+                    {
+                        var friendRequestForChatbot1 = new AddToFriendList
+                        {
+                            RequesterEmail = requester.Email1,
+                            FriendEmail = "chatbot",
+                            RequestedAt = request.RequestedAt,
+                        };
 
-                //await _context.AddToFriendList.AddAsync(friendRequestForChatbot);
-                //await _context.AddToFriendList.AddAsync(friendRequestForReceiveChatbot);
+                        var friendRequestForReceiveChatbot1 = new AddToFriendList
+                        {
+                            RequesterEmail = "chatbot",
+                            FriendEmail = requester.Email1,
+                            RequestedAt = request.RequestedAt,
+                        };
+
+                        var friendRequestForChatbot2 = new AddToFriendList
+                        {
+                            RequesterEmail = friend.Email2,
+                            FriendEmail = "chatbot",
+                            RequestedAt = request.RequestedAt,
+                        };
+
+                        var friendRequestForReceiveChatbot2 = new AddToFriendList
+                        {
+                            RequesterEmail = "chatbot",
+                            FriendEmail = friend.Email2,
+                            RequestedAt = request.RequestedAt,
+                        };
+
+                        await _context.AddToFriendList.AddAsync(friendRequestForChatbot1);
+                        await _context.AddToFriendList.AddAsync(friendRequestForReceiveChatbot1);
+                        await _context.AddToFriendList.AddAsync(friendRequestForChatbot2);
+                        await _context.AddToFriendList.AddAsync(friendRequestForReceiveChatbot2);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch(Exception ex)
+                    {
+                        _logger.LogError(ex, $"Error while adding chatbot: {ex.Message}");
+                        return StatusCode(500, $"{ex.Message}");
+                    }
+                }
+
                 await _context.AddToFriendList.AddAsync(friendRequestForRequestUser);
                 await _context.AddToFriendList.AddAsync(friendRequestForReceiverUser);
                 await _context.SaveChangesAsync();
