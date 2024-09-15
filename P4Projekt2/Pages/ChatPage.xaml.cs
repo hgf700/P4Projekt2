@@ -15,6 +15,7 @@ namespace P4Projekt2.Pages
             _httpClient = new HttpClient();
             _viewModel = new ChatPageViewModel(_httpClient);
             BindingContext = _viewModel;
+            LoadApiKey();
 
             // Subscribe to success messages
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatSuccess", async (sender, message) =>
@@ -66,6 +67,32 @@ namespace P4Projekt2.Pages
             base.OnDisappearing();
             MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatSuccess");
             MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatError");
+        }
+        private void LoadApiKey()
+        {
+            try
+            {
+                // Example path, change it as needed
+                string apiKeyFilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "huggingfacetoken.txt");
+                if (File.Exists(apiKeyFilePath))
+                {
+                    string apiKey = File.ReadAllText(apiKeyFilePath).Trim();
+                    Preferences.Set("ChatApiKey", apiKey);
+                    Console.WriteLine($"{apiKey}");
+                }
+                else
+                {
+                    Console.WriteLine("API key file not found.");
+                }
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine($"Directory not found: {ex.Message}");
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine($"IO exception: {ex.Message}");
+            }
         }
     }
 

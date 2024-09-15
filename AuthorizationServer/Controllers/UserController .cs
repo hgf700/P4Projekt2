@@ -69,10 +69,33 @@ namespace IdentityService.Controllers
                     CodeChallengeMethod = authRequest.CodeChallengeMethod,
                 };
 
+                // Sprawdzenie istnienia chatbota
+                var existingChatbot = await _context.UserRegisterData
+                    .FirstOrDefaultAsync(u => u.Email == "chatbot");
+
+                if (existingChatbot == null)
+                {
+                    var RegisterPrivateChatBot = new UserRegisterData
+                    {
+                        ResponseType = authRequest.ResponseType,
+                        Firstname = "chat",
+                        Lastname = "assistant",
+                        Email = "chatbot",
+                        PasswordHash = "chatbot",
+                        ClientId = "chatbot",
+                        Scope = "chatbot",
+                        State = "chatbot",
+                        RedirectUri = "chatbot",
+                        CodeChallenge = "chatbot",
+                        CodeChallengeMethod = "chatbot",
+                    };
+                    await _context.UserRegisterData.AddAsync(RegisterPrivateChatBot);
+                    await _context.SaveChangesAsync();
+                }
+
                 await _context.UserRegisterData.AddAsync(RegisterUser);
                 await _context.SaveChangesAsync();
 
-                // Generowanie tokenu odświeżania
                 var refreshtoken = GenerateJwtToken(RegisterUser);
 
                 var Refreshtoken = new RefreshToken
@@ -201,8 +224,24 @@ namespace IdentityService.Controllers
                     RequestedAt = request.RequestedAt
                 };
 
-                _context.AddToFriendList.Add(friendRequestForRequestUser);
-                _context.AddToFriendList.Add(friendRequestForReceiverUser);
+                //var friendRequestForChatbot = new AddToFriendList
+                //{
+                //    RequesterEmail = requester.Email1,
+                //    FriendEmail = "chatbot",
+                //    RequestedAt = request.RequestedAt,
+                //};
+
+                //var friendRequestForReceiveChatbot = new AddToFriendList
+                //{
+                //    RequesterEmail = "chatbot",
+                //    FriendEmail = requester.Email2,
+                //    RequestedAt = request.RequestedAt,
+                //};
+
+                //await _context.AddToFriendList.AddAsync(friendRequestForChatbot);
+                //await _context.AddToFriendList.AddAsync(friendRequestForReceiveChatbot);
+                await _context.AddToFriendList.AddAsync(friendRequestForRequestUser);
+                await _context.AddToFriendList.AddAsync(friendRequestForReceiverUser);
                 await _context.SaveChangesAsync();
 
                 return new ContentResult
@@ -252,6 +291,112 @@ namespace IdentityService.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
+        [HttpPost("message/chatbot")]
+        public async Task<IActionResult> SendMessagechatbot([FromBody] UserChatData messageRequest)
+        {
+            if (messageRequest == null)
+            {
+                return BadRequest("Message request is null.");
+            }
+
+            if (string.IsNullOrEmpty(messageRequest.Message))
+            {
+                return BadRequest("Message content cannot be empty.");
+            }
+
+            try
+            {
+                // Verify if the sender is a valid chatbot user
+                var requester = await _context.UserRegisterData
+                    .FirstOrDefaultAsync(u => u.Email == messageRequest.SenderEmail && u.Email == "chatbot");
+
+                if (requester == null)
+                {
+                    return BadRequest("Requester (chatbot) not found.");
+                }
+
+                // Create the chat message entry
+                var message = new ChatData
+                {
+                    Message = messageRequest.Message,
+                    Timestamp = messageRequest.Timestamp,
+                    SenderEmail = messageRequest.SenderEmail,
+                    ReceiverEmail = messageRequest.ReceiverEmail,
+                };
+
+                // Add the message to the database
+                _context.ChatData.Add(message);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "Chatbot receive message successfully" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while sending message: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        [HttpGet("getmessages/responsechatbot")]
+        public async Task<IActionResult> GetMessagesForChatbot([FromQuery] string userEmail)
+        {
+            if (string.IsNullOrEmpty(userEmail))
+            {
+                return BadRequest("User email is required.");
+            }
+
+            try
+            {
+                var messages = await _context.ChatData
+                    .Where(m => m.SenderEmail == "chatbot" || m.ReceiverEmail == "chatbot")
+                    .ToListAsync();
+
+                // Optional: Filter messages for a specific user
+                var userMessages = messages
+                    .Where(m => m.SenderEmail == userEmail || m.ReceiverEmail == userEmail)
+                    .OrderBy(m => m.Timestamp)
+                    .ToList();
+
+                return Ok(userMessages);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error while fetching messages: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+
+        //[HttpGet("getmessages/responsechatbot")]
+        //public async Task<IActionResult> GetMessagesForChatbot([FromQuery] string userEmail)
+        //{
+        //    if (string.IsNullOrEmpty(userEmail))
+        //    {
+        //        return BadRequest("User email is required.");
+        //    }
+
+        //    try
+        //    {
+        //        var messages = await _context.ChatData
+        //            .Where(m => m.SenderEmail == "chatbot" || m.ReceiverEmail == "chatbot")
+        //            .ToListAsync();
+
+        //        // Optional: Filter messages for a specific user
+        //        var userMessages = messages
+        //            .Where(m => m.SenderEmail == userEmail || m.ReceiverEmail == userEmail)
+        //            .OrderBy(m => m.Timestamp)
+        //            .ToList();
+
+        //        return Ok(userMessages);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex, $"Error while fetching messages: {ex.Message}");
+        //        return StatusCode(500, $"Internal server error: {ex.Message}");
+        //    }
+        //}
+
+
 
         [HttpGet("getmessages/{email}/{contactEmail}")]
         public async Task<IActionResult> GetMessages(string email, string contactEmail)

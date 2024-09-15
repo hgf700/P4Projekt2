@@ -20,6 +20,7 @@ namespace P4Projekt2.MVVM
         public ObservableCollection<MessageData> Messages { get; set; }
 
         private string _userEmail;
+        private string _apiKey;
 
         private string _newMessage;
         public string NewMessage
@@ -78,6 +79,11 @@ namespace P4Projekt2.MVVM
             SendMessageCommand = new Command(SendMesage);
             _userEmail = Preferences.Get("UserEmail", string.Empty);
             LoadMessagesCommand = new Command(async () => await LoadMessages());
+            _apiKey = Preferences.Get("ChatApiKey", string.Empty);
+
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _apiKey);
+
+
 
             LoadMessagesCommand.Execute(null);
             LoadFriendsCommand.Execute(null);
