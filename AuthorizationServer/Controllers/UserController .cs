@@ -19,6 +19,9 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Identity.Data;
 using System.Xml.Linq;
 using Microsoft.AspNet.SignalR.Client.Http;
+using System.Net.Http;
+using AuthorizationServer.chatbot;
+
 
 
 namespace IdentityService.Controllers
@@ -27,12 +30,14 @@ namespace IdentityService.Controllers
     [Route("authorization/[controller]")]
     public class UserController : ControllerBase
     {
+        private readonly IChatbotService _chatbotService;
         private readonly ApplicationDbContext _context;
         private readonly ILogger<UserController> _logger;
-        public UserController(ApplicationDbContext context, ILogger<UserController> logger)
+        public UserController(ApplicationDbContext context, ILogger<UserController> logger, IChatbotService chatbotService)
         {
             _context = context;
             _logger = logger;
+            _chatbotService = chatbotService;   
         }
 
         [HttpPost("register")]
@@ -337,6 +342,7 @@ namespace IdentityService.Controllers
             {
                 var requester = await _context.AddToFriendList
                                                .FirstOrDefaultAsync(u => u.RequesterEmail == messageRequest.SenderEmail);
+
                 if (requester == null)
                 {
                     return BadRequest("Requester not found.");
@@ -348,7 +354,6 @@ namespace IdentityService.Controllers
                     Timestamp = messageRequest.Timestamp,
                     SenderEmail = messageRequest.SenderEmail,
                     ReceiverEmail = messageRequest.ReceiverEmail,
-                    IsSentByCurrentUser=messageRequest.IsSentByCurrentUser
                 };
 
                 _context.ChatData.Add(message);
@@ -363,111 +368,6 @@ namespace IdentityService.Controllers
             }
         }
 
-        [HttpPost("message/chatbot")]
-        public async Task<IActionResult> SendMessagechatbot([FromBody] UserChatData messageRequest)
-        {
-            if (messageRequest == null)
-            {
-                return BadRequest("Message request is null.");
-            }
-
-            if (string.IsNullOrEmpty(messageRequest.Message))
-            {
-                return BadRequest("Message content cannot be empty.");
-            }
-
-            try
-            {
-                // Verify if the sender is a valid chatbot user
-                var requester = await _context.UserRegisterData
-                    .FirstOrDefaultAsync(u => u.Email == messageRequest.SenderEmail && u.Email == "chatbot");
-
-                if (requester == null)
-                {
-                    return BadRequest("Requester (chatbot) not found.");
-                }
-
-                // Create the chat message entry
-                var message = new ChatData
-                {
-                    Message = messageRequest.Message,
-                    Timestamp = messageRequest.Timestamp,
-                    SenderEmail = messageRequest.SenderEmail,
-                    ReceiverEmail = messageRequest.ReceiverEmail,
-                };
-
-                // Add the message to the database
-                _context.ChatData.Add(message);
-                await _context.SaveChangesAsync();
-
-                return Ok(new { message = "Chatbot receive message successfully" });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error while sending message: {ex.Message}");
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        [HttpGet("getmessages/responsechatbot")]
-        public async Task<IActionResult> GetMessagesForChatbot([FromQuery] string userEmail)
-        {
-            if (string.IsNullOrEmpty(userEmail))
-            {
-                return BadRequest("User email is required.");
-            }
-
-            try
-            {
-                var messages = await _context.ChatData
-                    .Where(m => m.SenderEmail == "chatbot" || m.ReceiverEmail == "chatbot")
-                    .ToListAsync();
-
-                // Optional: Filter messages for a specific user
-                var userMessages = messages
-                    .Where(m => m.SenderEmail == userEmail || m.ReceiverEmail == userEmail)
-                    .OrderBy(m => m.Timestamp)
-                    .ToList();
-
-                return Ok(userMessages);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, $"Error while fetching messages: {ex.Message}");
-                return StatusCode(500, $"Internal server error: {ex.Message}");
-            }
-        }
-
-        //[HttpGet("getmessages/responsechatbot")]
-        //public async Task<IActionResult> GetMessagesForChatbot([FromQuery] string userEmail)
-        //{
-        //    if (string.IsNullOrEmpty(userEmail))
-        //    {
-        //        return BadRequest("User email is required.");
-        //    }
-
-        //    try
-        //    {
-        //        var messages = await _context.ChatData
-        //            .Where(m => m.SenderEmail == "chatbot" || m.ReceiverEmail == "chatbot")
-        //            .ToListAsync();
-
-        //        // Optional: Filter messages for a specific user
-        //        var userMessages = messages
-        //            .Where(m => m.SenderEmail == userEmail || m.ReceiverEmail == userEmail)
-        //            .OrderBy(m => m.Timestamp)
-        //            .ToList();
-
-        //        return Ok(userMessages);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        _logger.LogError(ex, $"Error while fetching messages: {ex.Message}");
-        //        return StatusCode(500, $"Internal server error: {ex.Message}");
-        //    }
-        //}
-
-
 
         [HttpGet("getmessages/{email}/{contactEmail}")]
         public async Task<IActionResult> GetMessages(string email, string contactEmail)
@@ -479,28 +379,37 @@ namespace IdentityService.Controllers
                     return BadRequest("Both email and contactEmail are required.");
                 }
 
-                // Retrieve sent and received messages
-                var messages = await _context.ChatData
-                                             .Where(m => (m.SenderEmail == email && m.ReceiverEmail == contactEmail) ||
-                                                         (m.SenderEmail == contactEmail && m.ReceiverEmail == email))
-                                             .OrderBy(m => m.Timestamp)
-                                             .ToListAsync();
-
-                if (messages == null || !messages.Any())
+                if (contactEmail == "chatbot")
                 {
-                    return Ok(new List<object>()); // Return empty list if no messages are found
+
+
+                    return Ok();
                 }
-
-                var messageDtos = messages.Select(m => new
+                else
                 {
-                    m.Message,
-                    m.SenderEmail,
-                    m.ReceiverEmail,
-                    m.Timestamp,
-                    m.IsSentByCurrentUser
-                }).ToList();
+                    var messages = await _context.ChatData
+                             .Where(m => (m.SenderEmail == email && m.ReceiverEmail == contactEmail) ||
+                                         (m.SenderEmail == contactEmail && m.ReceiverEmail == email))
+                             .OrderBy(m => m.Timestamp)
+                             .ToListAsync();
 
-                return Ok(messageDtos);
+                    if (messages == null || !messages.Any())
+                    {
+                        return Ok(new List<object>()); // Return empty list if no messages are found
+                    }
+
+                    var messageDtos = messages.Select(m => new
+                    {
+                        m.Message,
+                        m.SenderEmail,
+                        m.ReceiverEmail,
+                        m.Timestamp,
+                    }).ToList();
+
+                    return Ok(messageDtos);
+                }
+                // Retrieve sent and received messages
+
             }
             catch (Exception ex)
             {

@@ -3,7 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using IdentityService.midleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-
+using AuthorizationServer.chatbot;
 
 public class Program
 {
@@ -45,9 +45,13 @@ public class Program
             };
         });
 
+        builder.Services.AddScoped<IChatbotService, ChatbotService>();
+
         // Dodanie Swagger (jeœli potrzebujesz dokumentacji API)
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        // Tutaj rejestrujemy HttpClient dla ChatBot
 
         var app = builder.Build();
 
@@ -93,3 +97,4 @@ public class Program
         MainProduction(args); // Mo¿esz u¿yæ tej samej konfiguracji, co w produkcji
     }
 }
+

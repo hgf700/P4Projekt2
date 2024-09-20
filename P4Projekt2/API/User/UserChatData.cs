@@ -12,6 +12,5 @@ namespace P4Projekt2.API.User
         public string SenderEmail { get; set; }
         public string ReceiverEmail { get; set; }
         public DateTime Timestamp { get; set; }
-        public bool IsSentByCurrentUser { get; set; } // Add this property
     }
 }

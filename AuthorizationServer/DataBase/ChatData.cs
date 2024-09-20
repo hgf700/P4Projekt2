@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System;
 
 namespace IdentityService.DataBase
 {
@@ -8,24 +8,25 @@ namespace IdentityService.DataBase
     {
         [Key]
         public int MessageId { get; set; }
+
+        [Required]
         public string Message { get; set; }
 
-        public DateTime Timestamp { get; set; }
+        [Required]
+        public DateTime Timestamp { get; set; } = DateTime.UtcNow; // Default to current time
 
+        [Required]
         public string SenderEmail { get; set; }
 
-        // Email odbiorcy
+        // Email of the recipient
+        [Required]
         public string ReceiverEmail { get; set; }
 
-        // This property is not mapped to the database
-        [NotMapped]
-        public bool IsSentByCurrentUser { get; set; }
-
-        // Nawigacja do nadawcy
+        // Navigation property to sender
         [ForeignKey("SenderEmail")]
         public UserLoginData Sender { get; set; }
 
-        // Nawigacja do odbiorcy
+        // Navigation property to receiver
         [ForeignKey("ReceiverEmail")]
         public UserLoginData Receiver { get; set; }
     }

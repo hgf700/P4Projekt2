@@ -115,26 +115,30 @@ public class ApplicationDbContext : DbContext
         });
 
         // Konfiguracja dla ChatData
+        // Configuration for ChatData
         modelBuilder.Entity<ChatData>(entity =>
         {
+            entity.ToTable("chat_data"); // Ensure this matches your database table name
             entity.HasKey(e => e.MessageId);
+
             entity.Property(e => e.Message).IsRequired();
             entity.Property(e => e.Timestamp).IsRequired();
 
-            // Relacja do UserLoginData dla Sender, na podstawie Email
+            // Relationship to UserLoginData for Sender
             entity.HasOne(e => e.Sender)
                   .WithMany(u => u.SentMessages)
                   .HasForeignKey(e => e.SenderEmail)
                   .HasPrincipalKey(u => u.Email1)
                   .OnDelete(DeleteBehavior.Restrict);
 
-            // Relacja do UserLoginData dla Receiver, na podstawie Email
+            // Relationship to UserLoginData for Receiver
             entity.HasOne(e => e.Receiver)
                   .WithMany(u => u.ReceivedMessages)
                   .HasForeignKey(e => e.ReceiverEmail)
                   .HasPrincipalKey(u => u.Email2)
                   .OnDelete(DeleteBehavior.Restrict);
         });
+
 
         modelBuilder.Entity<AddToFriendList>(entity =>
         {
@@ -153,13 +157,6 @@ public class ApplicationDbContext : DbContext
                   .HasForeignKey(f => f.FriendEmail)
                   .HasPrincipalKey(u => u.Email2)
                   .OnDelete(DeleteBehavior.SetNull);
-
         });
-
-
-
-
-
     }
-
 }

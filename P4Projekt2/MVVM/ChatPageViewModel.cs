@@ -88,6 +88,7 @@ namespace P4Projekt2.MVVM
             LoadMessagesCommand.Execute(null);
             LoadFriendsCommand.Execute(null);
         }
+
         private async void SendMesage()
         {
             if (_selectedContact == null)
@@ -102,7 +103,6 @@ namespace P4Projekt2.MVVM
                 SenderEmail = _userEmail,
                 ReceiverEmail = _selectedContact.Email,
                 Timestamp = DateTime.UtcNow,
-                IsSentByCurrentUser=true,
             };
 
             if (string.IsNullOrEmpty(messageRequest.Message))
@@ -117,11 +117,17 @@ namespace P4Projekt2.MVVM
                 return;
             }
 
-            var url = "https://localhost:5014/authorization/user/message";
+            var chatbotEmail = "chatbot"; 
+
+            var url = messageRequest.ReceiverEmail == chatbotEmail
+                ? "http://localhost:5015/analyze"
+                : "https://localhost:5014/authorization/user/message";
+
 
             try
             {
                 var httpContent = new StringContent(JsonConvert.SerializeObject(messageRequest), Encoding.UTF8, "application/json");
+
                 var response = await _httpClient.PostAsync(url, httpContent);
 
 
@@ -247,7 +253,14 @@ namespace P4Projekt2.MVVM
     }
 
 
+
+
+public class LlamaResponse
+{
+    [JsonProperty("generated_text")]
+    public string GeneratedText { get; set; }
 }
+
 public class Contact
 {
     public string Firstname { get; set; }
@@ -276,6 +289,7 @@ public class MessageTemplateSelector : DataTemplateSelector
         return message.IsSentByCurrentUser ? SentTemplate : ReceivedTemplate;
     }
 }
+    }
 
 
 

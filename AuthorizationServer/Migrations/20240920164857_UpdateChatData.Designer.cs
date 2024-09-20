@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240915100534_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240920164857_UpdateChatData")]
+    partial class UpdateChatData
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -81,7 +81,7 @@ namespace AuthorizationServer.Migrations
 
                     b.HasIndex("SenderEmail");
 
-                    b.ToTable("ChatData");
+                    b.ToTable("chat_data", (string)null);
                 });
 
             modelBuilder.Entity("IdentityService.DataBase.Key", b =>

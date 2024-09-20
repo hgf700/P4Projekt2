@@ -78,7 +78,7 @@ namespace AuthorizationServer.Migrations
 
                     b.HasIndex("SenderEmail");
 
-                    b.ToTable("ChatData");
+                    b.ToTable("chat_data", (string)null);
                 });
 
             modelBuilder.Entity("IdentityService.DataBase.Key", b =>

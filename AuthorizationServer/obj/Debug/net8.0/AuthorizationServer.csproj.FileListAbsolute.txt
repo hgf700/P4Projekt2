@@ -578,3 +578,5 @@ C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\obj\Debug\net8.
 C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\obj\Debug\net8.0\AuthorizationServer.pdb
 C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\obj\Debug\net8.0\AuthorizationServer.genruntimeconfig.cache
 C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\obj\Debug\net8.0\ref\AuthorizationServer.dll
+C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\bin\Debug\net8.0\DataBase\venv\Lib\site-packages\setuptools\config\distutils.schema.json
+C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer\bin\Debug\net8.0\DataBase\venv\Lib\site-packages\setuptools\config\setuptools.schema.json

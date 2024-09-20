@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class UpdateChatData : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -134,7 +134,7 @@ namespace AuthorizationServer.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ChatData",
+                name: "chat_data",
                 columns: table => new
                 {
                     MessageId = table.Column<int>(type: "integer", nullable: false)
@@ -146,15 +146,15 @@ namespace AuthorizationServer.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ChatData", x => x.MessageId);
+                    table.PrimaryKey("PK_chat_data", x => x.MessageId);
                     table.ForeignKey(
-                        name: "FK_ChatData_UserLoginData_ReceiverEmail",
+                        name: "FK_chat_data_UserLoginData_ReceiverEmail",
                         column: x => x.ReceiverEmail,
                         principalTable: "UserLoginData",
                         principalColumn: "Email2",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_ChatData_UserLoginData_SenderEmail",
+                        name: "FK_chat_data_UserLoginData_SenderEmail",
                         column: x => x.SenderEmail,
                         principalTable: "UserLoginData",
                         principalColumn: "Email1",
@@ -172,13 +172,13 @@ namespace AuthorizationServer.Migrations
                 column: "RequesterEmail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChatData_ReceiverEmail",
-                table: "ChatData",
+                name: "IX_chat_data_ReceiverEmail",
+                table: "chat_data",
                 column: "ReceiverEmail");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ChatData_SenderEmail",
-                table: "ChatData",
+                name: "IX_chat_data_SenderEmail",
+                table: "chat_data",
                 column: "SenderEmail");
 
             migrationBuilder.CreateIndex(
@@ -209,7 +209,7 @@ namespace AuthorizationServer.Migrations
                 name: "AddToFriendList");
 
             migrationBuilder.DropTable(
-                name: "ChatData");
+                name: "chat_data");
 
             migrationBuilder.DropTable(
                 name: "Keys");
