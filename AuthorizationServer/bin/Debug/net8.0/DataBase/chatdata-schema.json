@@ -1,0 +1,24 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ChatData",
+  "type": "object",
+  "properties": {
+    "MessageId": {
+      "type": "integer"
+    },
+    "Message": {
+      "type": "string"
+    },
+    "SenderEmail": {
+      "type": "string"
+    },
+    "ReceiverEmail": {
+      "type": "string"
+    },
+    "Timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [ "Message", "SenderEmail", "ReceiverEmail", "Timestamp" ]
+}

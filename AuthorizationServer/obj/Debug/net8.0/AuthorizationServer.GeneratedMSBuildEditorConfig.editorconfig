@@ -18,17 +18,3 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\USER098\Documents\GitHub\P4Projekt2\AuthorizationServer
 build_property._RazorSourceGeneratorDebug = 
-
-[C:/Users/USER098/Documents/GitHub/P4Projekt2/AuthorizationServer/DataBase/venv/Lib/site-packages/tokenizers/tools/visualizer-styles.css]
-build_metadata.AdditionalFiles.GenKind = Css
-build_metadata.AdditionalFiles.ManifestResourceName = AuthorizationServer.DataBase.venv.Lib.site_packages.tokenizers.tools.visualizer-styles.css
-build_metadata.AdditionalFiles.TargetPath = DataBase\venv\Lib\site-packages\tokenizers\tools\visualizer-styles.css
-build_metadata.AdditionalFiles.RelativePath = DataBase\venv\Lib\site-packages\tokenizers\tools\visualizer-styles.css
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/USER098/Documents/GitHub/P4Projekt2/AuthorizationServer/DataBase/venv/Lib/site-packages/werkzeug/debug/shared/style.css]
-build_metadata.AdditionalFiles.GenKind = Css
-build_metadata.AdditionalFiles.ManifestResourceName = AuthorizationServer.DataBase.venv.Lib.site_packages.werkzeug.debug.shared.style.css
-build_metadata.AdditionalFiles.TargetPath = DataBase\venv\Lib\site-packages\werkzeug\debug\shared\style.css
-build_metadata.AdditionalFiles.RelativePath = DataBase\venv\Lib\site-packages\werkzeug\debug\shared\style.css
-build_metadata.AdditionalFiles.CssScope = 

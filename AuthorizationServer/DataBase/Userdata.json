@@ -13,6 +13,6 @@
 //-d "{\"RequesterEmail\": \"asd\", \"FriendEmail\": \"qwe\", \"RequestedAt\": \"2024-09-10T12:00:00Z\"}"
 
 
-
-curl -X POST http://localhost:5015/analyze -H "Content-Type: application/json" -d "{\"message\":\"Hello, how are you?\",\"senderEmail\":\"asd\",\"receiverEmail\":\"chatbot\"}"
-
+curl -X POST http://localhost:5015/analyze ^
+-H "Content-Type: application/json" ^
+-d "{\"message\": \"Hello, how are you?\", \"sender_email\": \"asd\", \"timestamp\": \"2024-09-22T12:00:00Z\", \"receiver_email\": \"chatbot\"}"
