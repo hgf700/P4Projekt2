@@ -1,2 +1,5 @@
 pip install Flask Flask-SQLAlchemy transformers jsonschema torch psycopg2-binary
 
+# To start using local HTTP communication, it is required to open your local ports.
+# To start using the chatbot, you need to create a virtual environment, 
+# activate the environment, download the required libraries, and activate the server.
