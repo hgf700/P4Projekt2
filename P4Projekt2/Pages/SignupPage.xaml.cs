@@ -11,10 +11,10 @@ namespace P4Projekt2.Pages
             InitializeComponent();
             BindingContext = new SignUpPageViewModel(_httpClient);
 
-            MessagingCenter.Subscribe<SignUpPageViewModel, string>(this, "SignUpSuccess", async (sender, message) =>
-            {
-                await DisplayAlert("Success", message, "OK");
-            });
+            //MessagingCenter.Subscribe<SignUpPageViewModel, string>(this, "SignUpSuccess", async (sender, message) =>
+            //{
+            //    await DisplayAlert("Success", message, "OK");
+            //});
 
             MessagingCenter.Subscribe<SignUpPageViewModel, string>(this, "SignUpError", async (sender, message) =>
             {
@@ -25,7 +25,7 @@ namespace P4Projekt2.Pages
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<SignUpPageViewModel, string>(this, "SignUpSuccess");
+            //MessagingCenter.Unsubscribe<SignUpPageViewModel, string>(this, "SignUpSuccess");
             MessagingCenter.Unsubscribe<SignUpPageViewModel, string>(this, "SignUpError");
         }
     }

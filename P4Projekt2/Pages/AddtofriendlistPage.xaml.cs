@@ -13,10 +13,10 @@ namespace P4Projekt2.Pages
             _httpClient = httpClient;
             BindingContext = new AddtofriendlistPageViewModel(_httpClient);
 
-            MessagingCenter.Subscribe<AddtofriendlistPageViewModel, string>(this, "Addfriendsuccess", async (sender, message) =>
-            {
-                await DisplayAlert("Success", message, "OK");
-            });
+            //MessagingCenter.Subscribe<AddtofriendlistPageViewModel, string>(this, "Addfriendsuccess", async (sender, message) =>
+            //{
+            //    await DisplayAlert("Success", message, "OK");
+            //});
 
             MessagingCenter.Subscribe<AddtofriendlistPageViewModel, string>(this, "SignUpError", async (sender, message) =>
             {
@@ -27,7 +27,7 @@ namespace P4Projekt2.Pages
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<AddtofriendlistPageViewModel, string>(this, "Addfriendsuccess");
+            //MessagingCenter.Unsubscribe<AddtofriendlistPageViewModel, string>(this, "Addfriendsuccess");
             MessagingCenter.Unsubscribe<AddtofriendlistPageViewModel, string>(this, "SignUpError");
         }
     }

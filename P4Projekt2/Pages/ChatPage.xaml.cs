@@ -18,10 +18,10 @@ namespace P4Projekt2.Pages
             LoadApiKey();
 
             // Subscribe to success messages
-            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatSuccess", async (sender, message) =>
-            {
-                await DisplayAlert("Success", message, "OK");
-            });
+            //MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatSuccess", async (sender, message) =>
+            //{
+            //    await DisplayAlert("Success", message, "OK");
+            //});
 
             // Subscribe to error messages
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "ChatError", async (sender, message) =>
@@ -29,11 +29,11 @@ namespace P4Projekt2.Pages
                 await DisplayAlert("Error", message, "OK");
             });
 
-            // Subscribe to success messages
-            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "SendMesageSuccess", async (sender, message) =>
-            {
-                await DisplayAlert("Success", message, "OK");
-            });
+            //// Subscribe to success messages
+            //MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "SendMesageSuccess", async (sender, message) =>
+            //{
+            //    await DisplayAlert("Success", message, "OK");
+            //});
 
             // Subscribe to error messages
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "SendMesageError", async (sender, message) =>
@@ -41,10 +41,10 @@ namespace P4Projekt2.Pages
                 await DisplayAlert("Error", message, "OK");
             });
 
-            MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesSuccess", async (sender, message) =>
-            {
-                await DisplayAlert("Success", message, "OK");
-            });
+            //MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesSuccess", async (sender, message) =>
+            //{
+            //    await DisplayAlert("Success", message, "OK");
+            //});
 
             // Subscribe to error messages
             MessagingCenter.Subscribe<ChatPageViewModel, string>(this, "LoadMessagesError", async (sender, message) =>
@@ -59,14 +59,17 @@ namespace P4Projekt2.Pages
                 await DisplayAlert("Error", message, "OK");
             });
 
-            
+
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
-            MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatSuccess");
+            //MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatSuccess");
             MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "ChatError");
+            MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "SendMesageError");
+            MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "LoadMessagesError");
+            MessagingCenter.Unsubscribe<ChatPageViewModel, string>(this, "LoadMessagesexceptionError");
         }
         private void LoadApiKey()
         {
