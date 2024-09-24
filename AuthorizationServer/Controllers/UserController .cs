@@ -368,55 +368,49 @@ namespace IdentityService.Controllers
             }
         }
 
-
         [HttpGet("getmessages/{email}/{contactEmail}")]
         public async Task<IActionResult> GetMessages(string email, string contactEmail)
         {
             try
             {
+                // Sprawdzenie czy przekazano oba adresy email
                 if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(contactEmail))
                 {
                     return BadRequest("Both email and contactEmail are required.");
                 }
 
-                if (contactEmail == "chatbot")
+                // Pobranie wiadomości, w których nadawcą lub odbiorcą jest użytkownik o podanych adresach email
+                var messages = await _context.ChatData
+                    .Where(m => (m.SenderEmail == email && m.ReceiverEmail == contactEmail) ||
+                                (m.SenderEmail == contactEmail && m.ReceiverEmail == email))
+                    .OrderBy(m => m.Timestamp)
+                    .ToListAsync();
+
+                // Sprawdzenie, czy wiadomości istnieją
+                if (messages == null || !messages.Any())
                 {
-
-
-                    return Ok();
+                    return Ok(new List<object>()); // Zwraca pustą listę, gdy brak wiadomości
                 }
-                else
+
+                // Utworzenie listy wiadomości w formacie DTO
+                var messageDtos = messages.Select(m => new
                 {
-                    var messages = await _context.ChatData
-                             .Where(m => (m.SenderEmail == email && m.ReceiverEmail == contactEmail) ||
-                                         (m.SenderEmail == contactEmail && m.ReceiverEmail == email))
-                             .OrderBy(m => m.Timestamp)
-                             .ToListAsync();
+                    m.Message,
+                    m.SenderEmail,
+                    m.ReceiverEmail,
+                    m.Timestamp,
+                }).ToList();
 
-                    if (messages == null || !messages.Any())
-                    {
-                        return Ok(new List<object>()); // Return empty list if no messages are found
-                    }
-
-                    var messageDtos = messages.Select(m => new
-                    {
-                        m.Message,
-                        m.SenderEmail,
-                        m.ReceiverEmail,
-                        m.Timestamp,
-                    }).ToList();
-
-                    return Ok(messageDtos);
-                }
-                // Retrieve sent and received messages
-
+                return Ok(messageDtos); // Zwraca wiadomości
             }
             catch (Exception ex)
             {
+                // Logowanie błędów i zwracanie odpowiedniego statusu
                 _logger.LogError(ex, $"Error while retrieving messages: {ex.Message}");
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
+
 
         [HttpGet("friends/{email}")]
         public async Task<IActionResult> GetFriends(string email)

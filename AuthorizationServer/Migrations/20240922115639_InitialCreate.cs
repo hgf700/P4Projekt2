@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     /// <inheritdoc />
-    public partial class UpdateChatData : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -140,7 +140,7 @@ namespace AuthorizationServer.Migrations
                     MessageId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Message = table.Column<string>(type: "text", nullable: false),
-                    Timestamp = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    Timestamp = table.Column<string>(type: "text", nullable: false),
                     SenderEmail = table.Column<string>(type: "character varying(255)", nullable: false),
                     ReceiverEmail = table.Column<string>(type: "character varying(255)", nullable: false)
                 },

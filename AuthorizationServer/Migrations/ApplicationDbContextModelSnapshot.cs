@@ -69,8 +69,9 @@ namespace AuthorizationServer.Migrations
                         .IsRequired()
                         .HasColumnType("character varying(255)");
 
-                    b.Property<DateTime>("Timestamp")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("Timestamp")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("MessageId");
 

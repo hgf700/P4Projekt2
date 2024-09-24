@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AuthorizationServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240920164857_UpdateChatData")]
-    partial class UpdateChatData
+    [Migration("20240922115639_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -72,8 +72,9 @@ namespace AuthorizationServer.Migrations
                         .IsRequired()
                         .HasColumnType("character varying(255)");
 
-                    b.Property<DateTime>("Timestamp")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("Timestamp")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("MessageId");
 

@@ -13,7 +13,7 @@ namespace IdentityService.DataBase
         public string Message { get; set; }
 
         [Required]
-        public DateTime Timestamp { get; set; } = DateTime.UtcNow; // Default to current time
+        public string Timestamp { get; set; }
 
         [Required]
         public string SenderEmail { get; set; }

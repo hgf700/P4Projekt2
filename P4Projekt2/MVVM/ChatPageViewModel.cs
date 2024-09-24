@@ -102,7 +102,8 @@ namespace P4Projekt2.MVVM
                 Message = _newMessage,
                 SenderEmail = _userEmail,
                 ReceiverEmail = _selectedContact.Email,
-                Timestamp = DateTime.UtcNow,
+                Timestamp = DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ss")
+
             };
 
             if (string.IsNullOrEmpty(messageRequest.Message))
@@ -203,8 +204,10 @@ namespace P4Projekt2.MVVM
 
         private async Task LoadMessages()
         {
-            if (_selectedContact == null || string.IsNullOrEmpty(_userEmail))
+            if (_selectedContact == null || string.IsNullOrEmpty(_userEmail)){
+                MessagingCenter.Send(this, "ChatError", $"No choose user to show massage");
                 return;
+            }
 
             var url = $"https://localhost:5014/authorization/user/getmessages/{_userEmail}/{_selectedContact.Email}";
 
@@ -214,6 +217,7 @@ namespace P4Projekt2.MVVM
                 if (response.IsSuccessStatusCode)
                 {
                     var responseContent = await response.Content.ReadAsStringAsync();
+                    Console.WriteLine($"Response content: {responseContent}");
                     var messages = JsonConvert.DeserializeObject<List<MessageData>>(responseContent);
 
                     if (messages != null && messages.Any())
@@ -233,7 +237,8 @@ namespace P4Projekt2.MVVM
                     }
                     else
                     {
-                        MessagingCenter.Send(this, "ChatError", "No messages found.");
+                        var errorResponse = await response.Content.ReadAsStringAsync();
+                        MessagingCenter.Send(this, "ChatError", $"No messages found.  {errorResponse}");
                     }
                 }
                 else
@@ -274,21 +279,23 @@ public class MessageData
     public string Message { get; set; }
     public string SenderEmail { get; set; }
     public string ReceiverEmail { get; set; }
-    public DateTime Timestamp { get; set; }
+    public string Timestamp { get; set; }
     public bool IsSentByCurrentUser { get; set; } // Add this property
 }
 
-public class MessageTemplateSelector : DataTemplateSelector
-{
-    public DataTemplate SentTemplate { get; set; }
-    public DataTemplate ReceivedTemplate { get; set; }
 
-    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
-    {
-        var message = item as MessageData;
-        return message.IsSentByCurrentUser ? SentTemplate : ReceivedTemplate;
-    }
-}
+
+//public class MessageTemplateSelector : DataTemplateSelector
+//{
+//    public DataTemplate SentTemplate { get; set; }
+//    public DataTemplate ReceivedTemplate { get; set; }
+
+//    protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+//    {
+//        var message = item as MessageData;
+//        return message.IsSentByCurrentUser ? SentTemplate : ReceivedTemplate;
+//    }
+//}
     }
 
 

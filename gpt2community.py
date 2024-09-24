@@ -3,19 +3,20 @@ from flask_sqlalchemy import SQLAlchemy
 from transformers import pipeline
 from datetime import datetime
 from jsonschema import validate, ValidationError
+from datetime import datetime
 
 # JSON Schema for ChatData
 schema = {
     "type": "object",
     "properties": {
-        "message_id": {"type": "integer"},
-        "message": {"type": "string"},
-        "timestamp": {"type": "string","format": "date-time"},
-        "sender_email": {"type": "string"},
-        "receiver_email": {"type": "string"},
+        "Message": {"type": "string"},
+        "SenderEmail": {"type": "string"},
+        "ReceiverEmail": {"type": "string"},
+        "Timestamp": {"type": "string", "format": "date-time"},
     },
-    "required": ["message", "timestamp", "sender_email", "receiver_email"],
+    "required": ["Message", "Timestamp", "SenderEmail", "ReceiverEmail"],
 }
+
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres1@localhost:5013/MessageDoctor'
@@ -31,38 +32,45 @@ class ChatData(db.Model):
     sender_email = db.Column(db.String(255), nullable=False, name='SenderEmail')
     receiver_email = db.Column(db.String(255), nullable=False, name='ReceiverEmail')
     message = db.Column(db.Text, nullable=False, name='Message')
-    timestamp = db.Column(db.DateTime, default=datetime.utcnow, name='Timestamp')
+    timestamp = db.Column(db.String(255),  name='Timestamp')
 
 @app.route('/analyze', methods=['POST'])
 def analyze_message():
     data = request.json
+
+    print("Received data:", data)  # Debugging line to see received data
+
+
     try:
         validate(instance=data, schema=schema)
     except ValidationError as e:
         return jsonify({"error schema": str(e)}), 400
 
-    message = data.get('message')
-    sender_email = data.get('sender_email')  # Corrected key to match schema
+    message = data.get('Message')
+    sender_email = data.get('SenderEmail') 
 
     if not message or not sender_email:
         return jsonify({"error": "No message or sender email provided"}), 400
 
-    # Generate response using GPT-2
-    gpt2_response = generator(message, max_length=150, num_return_sequences=1)[0]['generated_text']
+    gpt2_response = generator(message, max_length=20, num_return_sequences=1, truncation=True)[0]['generated_text']
+
+    gpt2_response = gpt2_response.replace('\n', ' ').replace('\r', '')  # Remove newline characters
+    gpt2_response = gpt2_response.replace('"', '').replace("'", '')     # Remove quotes (single and double)
+    gpt2_response = gpt2_response.replace('(', '').replace(')', '')     # Remove parentheses
 
     # Create ChatData instance
     chat_entry = ChatData(
         sender_email=sender_email,
         receiver_email='chatbot',
         message=message,
-        timestamp=datetime.utcnow()  # Explicitly set timestamp if needed
+        timestamp = datetime.utcnow().isoformat(timespec='seconds')
     )
 
     bot_chat_entry = ChatData(
         sender_email='chatbot',
         receiver_email=sender_email,
         message=gpt2_response,
-        timestamp=datetime.utcnow()
+        timestamp=datetime.utcnow().isoformat() + 'Z'
     )
 
     # Save the chat entry to the database

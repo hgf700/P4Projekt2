@@ -11,6 +11,6 @@ namespace P4Projekt2.API.User
         public string Message { get; set; }
         public string SenderEmail { get; set; }
         public string ReceiverEmail { get; set; }
-        public DateTime Timestamp { get; set; }
+        public string Timestamp { get; set; }
     }
 }

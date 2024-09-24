@@ -1,18 +1,15 @@
 
+curl -X POST "https://localhost:5014/authorization/register" \
+-H "Content-Type: application/json" \
+-d "{\"Firstname\": \"asd\", \"Lastname\": \"asd\", \"Email\": \"asd\", \"PasswordHash\": \"688787d8ff144c502c7f5cffaafe2cc588d86079f9de88304c26b0cb99ce91c6\", \"ClientId\": \"postman\"}"
 
-//curl -X POST "https://localhost:5014/authorization/register
-//-H "Content-Type: application/json" ^
-//-d "{\"Granttype\": \"client_credentials\", \"Firstname\": \"John\", \"Lastname\": \"Doe\", \"Email\": \"johndoe@example.com\", \"Password\": \"securepassword\", \"ClientId\": \"client123\"}"
 
-//curl -X POST "https://localhost:5014/authorization/user/addfriend" \
-//-H "Content-Type: application/json" \
-//-d "{\"RequesterEmail\": \"asd\", \"FriendEmail\": \"qwe\", \"RequestedAt\": \"2024-09-10T12:00:00Z\"}"
-
-//curl -X POST "https://localhost:5014/authorization/user/addfriend" \
-//-H "Content-Type: application/json" \
-//-d "{\"RequesterEmail\": \"asd\", \"FriendEmail\": \"qwe\", \"RequestedAt\": \"2024-09-10T12:00:00Z\"}"
+curl -X POST "https://localhost:5014/authorization/register" \
+-H "Content-Type: application/json" \
+-d "{\"Firstname\": \"qwe\", \"Lastname\": \"qwe\", \"Email\": \"qwe\", \"PasswordHash\": \"489cd5dbc708c7e541de4d7cd91ce6d0f1613573b7fc5b40d3942ccb9555cf35\", \"ClientId\": \"postman\"}"
 
 
 curl -X POST http://localhost:5015/analyze ^
 -H "Content-Type: application/json" ^
 -d "{\"message\": \"Hello, how are you?\", \"sender_email\": \"asd\", \"timestamp\": \"2024-09-22T12:00:00Z\", \"receiver_email\": \"chatbot\"}"
+

@@ -102,7 +102,7 @@
                                 </ContentView.Triggers>
                                 <StackLayout Padding="10" HorizontalOptions="{Binding IsSentByCurrentUser, Converter={StaticResource BooleanToHorizontalOptionsConverter}}">
                                     <Label Text="{Binding SenderEmail}" FontSize="18" VerticalOptions="Center" />
-                                    <Label Text="{Binding Message}" FontSize="18" VerticalOptions="Center" />
+                                    <Label Text="{Binding Message}" FontSize="18" VerticalOptions="Center" LineBreakMode="WordWrap" MaxLines="10" />
                                     <Label Text="{Binding Timestamp, StringFormat='{0:HH:mm}'}" FontSize="14" VerticalOptions="Center" />
                                 </StackLayout>
                             </ContentView>
