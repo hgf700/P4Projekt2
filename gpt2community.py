@@ -24,8 +24,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 # Initialize the text generation pipeline with GPT-2
-generator = pipeline("text-generation", model="openai-community/gpt2")
-
+generator = pipeline("assistance-analysis",clean_up_tokenization_spaces="true", model="openai-community/gpt2")
 class ChatData(db.Model):
     __tablename__ = 'chat_data'
     message_id = db.Column(db.Integer, primary_key=True, autoincrement=True, name='MessageId')
@@ -52,7 +51,7 @@ def analyze_message():
     if not message or not sender_email:
         return jsonify({"error": "No message or sender email provided"}), 400
 
-    gpt2_response = generator(message, max_length=20, num_return_sequences=1, truncation=True)[0]['generated_text']
+    gpt2_response = generator(message, max_length=35, num_return_sequences=1, truncation=True, padding ="true")[0]['generated_text']
 
     gpt2_response = gpt2_response.replace('\n', ' ').replace('\r', '')  # Remove newline characters
     gpt2_response = gpt2_response.replace('"', '').replace("'", '')     # Remove quotes (single and double)
@@ -77,6 +76,7 @@ def analyze_message():
     db.session.add(chat_entry)
     db.session.add(bot_chat_entry)
     db.session.commit()
+
 
     return jsonify({"response": gpt2_response})
 

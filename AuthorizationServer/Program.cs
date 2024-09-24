@@ -1,9 +1,9 @@
+
+using IdentityService.midleware;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using IdentityService.midleware;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using AuthorizationServer.chatbot;
 
 public class Program
 {
@@ -44,8 +44,6 @@ public class Program
                 ValidateAudience = false,
             };
         });
-
-        builder.Services.AddScoped<IChatbotService, ChatbotService>();
 
         // Dodanie Swagger (jeœli potrzebujesz dokumentacji API)
         builder.Services.AddEndpointsApiExplorer();

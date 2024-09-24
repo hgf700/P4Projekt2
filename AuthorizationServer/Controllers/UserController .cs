@@ -1,28 +1,15 @@
-﻿using IdentityService.DataBase;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+﻿
+using IdentityService.DataBase;
 using Microsoft.AspNetCore.Mvc;
-using P4Projekt2.API.Authorization;
-using P4Projekt2.API.User;
-using System.Security.Cryptography;
-using System.Linq;
-using IdentityModel;
-using Microsoft.AspNetCore.Identity;
-using System.Security.Claims;
-using System.Text;
-using static IdentityModel.OidcConstants;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Identity;
-using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
-using Microsoft.AspNetCore.Identity.Data;
-using System.Xml.Linq;
-using Microsoft.AspNet.SignalR.Client.Http;
-using System.Net.Http;
-using AuthorizationServer.chatbot;
-
-
+using P4Projekt2.API.Authorization;
+using P4Projekt2.API.User;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace IdentityService.Controllers
 {
@@ -30,14 +17,12 @@ namespace IdentityService.Controllers
     [Route("authorization/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly IChatbotService _chatbotService;
         private readonly ApplicationDbContext _context;
         private readonly ILogger<UserController> _logger;
-        public UserController(ApplicationDbContext context, ILogger<UserController> logger, IChatbotService chatbotService)
+        public UserController(ApplicationDbContext context, ILogger<UserController> logger)
         {
             _context = context;
             _logger = logger;
-            _chatbotService = chatbotService;   
         }
 
         [HttpPost("register")]
@@ -259,10 +244,10 @@ namespace IdentityService.Controllers
                     RequestedAt = request.RequestedAt
                 };
 
-                var friendRequestForReceiverUser= new AddToFriendList
+                var friendRequestForReceiverUser = new AddToFriendList
                 {
-                    RequesterEmail = friend.Email2, 
-                    FriendEmail = requester.Email1,   
+                    RequesterEmail = friend.Email2,
+                    FriendEmail = requester.Email1,
                     RequestedAt = request.RequestedAt
                 };
 
@@ -309,7 +294,7 @@ namespace IdentityService.Controllers
                         await _context.AddToFriendList.AddAsync(friendRequestForReceiveChatbot2);
                         await _context.SaveChangesAsync();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         _logger.LogError(ex, $"Error while adding chatbot: {ex.Message}");
                         return StatusCode(500, $"{ex.Message}");
@@ -410,7 +395,6 @@ namespace IdentityService.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}");
             }
         }
-
 
         [HttpGet("friends/{email}")]
         public async Task<IActionResult> GetFriends(string email)

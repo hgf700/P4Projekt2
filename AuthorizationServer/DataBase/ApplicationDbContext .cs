@@ -1,6 +1,5 @@
 ﻿using IdentityService.DataBase;
 using Microsoft.EntityFrameworkCore;
-using P4Projekt2.API.User;
 
 public class ApplicationDbContext : DbContext
 {
@@ -21,7 +20,6 @@ public class ApplicationDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Konfiguracja dla UserRegisterData
         modelBuilder.Entity<UserRegisterData>(entity =>
         {
             entity.HasKey(e => e.IdRegister);
@@ -59,7 +57,6 @@ public class ApplicationDbContext : DbContext
                 .HasPrincipalKey(u => u.Email);
         });
 
-        // Konfiguracja dla Key
         modelBuilder.Entity<Key>(entity =>
         {
             entity.HasKey(e => e.Id);
@@ -97,8 +94,6 @@ public class ApplicationDbContext : DbContext
                   .HasPrincipalKey(r => r.Email);
         });
 
-
-        // Konfiguracja dla RefreshToken
         modelBuilder.Entity<RefreshToken>(entity =>
         {
             entity.HasKey(e => e.Id);
@@ -114,8 +109,6 @@ public class ApplicationDbContext : DbContext
                   .HasPrincipalKey(u => u.Email); // Użycie Email jako klucza głównego
         });
 
-        // Konfiguracja dla ChatData
-        // Configuration for ChatData
         modelBuilder.Entity<ChatData>(entity =>
         {
             entity.ToTable("chat_data"); // Ensure this matches your database table name
@@ -138,7 +131,6 @@ public class ApplicationDbContext : DbContext
                   .HasPrincipalKey(u => u.Email2)
                   .OnDelete(DeleteBehavior.Restrict);
         });
-
 
         modelBuilder.Entity<AddToFriendList>(entity =>
         {

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v8.0": {
       "P4Projekt2/1.0.0": {
         "dependencies": {
-          "IdentityModel": "7.0.0",
           "Microsoft.AspNet.SignalR.Client": "2.4.3",
           "Microsoft.AspNetCore.Server.Kestrel": "2.2.0",
           "Microsoft.AspNetCore.SignalR.Client.Core": "8.0.8",
@@ -24,14 +23,6 @@
         },
         "runtime": {
           "P4Projekt2.dll": {}
-        }
-      },
-      "IdentityModel/7.0.0": {
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "assemblyVersion": "7.0.0.0",
-            "fileVersion": "7.0.0.0"
-          }
         }
       },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
@@ -824,13 +815,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "IdentityModel/7.0.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-to99aLL5Gev1GOb2gUao/UZXT/uXMyjEmHPNrf/vJI2HBD1LMCTeC4SBCe/cqMIB12V9v+eSieq7ff0lju9pOQ==",
-      "path": "identitymodel/7.0.0",
-      "hashPath": "identitymodel.7.0.0.nupkg.sha512"
     },
     "Microsoft.AspNet.SignalR.Client/2.4.3": {
       "type": "package",

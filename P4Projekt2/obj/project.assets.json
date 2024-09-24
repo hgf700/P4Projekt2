@@ -2,19 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -1281,19 +1268,6 @@
       }
     },
     "net8.0/android-arm": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -2548,19 +2522,6 @@
       }
     },
     "net8.0/android-arm64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -3815,19 +3776,6 @@
       }
     },
     "net8.0/android-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -5082,19 +5030,6 @@
       }
     },
     "net8.0/android-x86": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -6349,19 +6284,6 @@
       }
     },
     "net8.0/iossimulator-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -7616,19 +7538,6 @@
       }
     },
     "net8.0/maccatalyst-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -8883,19 +8792,6 @@
       }
     },
     "net8.0/win10-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -10160,19 +10056,6 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
-          }
-        }
-      },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
           }
         }
       },
@@ -13334,19 +13217,6 @@
           }
         }
       },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -16490,19 +16360,6 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
-          }
-        }
-      },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
           }
         }
       },
@@ -19652,19 +19509,6 @@
           }
         }
       },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -22808,19 +22652,6 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
-          }
-        }
-      },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
           }
         }
       },
@@ -25970,19 +25801,6 @@
           }
         }
       },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -29126,19 +28944,6 @@
         "runtime": {
           "lib/net6.0-android31.0/GoogleGson.dll": {
             "related": ".aar;.xml"
-          }
-        }
-      },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
           }
         }
       },
@@ -32288,19 +32093,6 @@
           }
         }
       },
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -35434,19 +35226,6 @@
       }
     },
     "net8.0-ios17.5": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -36719,19 +36498,6 @@
       }
     },
     "net8.0-ios17.5/android-arm": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -37992,19 +37758,6 @@
       }
     },
     "net8.0-ios17.5/android-arm64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -39265,19 +39018,6 @@
       }
     },
     "net8.0-ios17.5/android-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -40538,19 +40278,6 @@
       }
     },
     "net8.0-ios17.5/android-x86": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -41811,19 +41538,6 @@
       }
     },
     "net8.0-ios17.5/iossimulator-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -43084,19 +42798,6 @@
       }
     },
     "net8.0-ios17.5/maccatalyst-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -44357,19 +44058,6 @@
       }
     },
     "net8.0-ios17.5/win10-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -45630,19 +45318,6 @@
       }
     },
     "net8.0-maccatalyst17.5": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -46915,19 +46590,6 @@
       }
     },
     "net8.0-maccatalyst17.5/android-arm": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -48188,19 +47850,6 @@
       }
     },
     "net8.0-maccatalyst17.5/android-arm64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -49461,19 +49110,6 @@
       }
     },
     "net8.0-maccatalyst17.5/android-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -50734,19 +50370,6 @@
       }
     },
     "net8.0-maccatalyst17.5/android-x86": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -52007,19 +51630,6 @@
       }
     },
     "net8.0-maccatalyst17.5/iossimulator-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -53280,19 +52890,6 @@
       }
     },
     "net8.0-maccatalyst17.5/maccatalyst-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -54553,19 +54150,6 @@
       }
     },
     "net8.0-maccatalyst17.5/win10-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -55826,19 +55410,6 @@
       }
     },
     "net8.0-windows10.0.19041": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -57280,19 +56851,6 @@
       }
     },
     "net8.0-windows10.0.19041/android-arm": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -58682,19 +58240,6 @@
       }
     },
     "net8.0-windows10.0.19041/android-arm64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -60084,19 +59629,6 @@
       }
     },
     "net8.0-windows10.0.19041/android-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -61486,19 +61018,6 @@
       }
     },
     "net8.0-windows10.0.19041/android-x86": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -62888,19 +62407,6 @@
       }
     },
     "net8.0-windows10.0.19041/iossimulator-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -64290,19 +63796,6 @@
       }
     },
     "net8.0-windows10.0.19041/maccatalyst-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -65692,19 +65185,6 @@
       }
     },
     "net8.0-windows10.0.19041/win10-x64": {
-      "IdentityModel/7.0.0": {
-        "type": "package",
-        "compile": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net6.0/IdentityModel.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      },
       "Microsoft.AspNet.SignalR.Client/2.4.3": {
         "type": "package",
         "dependencies": {
@@ -67117,31 +66597,6 @@
         "lib/net6.0-android31.0/GoogleGson.aar",
         "lib/net6.0-android31.0/GoogleGson.dll",
         "lib/net6.0-android31.0/GoogleGson.xml"
-      ]
-    },
-    "IdentityModel/7.0.0": {
-      "sha512": "to99aLL5Gev1GOb2gUao/UZXT/uXMyjEmHPNrf/vJI2HBD1LMCTeC4SBCe/cqMIB12V9v+eSieq7ff0lju9pOQ==",
-      "type": "package",
-      "path": "identitymodel/7.0.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "README.md",
-        "icon.jpg",
-        "identitymodel.7.0.0.nupkg.sha512",
-        "identitymodel.nuspec",
-        "lib/net462/IdentityModel.dll",
-        "lib/net462/IdentityModel.pdb",
-        "lib/net462/IdentityModel.xml",
-        "lib/net472/IdentityModel.dll",
-        "lib/net472/IdentityModel.pdb",
-        "lib/net472/IdentityModel.xml",
-        "lib/net6.0/IdentityModel.dll",
-        "lib/net6.0/IdentityModel.pdb",
-        "lib/net6.0/IdentityModel.xml",
-        "lib/netstandard2.0/IdentityModel.dll",
-        "lib/netstandard2.0/IdentityModel.pdb",
-        "lib/netstandard2.0/IdentityModel.xml"
       ]
     },
     "Microsoft.AspNet.SignalR.Client/2.4.3": {
@@ -72628,7 +72083,6 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "IdentityModel >= 7.0.0",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.2.0",
       "Microsoft.AspNetCore.SignalR.Client.Core >= 8.0.8",
@@ -72643,7 +72097,6 @@
       "System.Net.Http.Json >= 8.0.0"
     ],
     "net8.0-android34.0": [
-      "IdentityModel >= 7.0.0",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.2.0",
       "Microsoft.AspNetCore.SignalR.Client.Core >= 8.0.8",
@@ -72659,7 +72112,6 @@
       "System.Net.Http.Json >= 8.0.0"
     ],
     "net8.0-ios17.5": [
-      "IdentityModel >= 7.0.0",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.2.0",
       "Microsoft.AspNetCore.SignalR.Client.Core >= 8.0.8",
@@ -72675,7 +72127,6 @@
       "System.Net.Http.Json >= 8.0.0"
     ],
     "net8.0-maccatalyst17.5": [
-      "IdentityModel >= 7.0.0",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.2.0",
       "Microsoft.AspNetCore.SignalR.Client.Core >= 8.0.8",
@@ -72691,7 +72142,6 @@
       "System.Net.Http.Json >= 8.0.0"
     ],
     "net8.0-windows10.0.19041": [
-      "IdentityModel >= 7.0.0",
       "Microsoft.AspNet.SignalR.Client >= 2.4.3",
       "Microsoft.AspNetCore.Server.Kestrel >= 2.2.0",
       "Microsoft.AspNetCore.SignalR.Client.Core >= 8.0.8",
@@ -72777,10 +72227,6 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "IdentityModel": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          },
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"
@@ -72851,10 +72297,6 @@
       "net8.0-android34.0": {
         "targetAlias": "net8.0-android",
         "dependencies": {
-          "IdentityModel": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          },
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"
@@ -72934,10 +72376,6 @@
       "net8.0-ios17.5": {
         "targetAlias": "net8.0-ios",
         "dependencies": {
-          "IdentityModel": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          },
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"
@@ -73017,10 +72455,6 @@
       "net8.0-maccatalyst17.5": {
         "targetAlias": "net8.0-maccatalyst",
         "dependencies": {
-          "IdentityModel": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          },
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"
@@ -73101,10 +72535,6 @@
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
         "dependencies": {
-          "IdentityModel": {
-            "target": "Package",
-            "version": "[7.0.0, )"
-          },
           "Microsoft.AspNet.SignalR.Client": {
             "target": "Package",
             "version": "[2.4.3, )"

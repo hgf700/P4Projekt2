@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "pOEODsjiELYQZm+9CPAEQ8jxmGg0VztDTUg8Voa7FXAGUfQxYG+NN50V6kaQes58MESlai0Rk9M3QKSMDwIW2w==",
+  "dgSpecHash": "xIo05vs+m1D+XA6l2PgWVCrty94jUNFVcNVuYuQy0vIvJ2scA0cf5YerVQa/t8IAtbMIRsRKlHseqAz9iArj4w==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\P4Projekt2\\P4Projekt2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER098\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
-    "C:\\Users\\USER098\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.3\\microsoft.aspnet.signalr.client.2.4.3.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\8.0.8\\microsoft.aspnetcore.connections.abstractions.8.0.8.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.hosting\\2.2.0\\microsoft.aspnetcore.hosting.2.2.0.nupkg.sha512",

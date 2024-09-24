@@ -1,0 +1,47 @@
+cd Documents/GitHub/P4Projekt2/AuthorizationServer
+cd Documents\GitHub\P4Projekt2
+.\venv\Scripts\Activate 
+
+python gpt2community.py
+
+Select *
+From "UserRegisterData"
+
+Select *
+From "Keys"
+
+Select *
+From "UserLoginData"
+
+Select *
+From "RefreshTokens"
+
+Select *
+From "chat_data"
+
+Select *
+From "AddToFriendList"
+
+TRUNCATE TABLE "chat_data";
+TRUNCATE TABLE "AddToFriendList";
+
+--to delete data from tables
+DO $$ 
+DECLARE
+    r RECORD;
+BEGIN
+    -- Dla każdej tabeli w schemacie public
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP
+        EXECUTE 'TRUNCATE TABLE ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+
+--to delete tables
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = 'public') LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+

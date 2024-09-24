@@ -1,8 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.Configuration;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IdentityModel.Tokens.Jwt;
 
 
 
@@ -44,7 +40,7 @@ namespace IdentityService.midleware
                 // Przypisanie użytkownika do kontekstu, jeśli token jest poprawny
                 context.Items["User"] = user;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Błąd podczas weryfikacji tokenu lub dostępu do bazy danych: {ex.Message}");
             }

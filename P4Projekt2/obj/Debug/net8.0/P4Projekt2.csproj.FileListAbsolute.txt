@@ -109,7 +109,6 @@ C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\P4Proje
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\P4Projekt2.runtimeconfig.json
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\P4Projekt2.dll
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\P4Projekt2.pdb
-C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\IdentityModel.dll
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\Microsoft.AspNet.SignalR.Client.dll
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\USER098\Documents\GitHub\P4Projekt2\P4Projekt2\bin\Debug\net8.0\Microsoft.AspNetCore.Hosting.dll

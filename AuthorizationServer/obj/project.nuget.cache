@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AkCBvd+mltI56l8UKP2xwHXgO/mO8F6IbbUXrwFD1l4mQ3eHIkYprfN3uZ1+9tSC6+VE2t3qfBv6say/99j85g==",
+  "dgSpecHash": "/PQGrxYivJkiPhGSmP+R4TspvieosNBJVUC2mEn+pyqtAR+H1MKzinvsGxy19AFoCMygTpPxpD6FwCY1YdfzLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER098\\Documents\\GitHub\\P4Projekt2\\AuthorizationServer\\AuthorizationServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USER098\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
-    "C:\\Users\\USER098\\.nuget\\packages\\identitymodel\\7.0.0\\identitymodel.7.0.0.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnet.signalr.client\\2.4.3\\microsoft.aspnet.signalr.client.2.4.3.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\USER098\\.nuget\\packages\\microsoft.aspnetcore.connections.abstractions\\8.0.8\\microsoft.aspnetcore.connections.abstractions.8.0.8.nupkg.sha512",
